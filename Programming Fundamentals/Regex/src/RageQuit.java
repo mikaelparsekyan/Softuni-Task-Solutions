@@ -8,9 +8,9 @@ public class RageQuit {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();      //"(([^\d]+)(\d+))
-        Pattern pattern = Pattern.compile("(?<sequence>[^\\d]+)(?<digit>\\d+)");
+        Pattern pattern = Pattern.compile("(?<sequence>[^0-9]+)(?<digit>[0-9]+)");
         Matcher matcher = pattern.matcher(input);
-        List<String> uniqueSymbols = new ArrayList<>();
+        List<Character> uniqueSymbols = new ArrayList<>();
         StringBuilder result = new StringBuilder();
         while (matcher.find()) {
             String sequence = matcher.group("sequence");
@@ -20,8 +20,8 @@ public class RageQuit {
                 currentSequence.append(sequence.toUpperCase());
             }
             for (int i = 0; i < currentSequence.length(); i++) {
-                if(!uniqueSymbols.contains(currentSequence.charAt(i)+"")){
-                    uniqueSymbols.add(currentSequence.charAt(i)+"");
+                if(!uniqueSymbols.contains(currentSequence.charAt(i))){
+                    uniqueSymbols.add(currentSequence.charAt(i));
                 }
             }
 
