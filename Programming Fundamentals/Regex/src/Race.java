@@ -16,8 +16,7 @@ public class Race {
         while (!"end of race".equals(info)) {
             String name = findName(nameRegex, info);
             int distance = findDistance(distanceRegex, info);
-            //System.out.println(name + " " + distance);
-            if (names.contains(name.toString())) {
+            if (names.contains(name)) {
 
                 if (racers.containsKey(name)) {
                     int currentDistance = racers.get(name);
