@@ -8,7 +8,7 @@ public class ArrivingInKathmandu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        Pattern pattern = Pattern.compile("^(?<name>[A-Za-z\\!\\@\\#\\$\\?]+)=(?<length>[0-9]+)<<(?<code>.+)$");
+        Pattern pattern = Pattern.compile("^(?<name>[A-Za-z0-9\\!\\@\\#\\$\\?]+)=(?<length>[0-9]+)<<(?<code>.*)$");
         boolean isFound = false;
         while (!"Last note".equals(input)){
             Matcher matcher = pattern.matcher(input);
@@ -35,7 +35,7 @@ public class ArrivingInKathmandu {
     private static String getName(String name){
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < name.length(); i++) {
-            if(Character.isLetter(name.charAt(i))){
+            if(Character.isLetterOrDigit(name.charAt(i))){
                 result.append(name.charAt(i));
             }
         }
