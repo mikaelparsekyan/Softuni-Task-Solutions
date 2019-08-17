@@ -13,32 +13,7 @@ public class BalancedParentheses {
                 stackOpen.push(currentChar);
             } else {
                 stackClose.push(currentChar);
-                switch (currentChar) {
-                    case ')':
-                        if (stackOpen.size() > 0) {
-                            if (stackOpen.peek() == '(') {
-                                stackOpen.pop();
-                                stackClose.pop();
-                            }
-                        }
-                        break;
-                    case '}':
-                        if (stackOpen.size() > 0) {
-                            if (stackOpen.peek() == '{') {
-                                stackOpen.pop();
-                                stackClose.pop();
-                            }
-                        }
-                        break;
-                    case ']':
-                        if (stackOpen.size() > 0) {
-                            if (stackOpen.peek() == '[') {
-                                stackOpen.pop();
-                                stackClose.pop();
-                            }
-                        }
-                        break;
-                }
+                removeFromStack(currentChar,stackOpen,stackClose);
             }
         }
 
@@ -50,4 +25,21 @@ public class BalancedParentheses {
         }
     }
 
+    static void removeFromStack(char character,
+                                ArrayDeque<Character> stackOpen, ArrayDeque<Character> stackClose) {
+        char oppositeChar = ' ';
+        if (character == ')') {
+            oppositeChar = '(';
+        } else if (character == '}') {
+            oppositeChar = '{';
+        } else if (character == ']') {
+            oppositeChar = '[';
+        }
+        if (stackOpen.size() > 0) {
+            if (stackOpen.peek() == oppositeChar) {
+                stackOpen.pop();
+                stackClose.pop();
+            }
+        }
+    }
 }
