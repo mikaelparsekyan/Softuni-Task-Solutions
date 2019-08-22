@@ -12,7 +12,7 @@ public class MaximumSumOfSubmatrix {
             matrix[i] = Arrays.stream(scanner.nextLine().split(", "))
                     .mapToInt(Integer::parseInt).toArray();
         }
-        for (int[] row : getMaxSubmatrix(matrix,sum)) {
+        for (int[] row : getMaxSubmatrix(matrix, sum)) {
             for (int i : row) {
                 System.out.print(i + " ");
             }
@@ -36,7 +36,7 @@ public class MaximumSumOfSubmatrix {
 
                             for (int i = 0; i < maxSumSubmatrix.length; i++) {
                                 for (int j = 0; j < maxSumSubmatrix[i].length; j++) {
-                                    maxSumSubmatrix[i][j] = matrix[row+i][col+j];
+                                    maxSumSubmatrix[i][j] = matrix[row + i][col + j];
                                 }
                             }
                         }
