@@ -19,6 +19,5 @@ public class WriteEveryThirdLine {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
