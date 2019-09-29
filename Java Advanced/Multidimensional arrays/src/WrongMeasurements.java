@@ -6,30 +6,32 @@ public class WrongMeasurements {
         Scanner scanner = new Scanner(System.in);
         int rows = Integer.parseInt(scanner.nextLine());
         int[][] matrix = new int[rows][];
-        int[][] result = new int[rows][];
+
         for (int i = 0; i < rows; i++) {
             matrix[i] = Arrays.stream(scanner.nextLine().split(" "))
                     .mapToInt(Integer::parseInt).toArray();
-            result[i] = new int[matrix[i].length];
         }
+
+        char[][] validValues = new char[rows][matrix[0].length];
         int[] wrongValues = Arrays.stream(scanner.nextLine().split(" "))
                 .mapToInt(Integer::parseInt).toArray();
 
-        int number = matrix[wrongValues[0]][wrongValues[1]];
+        int wrongNum = matrix[wrongValues[0]][wrongValues[1]];
 
-        while (isContaining(matrix, number)) {
-            for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix[i].length; j++) {
-                    if (matrix[i][j] == number) {
-                        removeValue(matrix, result, new int[]{i, j});
+        removeValue(matrix, validValues, wrongValues);
 
-                    }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == wrongNum) {
+                    removeValue(matrix, validValues, new int[]{i, j});
                 }
             }
         }
-        //removeValue(matrix,result, wrongValues);
+        printMatrix(matrix);
+    }
 
-        for (int[] ints : result) {
+    private static void printMatrix(int[][] matrix) {
+        for (int[] ints : matrix) {
             for (int i : ints) {
                 System.out.print(i + " ");
             }
@@ -37,49 +39,37 @@ public class WrongMeasurements {
         }
     }
 
-
-    private static boolean isContaining(int[][] matrix, int number) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] == number) {
-
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private static void removeValue(int[][] matrix, int[][] newMatrix, int[] coordinates) {
+    private static void removeValue(int[][] matrix, char[][] validValues, int[] coordinates) {
         int x = coordinates[0];
         int y = coordinates[1];
-            int sum = 0;
+        int sum = 0;
         int num = matrix[x][y];
         if (x + 1 < matrix.length) {
             int val = matrix[x + 1][y];
-            if (val != num) {
+            if ((val != num) && (validValues[x + 1][y] != 'x')) {
                 sum += val;
             }
         }
         if (x - 1 >= 0) {
             int val = matrix[x - 1][y];
-            if (val != num) {
+            if ((val != num) && (validValues[x - 1][y] != 'x')) {
                 sum += val;
             }
         }
         if (y + 1 < matrix[x].length) {
             int val = matrix[x][y + 1];
-            if (val != num) {
+            if ((val != num) && (validValues[x][y + 1] != 'x')) {
                 sum += val;
             }
         }
         if (y - 1 >= 0) {
             int val = matrix[x][y - 1];
-            if (val != num) {
+            if ((val != num) && (validValues[x][y - 1] != 'x')) {
                 sum += val;
             }
         }
-        newMatrix[x][y] = sum;
+        matrix[x][y] = sum;
+        validValues[x][y] = 'x';
     }
 
 }
