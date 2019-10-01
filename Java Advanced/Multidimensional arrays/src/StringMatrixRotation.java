@@ -17,7 +17,6 @@ public class StringMatrixRotation {
         }
         String row = scanner.nextLine();
         List<String> input = new ArrayList<>();
-        int index = 0;
         int longestInput = 0;
         while (!"END".equals(row)) {
             input.add(row);
@@ -37,11 +36,8 @@ public class StringMatrixRotation {
             matrix[i] = elements;
         }
         System.out.println();
-        //matrix = rotateMatrix(matrix);
-        if (iterations != 0) {
-
-
-            for (int i = 0; i < iterations / 90; i++) {
+        if (iterations % 360!= 0) {
+            for (int i = 0; i < (iterations % 360)/90; i++) {
                 matrix = rotateMatrix(matrix);
             }
         }
