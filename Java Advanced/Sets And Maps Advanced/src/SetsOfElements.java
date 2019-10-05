@@ -18,10 +18,9 @@ public class SetsOfElements {
                 secondSet.add(value);
             }
         }
+        firstSet.retainAll(secondSet);
         for (Integer element : firstSet) {
-            if(secondSet.contains(element)){
-                System.out.print(element + " ");
-            }
+            System.out.print(element + " ");
         }
 
 
