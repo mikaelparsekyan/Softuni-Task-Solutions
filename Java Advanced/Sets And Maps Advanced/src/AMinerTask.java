@@ -14,7 +14,7 @@ public class AMinerTask {
             } else {
                 materials.put(material, quantity);
             }
-            material = scanner.nex  tLine();
+            material = scanner.nextLine();
         }
         materials.entrySet().stream().forEach(e -> {
             System.out.printf("%s -> %d%n", e.getKey(), e.getValue());
