@@ -7,7 +7,6 @@ public class DragonArmy {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Map<String, Map<String, Dragon>> dragonMap = new LinkedHashMap<>();
-        //Map<String,Map<String, List<Integer>>> averageStats = new LinkedHashMap<>();
         int n = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < n; i++) {
             String[] input = scanner.nextLine().split("\\s+");
@@ -67,7 +66,6 @@ public class DragonArmy {
     private static void addToValue(Map<String, Map<String, Dragon>> dragonMap,
                                    String dragonType, String dragonName, int damage, int health, int armor) {
         Map<String, Dragon> value = new LinkedHashMap<>();
-        Map<String, Dragon> stats = new LinkedHashMap<>();
         if (dragonMap.containsKey(dragonType)) {
             value = dragonMap.get(dragonType);
             value.put(dragonName, new Dragon(
@@ -81,7 +79,6 @@ public class DragonArmy {
         dragonMap.put(dragonType, value);
     }
 }
-
 class Dragon {
     String name;
     int health;
@@ -94,11 +91,6 @@ class Dragon {
         this.damage = damage;
         this.armor = armor;
     }
-
-    public String getName() {
-        return name;
-    }
-
     public int getHealth() {
         return health;
     }
