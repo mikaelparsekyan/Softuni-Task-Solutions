@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class AllCapitals {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         String userDir = System.getProperty("user.dir");
         String inputFilePath = userDir + "/res/input.txt";
         String outputFilePath = userDir + "/res/output.txt";
