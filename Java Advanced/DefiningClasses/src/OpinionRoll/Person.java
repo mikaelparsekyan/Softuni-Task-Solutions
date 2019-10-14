@@ -1,3 +1,5 @@
+package OpinionRoll;
+
 class Person {
     String name;
     int age;

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f205625-cdf9-48ba-8801-4a5a8ef215d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../DefiningClasses/DefiningClasses.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../DefiningClasses/src/Department.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../DefiningClasses/src/Employee.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../DefiningClasses/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FindEvensOrOdds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,7 +66,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FindEvensOrOdds.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="386">
               <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -249,7 +246,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5091938" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5091938" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42149928" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -482,7 +479,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FindEvensOrOdds.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
+        <state relative-caret-position="386">
           <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
