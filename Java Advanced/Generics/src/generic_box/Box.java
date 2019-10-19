@@ -1,9 +1,9 @@
 package generic_box;
 
-public class Box<String> {
-    private String value;
+public class Box<T> {
+    private T value;
 
-    public Box(String value) {
+    public Box(T value) {
         this.value = value;
     }
 
