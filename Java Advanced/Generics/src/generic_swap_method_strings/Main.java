@@ -14,7 +14,7 @@ public class Main {
         int swapElementToIndex = scanner.nextInt();
         box.swap(swapElementIndex,swapElementToIndex);
         for (String value : box.getData()) {
-            System.out.println("java.lang.String: " + value);
+            System.out.println(value.getClass().getCanonicalName() + ": " + value);
         }
 
     }
