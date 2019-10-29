@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
-        printRombus(n);
+        printRhombus(n);
     }
-    private static void printRombus(int n){
+    private static void printRhombus(int n){
         //IF IT IS HARD TO READ, PROSTO ZAEBI...
         for (int i = n - 1; i >= 0; i--) {
             for (int j = i; j > 0; j--) {
