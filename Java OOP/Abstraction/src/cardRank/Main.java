@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.printf("%s:%n",scanner.nextLine());
+        System.out.printf("%s:%n", scanner.nextLine());
         Ranks[] ranks = Ranks.values();
-        for (int i = 0; i < ranks.length; i++) {
+        for (Ranks rank : ranks) {
             System.out.printf("Ordinal value: %d; Name value: %s%n",
-                    i,ranks[i]);
+                    rank.ordinal(), rank.toString());
         }
     }
 }
