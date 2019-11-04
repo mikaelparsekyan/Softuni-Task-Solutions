@@ -1,5 +1,8 @@
 package multiple_implementation;
 
+import multiple_implementation.interfaces.Birthable;
+import multiple_implementation.interfaces.Identifiable;
+
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Scanner;

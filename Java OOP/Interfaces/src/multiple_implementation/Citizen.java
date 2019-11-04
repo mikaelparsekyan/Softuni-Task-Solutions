@@ -1,6 +1,10 @@
 package multiple_implementation;
 
-public class Citizen implements Person,Identifiable,Birthable {
+import multiple_implementation.interfaces.Birthable;
+import multiple_implementation.interfaces.Identifiable;
+import multiple_implementation.interfaces.Person;
+
+public class Citizen implements Person, Identifiable, Birthable {
     private String name;
     private int age;
     private String id;

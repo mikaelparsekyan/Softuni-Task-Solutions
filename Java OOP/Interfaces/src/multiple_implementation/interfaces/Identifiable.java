@@ -1,4 +1,4 @@
-package multiple_implementation;
+package multiple_implementation.interfaces;
 
 public interface Identifiable {
     String getId();
