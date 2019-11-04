@@ -1,7 +1,6 @@
 package birthday_celebrations;
 
 import birthday_celebrations.interfaces.Birthable;
-import birthday_celebrations.interfaces.Identifiable;
 
 import java.util.LinkedList;
 import java.util.List;
