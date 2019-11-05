@@ -20,7 +20,7 @@ public class Topping {
     private boolean isToppingValid(String type) {
         ToppingsModifiers[] modifiers = ToppingsModifiers.values();
         for (ToppingsModifiers modifier : modifiers) {
-            if (modifier.name().equalsIgnoreCase(type)) {
+            if (modifier.name().equals(type)) {
                 return true;
             }
         }

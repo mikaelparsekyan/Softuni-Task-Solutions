@@ -32,6 +32,7 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+
     }
 
     private static String[] readLine(Scanner scanner) {

@@ -2,13 +2,13 @@ package pizza_calories;
 
 public class Dough {
     private String flourType;
-    private String backingTechnique;
+    private String bakingTechnique;
     private double weight;
     private static final String INVALID_MESSAGE = "Invalid type of dough.";
 
     public Dough(String flourType, String backingTechnique, double weight) {
         this.setFlourType(flourType);
-        this.setBackingTechnique(backingTechnique);
+        this.setBakingTechnique(backingTechnique);
         this.setWeight(weight);
     }
 
@@ -33,11 +33,11 @@ public class Dough {
         this.flourType = flourType;
     }
 
-    private void setBackingTechnique(String backingTechnique) {
-        if (!isDoughValid(backingTechnique)) {
+    private void setBakingTechnique(String bakingTechnique) {
+        if (!isDoughValid(bakingTechnique)) {
             throw new IllegalArgumentException(INVALID_MESSAGE);
         }
-        this.backingTechnique = backingTechnique;
+        this.bakingTechnique = bakingTechnique;
     }
 
     private void setWeight(double weight) {
@@ -51,6 +51,6 @@ public class Dough {
     public double calculateCalories() {
         return (2 * weight) *
                 DoughModifiers.valueOf(flourType).getCal() *
-                DoughModifiers.valueOf(backingTechnique).getCal();
+                DoughModifiers.valueOf(bakingTechnique).getCal();
     }
 }
