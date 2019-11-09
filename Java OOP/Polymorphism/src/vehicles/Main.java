@@ -10,19 +10,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] carData = scanner.nextLine().split("\\s+");
-        String[] truckData = scanner.nextLine().split("\\s+");
+        String[] carData = readLine(scanner);
+        String[] truckData = readLine(scanner);
 
 
         Car car = new Car(Double.parseDouble(carData[1]),
                 Double.parseDouble(carData[2]));
+        
         Truck truck = new Truck(Double.parseDouble(truckData[1]),
                 Double.parseDouble(truckData[2]));
 
         int n = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < n; i++) {
-            String[] command = scanner.nextLine().split("\\s+");
+            String[] command = readLine(scanner);
             switch (command[1]) {
                 case "Car":
                     switchCommands(car, command);
@@ -32,8 +33,8 @@ public class Main {
                     break;
             }
         }
-        System.out.printf("Car: %.2f" + System.lineSeparator(), car.getFuelQuantity());
-        System.out.printf("Truck: %.2f", truck.getFuelQuantity());
+        System.out.println(car.toString());
+        System.out.println(truck.toString());
 
     }
 
@@ -43,5 +44,9 @@ public class Main {
         } else {
             vehicle.refuel(Double.parseDouble(command[2]));
         }
+    }
+
+    private static String[] readLine(Scanner scanner) {
+        return scanner.nextLine().split("\\s+");
     }
 }

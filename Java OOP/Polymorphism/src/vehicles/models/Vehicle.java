@@ -33,4 +33,11 @@ public abstract class Vehicle {
         System.out.printf("%s travelled " + outputFormat.format(distance) + " km" + System.lineSeparator(),
                 this.getClass().getSimpleName());
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %.2f", this.getClass().getSimpleName(),
+                this.fuelQuantity);
+    }
+
 }
