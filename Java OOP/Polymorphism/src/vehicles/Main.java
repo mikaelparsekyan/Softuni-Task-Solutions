@@ -2,6 +2,7 @@ package vehicles;
 
 import vehicles.models.Car;
 import vehicles.models.Truck;
+import vehicles.models.Vehicle;
 
 import java.util.Scanner;
 
@@ -24,23 +25,23 @@ public class Main {
             String[] command = scanner.nextLine().split("\\s+");
             switch (command[1]) {
                 case "Car":
-                    if (command[0].equals("Drive")) {
-                        car.drive(Double.parseDouble(command[2]));
-                    } else {
-                        car.refuel(Double.parseDouble(command[2]));
-                    }
+                    switchCommands(car, command);
                     break;
                 case "Truck":
-                    if (command[0].equals("Drive")) {
-                        truck.drive(Double.parseDouble(command[2]));
-                    } else {
-                        truck.refuel(Double.parseDouble(command[2]));
-                    }
+                    switchCommands(truck, command);
                     break;
             }
         }
         System.out.printf("Car: %.2f" + System.lineSeparator(), car.getFuelQuantity());
         System.out.printf("Truck: %.2f", truck.getFuelQuantity());
 
+    }
+
+    private static void switchCommands(Vehicle vehicle, String[] command) {
+        if (command[0].equals("Drive")) {
+            vehicle.drive(Double.parseDouble(command[2]));
+        } else {
+            vehicle.refuel(Double.parseDouble(command[2]));
+        }
     }
 }
