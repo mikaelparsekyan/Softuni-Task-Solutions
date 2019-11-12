@@ -13,7 +13,7 @@ public class SpecialisedSoldierImpl extends PrivateImpl implements SpecialisedSo
     }
 
     @Override
-    public Corps getCorps() {
-        return corps;
+    public String getCorps() {
+        return corps.toString();
     }
 }

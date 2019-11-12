@@ -22,8 +22,8 @@ public class EngineerImpl extends SpecialisedSoldierImpl implements Engineer {
     }
 
     @Override
-    public Corps getCorps() {
-        return corps;
+    public String getCorps() {
+        return corps.toString();
     }
 
     @Override
@@ -36,6 +36,7 @@ public class EngineerImpl extends SpecialisedSoldierImpl implements Engineer {
         result.append(System.lineSeparator()).append(String.format("Corps: %s", this.getCorps()))
                 .append(System.lineSeparator()).append("Repairs:");
         for (Repair repair : this.getRepairs()) {
+
             result.append(System.lineSeparator()).append("  ").append(repair.toString());
         }
         return result.toString();

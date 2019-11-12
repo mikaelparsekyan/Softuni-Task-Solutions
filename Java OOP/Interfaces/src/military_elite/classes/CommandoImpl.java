@@ -19,8 +19,8 @@ public class CommandoImpl extends SpecialisedSoldierImpl implements Commando {
     }
 
     @Override
-    public Corps getCorps() {
-        return corps;
+    public String getCorps() {
+        return corps.toString();
     }
 
     @Override

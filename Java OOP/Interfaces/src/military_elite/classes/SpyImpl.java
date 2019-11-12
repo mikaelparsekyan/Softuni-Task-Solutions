@@ -9,6 +9,7 @@ public class SpyImpl extends SoldierImpl implements Spy {
         super(id, firstName, lastName);
         this.codeNumber = codeNumber;
     }
+
     @Override
     public String getCodeNumber() {
         return codeNumber;
@@ -16,7 +17,7 @@ public class SpyImpl extends SoldierImpl implements Spy {
 
     @Override
     public String toString() {
-        return String.format("Name: %s %s Id: %d%nCode Number: %s",
-                super.getFirstName(),super.getLastName(),super.getId(),this.getCodeNumber());
+        return String.format(super.toString() + "%nCode Number: %s",
+                this.getCodeNumber());
     }
 }

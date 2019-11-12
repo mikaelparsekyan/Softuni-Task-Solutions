@@ -17,8 +17,7 @@ public class PrivateImpl extends SoldierImpl implements Private {
 
     @Override
     public String toString() {
-        return String.format("Name: %s %s Id: %d Salary: %.2f",
-                super.getFirstName(), super.getLastName(), super.getId(),
+        return String.format(super.toString() + "Salary: %.2f",
                 this.getSalary());
     }
 }

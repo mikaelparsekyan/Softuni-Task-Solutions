@@ -2,7 +2,7 @@ package military_elite.classes;
 
 import military_elite.interfaces.Soldier;
 
-public class SoldierImpl implements Soldier {
+public abstract class SoldierImpl implements Soldier {
     private String firstName;
     private String lastName;
     private int id;
@@ -26,5 +26,10 @@ public class SoldierImpl implements Soldier {
     @Override
     public String getLastName() {
         return this.lastName;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s %s Id: %d ", this.firstName, this.lastName, this.id);
     }
 }
