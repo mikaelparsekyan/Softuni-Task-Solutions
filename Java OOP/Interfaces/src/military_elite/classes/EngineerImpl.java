@@ -37,7 +37,7 @@ public class EngineerImpl extends SpecialisedSoldierImpl implements Engineer {
                 .append(System.lineSeparator()).append("Repairs:");
         for (Repair repair : this.getRepairs()) {
 
-            result.append(System.lineSeparator()).append("  ").append(repair.toString());
+            result.append(System.lineSeparator()).append(repair.toString());
         }
         return result.toString();
     }

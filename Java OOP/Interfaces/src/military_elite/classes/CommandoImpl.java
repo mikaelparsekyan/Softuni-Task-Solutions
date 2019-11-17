@@ -40,7 +40,7 @@ public class CommandoImpl extends SpecialisedSoldierImpl implements Commando {
                 .append(System.lineSeparator()).append("Missions:");
         for (Mission mission : this.missions) {
             if(!mission.getState().name().equals("finished")) {
-                result.append(System.lineSeparator()).append("  ").append(mission.toString());
+                result.append(System.lineSeparator()).append(mission.toString());
             }
 
         }
