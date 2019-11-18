@@ -1,3 +1,5 @@
+package getters_and_setters;
+
 import java.io.Serializable;
 
 public class Reflection implements Serializable {
