@@ -2,38 +2,38 @@ package spaceStation.repositories;
 
 import spaceStation.models.astronauts.Astronaut;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class AstronautRepository implements Repository<Astronaut> {
-    private Map<String, Astronaut> astronauts;
+    private List<Astronaut> astronauts;
 
     public AstronautRepository() {
-        this.astronauts = new HashMap<>();
+        this.astronauts = new LinkedList<>();
     }
 
-    private AstronautRepository(Map<String, Astronaut> astronauts) {
-        this.astronauts = astronauts;
-    }
 
     @Override
     public Collection<Astronaut> getModels() {
-        return this.astronauts.values();
+        return this.astronauts;
     }
 
     @Override
     public void add(Astronaut model) {
-        this.astronauts.put(model.getName(), model);
+        this.astronauts.add(model);
     }
 
     @Override
     public boolean remove(Astronaut model) {
-        return this.astronauts.remove(model.getName(), model);
+        return this.astronauts.remove(model);
     }
 
     @Override
     public Astronaut findByName(String name) {
-        return this.astronauts.get(name);
+        for (Astronaut astronaut : this.astronauts) {
+            if(astronaut.getName().equals(name)){
+                return astronaut;
+            }
+        }
+        return null;
     }
 }

@@ -2,35 +2,37 @@ package spaceStation.repositories;
 
 import spaceStation.models.planets.Planet;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PlanetRepository implements Repository<Planet>{
-    private Map<String,Planet> planets;
+    private List<Planet> planets;
 
     public PlanetRepository() {
-        this.planets = new HashMap<>();
+        this.planets = new LinkedList<>();
     }
 
     @Override
     public Collection<Planet> getModels() {
-        return this.planets.values();
+        return this.planets;
     }
 
     @Override
     public void add(Planet model) {
-        this.planets.put(model.getName(),model);
+        this.planets.add(model);
     }
 
     @Override
     public boolean remove(Planet model) {
-        return this.planets.remove(model.getName(),model);
+        return this.planets.remove(model);
     }
 
     @Override
     public Planet findByName(String name) {
-        return this.planets.get(name);
+        for (Planet planet : this.planets) {
+            if(planet.getName().equals(name)){
+                return planet;
+            }
+        }
+        return null;
     }
 }

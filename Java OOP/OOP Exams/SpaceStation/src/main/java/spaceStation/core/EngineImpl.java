@@ -6,6 +6,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class EngineImpl implements Engine {
     private Controller controller;
@@ -67,22 +71,27 @@ public class EngineImpl implements Engine {
     }
 
     private String retireAstronaut(String[] data) {
-        return null;
+        return controller.retireAstronaut(data[0]);
     }
 
     private String report() {
-        return null;
+        return controller.report();
     }
 
     private String explorePlanet(String[] data) {
-        return null;
+        return controller.explorePlanet(data[0]);
     }
 
     private String addPlanet(String[] data) {
-        return null;
+        List<String> items = new LinkedList<>();
+        for (int i = 1; i < data.length; i++) {
+            items.add(data[i]);
+        }
+        String[] arr = new String[items.size()];
+        return controller.addPlanet(data[0], items.toArray(arr));
     }
 
     private String addAstronaut(String[] data) {
-        return null;
+        return controller.addAstronaut(data[0], data[1]);
     }
 }
