@@ -38,14 +38,14 @@ public class Interpreter implements CommandInterpreter {
 
             executable = (Executable) constructor.newInstance(new Object[]{data});
             Field[] executableFields = executable.getClass().getDeclaredFields();
-            Field[] thisCommandImpl = Interpreter.class.getDeclaredFields();
+            Field[] commandField = Interpreter.class.getDeclaredFields();
 
-            for (Field executableField : executableFields) {
-                if(executableField.isAnnotationPresent(Inject.class)) {
-                    for (Field field : thisCommandImpl) {
-                        if(executableField.getType().getSimpleName().equals(field.getType().getSimpleName())) {
-                            executableField.setAccessible(true);
-                            executableField.set(executable, field.get(this));
+            for (Field currentField : executableFields) {
+                if(currentField.isAnnotationPresent(Inject.class)) {
+                    for (Field field : commandField) {
+                        if(field.getType().getSimpleName().equals(currentField.getType().getSimpleName())) {
+                            currentField.setAccessible(true);
+                            currentField.set(executable, field.get(this));
                         }
                     }
                 }

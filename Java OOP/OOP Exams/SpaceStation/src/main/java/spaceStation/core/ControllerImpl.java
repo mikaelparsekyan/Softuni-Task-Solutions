@@ -84,7 +84,7 @@ public class ControllerImpl implements Controller {
         } else {
             Mission mission = new MissionImpl();
             Planet planetToExplore = this.planetRepository.findByName(planetName);
-            
+
             int peopleBeforeExploration = suitableAstronauts.size();
 
             mission.explore(planetToExplore, suitableAstronauts);

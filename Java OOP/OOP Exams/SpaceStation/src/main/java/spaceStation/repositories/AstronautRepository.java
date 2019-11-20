@@ -11,7 +11,6 @@ public class AstronautRepository implements Repository<Astronaut> {
         this.astronauts = new LinkedList<>();
     }
 
-
     @Override
     public Collection<Astronaut> getModels() {
         return this.astronauts;
