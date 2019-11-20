@@ -1,19 +1,27 @@
 package barracksWars.core.commands;
 
+import barracksWars.core.Inject;
 import barracksWars.interfaces.Repository;
 import barracksWars.interfaces.Unit;
 import barracksWars.interfaces.UnitFactory;
 
 public class Add extends Command {
-    protected Add(String[] data, Repository repository, UnitFactory unitFactory) {
-        super(data, repository, unitFactory);
+    @Inject
+    protected String[] data;
+    @Inject
+    private Repository repository;
+    @Inject
+    private UnitFactory unitFactory;
+
+    protected Add(String[] data) {
+        super(data);
     }
 
     @Override
     public String execute() {
         String unitType = super.getData()[1];
-        Unit unitToAdd = super.getUnitFactory().createUnit(unitType);
-        super.getRepository().addUnit(unitToAdd);
+        Unit unitToAdd = unitFactory.createUnit(unitType);
+        repository.addUnit(unitToAdd);
         return unitType + " added!";
     }
 }

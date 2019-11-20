@@ -1,5 +1,6 @@
 package barracksWars.core.commands;
 
+import barracksWars.core.Inject;
 import barracksWars.data.UnitRepository;
 import barracksWars.interfaces.Repository;
 import barracksWars.interfaces.UnitFactory;
@@ -9,9 +10,11 @@ import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class Retire extends Command {
+    @Inject
+    private Repository repository;
 
-    protected Retire(String[] data, Repository repository, UnitFactory unitFactory) {
-        super(data, repository, unitFactory);
+    protected Retire(String[] data) {
+        super(data);
     }
 
     @Override
@@ -22,7 +25,7 @@ public class Retire extends Command {
         try {
             Field amountOfUnitsField = unitRepositoryClazz.getDeclaredField("amountOfUnits");
             amountOfUnitsField.setAccessible(true);
-            Map<String, Integer> value = (Map) amountOfUnitsField.get(getRepository());
+            Map<String, Integer> value = (Map) amountOfUnitsField.get(repository);
 
             boolean isValid = false;
             if (value.containsKey(unitName)) {
