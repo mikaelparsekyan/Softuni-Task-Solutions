@@ -1,25 +1,26 @@
 package rpg_tests;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestFactory;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
 import rpg_lab.Axe;
 import rpg_lab.Dummy;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class DummyTests {
     private static Axe axe;
     private static Dummy dummy;
 
-    @BeforeAll
-    static void initialize() {
+    @Before
+    public void initialize() {
         axe = new Axe(1, 2);
         dummy = new Dummy(10, 10);
     }
 
     @Test
-    void shouldLoseHealthWhenAttacked() {
+    public void shouldLoseHealthWhenAttacked() {
         int healthBeforeAttack = dummy.getHealth();
 
         this.attackDummy();
@@ -30,21 +31,25 @@ public class DummyTests {
     }
 
     @Test
-    void canGiveXPWhenIsDead() {
+    public void canGiveXPWhenIsDead() {
         assertFalse(dummy.isDead());
     }
 
     @Test
-    void canNotGiveXPWhenIsAlive() {
+    public void canNotGiveXPWhenIsAlive() {
         assertFalse(dummy.isDead());
     }
 
-    @Test
-    void shouldThrownExceptionWhenAttacked() {
+    @Test(expected = IllegalStateException.class)
+    public void shouldThrownExceptionWhenAttacked() {
         attackDummy();
-        assertThrows(IllegalStateException.class, this::attackDummy);
+        attackDummy();
+        attackDummy();
     }
-
+    @Test
+    public void simpleTest(){
+        Mockito.mock(Axe.class);
+    }
     private void attackDummy() {
         axe.attack(dummy);
     }

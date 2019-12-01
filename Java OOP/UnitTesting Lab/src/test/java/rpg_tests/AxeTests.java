@@ -1,14 +1,15 @@
 package rpg_tests;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import rpg_lab.Axe;
 import rpg_lab.Dummy;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static junit.framework.TestCase.assertTrue;
 
 public class AxeTests {
 
     @Test
-    void shouldLoseDurability() {
+    public void shouldLoseDurability() {
         Axe axe = new Axe(10, 10);
         Dummy dummy = new Dummy(100, 10);
         int durabilityBeforeAttack = axe.getDurabilityPoints();
