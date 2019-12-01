@@ -9,9 +9,9 @@ public abstract class BaseGun implements Gun {
     private int totalBullets;
 
     protected BaseGun(String name, int bulletsPerBarrel, int totalBullets) {
-        this.name = name;
-        this.bulletsPerBarrel = bulletsPerBarrel;
-        this.totalBullets = totalBullets;
+        this.setName(name);
+        this.setBulletsPerBarrel(bulletsPerBarrel);
+        this.setTotalBullets(totalBullets);
     }
 
     private void setName(String name) {
@@ -24,7 +24,7 @@ public abstract class BaseGun implements Gun {
         this.bulletsPerBarrel = bulletsPerBarrel;
     }
 
-    private void setTotalBullets(int totalBullets) {
+    void setTotalBullets(int totalBullets) {
         Validator.validateNumber(totalBullets, ExceptionMessages.TOTAL_BULLETS_LESS_THAN_ZERO);
         this.totalBullets = totalBullets;
     }
@@ -49,8 +49,4 @@ public abstract class BaseGun implements Gun {
         return totalBullets;
     }
 
-    @Override
-    public int fire() {
-        return 0;
-    }
 }

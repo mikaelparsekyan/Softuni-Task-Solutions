@@ -3,6 +3,7 @@ package viceCity.models.players;
 import viceCity.common.ExceptionMessages;
 import viceCity.core.validator.Validator;
 import viceCity.models.guns.Gun;
+import viceCity.repositories.GunRepository;
 import viceCity.repositories.interfaces.Repository;
 
 public abstract class BasePlayer implements Player {
@@ -10,9 +11,10 @@ public abstract class BasePlayer implements Player {
     private int lifePoints;
     private Repository<Gun> gunRepository;
 
-    protected BasePlayer(String name, int lifePoints) {
+    BasePlayer(String name, int lifePoints) {
         this.setName(name);
         this.setLifePoints(lifePoints);
+        this.gunRepository = new GunRepository();
     }
 
 
@@ -22,16 +24,14 @@ public abstract class BasePlayer implements Player {
     }
 
     private void setLifePoints(int lifePoints) {
-        Validator.validateNumber(lifePoints,ExceptionMessages.PLAYER_LIFE_POINTS_LESS_THAN_ZERO);
+        Validator.validateNumber(lifePoints, ExceptionMessages.PLAYER_LIFE_POINTS_LESS_THAN_ZERO);
         this.lifePoints = lifePoints;
     }
 
 
     @Override
     public void takeLifePoints(int points) {
-        if (lifePoints - points > 0) {
-            lifePoints -= points;
-        }
+        lifePoints -= points;
     }
 
     @Override

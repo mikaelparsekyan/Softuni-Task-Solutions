@@ -7,4 +7,5 @@ public class MainPlayer extends BasePlayer {
     public MainPlayer() {
         super(PLAYER_NAME, 100);
     }
+
 }
