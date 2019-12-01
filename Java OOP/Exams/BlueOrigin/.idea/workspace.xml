@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b596cd4c-eb17-4979-bfcc-e14a37d5de11" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1UEsK2ASmQuH2IYzNKRLlgfYkKR" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
+    <property name="last_opened_file_path" value="D:/Git repos/Softuni-Task-Solutions/Java OOP/UnitTesting Lab" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.SpaceshipTests">
+    <configuration name="SpaceshipTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpg-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="blueOrigin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="blueOrigin" />
+      <option name="MAIN_CLASS_NAME" value="blueOrigin.SpaceshipTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipTests.addEqualAstronaut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpg-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="blueOrigin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="blueOrigin" />
+      <option name="MAIN_CLASS_NAME" value="blueOrigin.SpaceshipTests" />
+      <option name="METHOD_NAME" value="addEqualAstronaut" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipTests.testCountIncrementation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpg-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="blueOrigin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="blueOrigin" />
+      <option name="MAIN_CLASS_NAME" value="blueOrigin.SpaceshipTests" />
+      <option name="METHOD_NAME" value="testCountIncrementation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipTests.testFullSpaceshipException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpg-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="blueOrigin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="blueOrigin" />
+      <option name="MAIN_CLASS_NAME" value="blueOrigin.SpaceshipTests" />
+      <option name="METHOD_NAME" value="testFullSpaceshipException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipTests.testRemoveAstronaut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpg-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="blueOrigin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="blueOrigin" />
+      <option name="MAIN_CLASS_NAME" value="blueOrigin.SpaceshipTests" />
+      <option name="METHOD_NAME" value="testRemoveAstronaut" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipTests.testRemoveInvalidAstronaut" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="rpg-exam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="blueOrigin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="blueOrigin" />
+      <option name="MAIN_CLASS_NAME" value="blueOrigin.SpaceshipTests" />
+      <option name="METHOD_NAME" value="testRemoveInvalidAstronaut" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SpaceshipTests" />
+        <item itemvalue="JUnit.SpaceshipTests.testCountIncrementation" />
+        <item itemvalue="JUnit.SpaceshipTests.addEqualAstronaut" />
+        <item itemvalue="JUnit.SpaceshipTests.testFullSpaceshipException" />
+        <item itemvalue="JUnit.SpaceshipTests.testRemoveAstronaut" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b596cd4c-eb17-4979-bfcc-e14a37d5de11" name="Default Changelist" comment="" />
+      <created>1574933021257</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574933021257</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11.0.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
