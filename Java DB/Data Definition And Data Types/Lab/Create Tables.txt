@@ -1,0 +1,9 @@
+CREATE TABLE minions (
+ID INT primary key,
+NAME text,
+AGE INT
+);
+CREATE TABLE towns (
+ID INT primary key,
+NAME text
+);
