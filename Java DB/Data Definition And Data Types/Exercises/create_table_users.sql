@@ -3,7 +3,7 @@ CREATE TABLE `users`(
     username VARCHAR(30) NOT NULL,
     password VARCHAR(26) NOT NULL,
     profile_picture BLOB,
-    last_login_time TIME,
+    last_login_time DATETIME,
 	is_deleted BOOLEAN
 );
 INSERT INTO `users` VALUES(1,"John","1234",NULL,NULL,false);
