@@ -1,0 +1,3 @@
+SELECT name FROM `towns`
+WHERE CHARACTER_LENGTH(name) = 5 OR CHARACTER_LENGTH(name) = 6
+ORDER BY name ASC; 
