@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `mytestdb`.`cities`, `mytestdb`.`customers`, `mytestdb`.`item_types`, `mytestdb`.`items`, `mytestdb`.`order_items`, mytestdb.orders;
 CREATE TABLE `cities`(
 	city_id INT(11) PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50)
