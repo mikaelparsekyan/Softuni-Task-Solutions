@@ -1,4 +1,8 @@
-SELECT AVG(salary) AS min_average_salary FROM `employees`
-GROUP BY department_id
-ORDER BY salary ASC
-LIMIT 1;
+SELECT mc.country_code, m.mountain_range, p.peak_name, p.elevation
+FROM `mountains` as m
+JOIN `mountains_countries` as mc
+ON m.id = mc.mountain_id
+JOIN `peaks` as p
+ON mc.mountain_id = p.mountain_id
+WHERE p.elevation > 2835 AND mc.country_code = 'BG'
+ORDER BY p.elevation DESC
