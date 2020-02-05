@@ -8,5 +8,5 @@ CREATE PROCEDURE usp_get_holders_with_balance_higher_than(num DECIMAL(19, 4))
             HAVING total_balance > num
             ORDER BY id
         ) AS a ON a.account_holder_id = ah.id
-        ORDER BY a.id ASC;
+        ORDER BY a.account_holder_id ASC;
     END;
