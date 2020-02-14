@@ -15,13 +15,20 @@ public class Main {
 
             TaskManager tasks = new TaskManager(connection);
 
-            //tasks.getVillainsNames(connection);
+            /* Uncomment to see the tasks. :)
 
-            tasks.getMinionsNames(connection);
+            tasks.getVillainsNames();
+
+            tasks.getMinionsNames();
+
+            tasks.changeTownNamesCasing();
+            */
+
+
 
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Mysql error!");
         }
     }
 

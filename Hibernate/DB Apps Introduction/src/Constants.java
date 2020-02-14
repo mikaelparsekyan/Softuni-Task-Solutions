@@ -8,7 +8,7 @@ class Constants {
             "JOIN minions_villains AS mv ON mv.villain_id = v.id\n" +
             "GROUP BY v.id\n" +
             "HAVING m_count > 15\n" +
-            "ORDER BY m_count DESC;";
+            "ORDER BY m_count DESC";
 
     static final String GET_VILLAIN_NAME_BY_ID = "SELECT v.name AS name\n" +
             "FROM villains AS v\n" +
@@ -21,4 +21,16 @@ class Constants {
             "WHERE  v.name = ?\n";
 
     static final String VILLAIN_NAME_NOT_FOUND = "No villain with ID %d exists in the database.";
+
+    static final String UPDATE_TOWN_NAME_QUERY = "UPDATE towns AS t\n" +
+            "SET name = (\n" +
+            "    UPPER(name)\n" +
+            "    )\n" +
+            "WHERE t.country = ?";
+
+    static final String SELECT_NAME_UPDATED_TOWNS = "SELECT name FROM towns WHERE country = ?";
+
+    static final String SELECT_COUNT_UPDATED_TOWNS = "SELECT COUNT(id) AS count FROM towns WHERE country = ?";
+
+    static final String NO_TOWNS_AFFECTED = "No town names were affected.";
 }
