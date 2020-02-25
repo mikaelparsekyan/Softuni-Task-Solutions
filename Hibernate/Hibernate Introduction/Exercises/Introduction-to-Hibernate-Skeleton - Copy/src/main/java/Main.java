@@ -4,6 +4,9 @@ import javax.persistence.Persistence;
 
 public class Main {
     public static void main(String[] args) {
+        /*
+            @Warning: TO RUN A TASK, PLEASE SEE THE ENGINE CLASS
+         */
         EntityManagerFactory managerFactory = Persistence
                 .createEntityManagerFactory("manager");
 

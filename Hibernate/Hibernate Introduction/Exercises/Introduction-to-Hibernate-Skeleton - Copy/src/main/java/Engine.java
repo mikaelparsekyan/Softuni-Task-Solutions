@@ -16,7 +16,7 @@ public class Engine implements Runnable {
     public void run() {
         clearDatabase();
 
-        Task currentTask = new GetEmployeeWithProject(this.manager);
+        Task currentTask = new FindLatestProjects(this.manager);
 
         currentTask.run();
     }

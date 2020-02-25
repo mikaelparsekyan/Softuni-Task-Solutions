@@ -21,6 +21,7 @@ public class GetEmployeeWithProject extends Task {
 
     @Override
     public void run() {
+        System.out.println("Enter id: ");
         int id = Integer.parseInt(scanner.nextLine());
 
         Employee employee = getManager().find(Employee.class, id);

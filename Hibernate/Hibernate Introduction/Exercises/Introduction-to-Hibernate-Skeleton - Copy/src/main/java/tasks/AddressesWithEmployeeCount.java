@@ -13,14 +13,22 @@ public class AddressesWithEmployeeCount extends Task {
         super(manager);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void run() {
-        List<Address> addresses = getManager()
-                .createQuery(FIND_ADDRESSES, Address.class)
+        List<Object[]> columns = getManager()
+                .createQuery(FIND_ADDRESSES)
                 .setMaxResults(10)
                 .getResultList();
 
-        printAddresses(addresses);
+        for (Object[] column : columns) {
+            String addressText = (String) column[0];
+            String townName = (String) column[1];
+            long employeesCount = (long) column[2];
+            System.out.printf("%s, %s - %d employees%n", addressText, townName,
+                    (int) employeesCount);
+        }
+
     }
 
     private void printAddresses(List<Address> addresses) {
