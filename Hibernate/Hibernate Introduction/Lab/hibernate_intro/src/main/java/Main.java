@@ -19,10 +19,18 @@ public class Main {
 
         SessionFactory factory = configuration.buildSessionFactory(serviceRegistry);
 
-        Session currentSession = factory.openSession();
-        currentSession.beginTransaction();
+        Session currentSession = openSession(factory);
+
         currentSession.persist(p);
+
+
         currentSession.getTransaction().commit();
         currentSession.close();
+    }
+
+    private static Session openSession(SessionFactory factory) {
+        Session currentSession = factory.openSession();
+        currentSession.beginTransaction();
+        return currentSession;
     }
 }

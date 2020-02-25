@@ -1,9 +1,8 @@
-import tasks.ContainsEmployee;
-import tasks.RemoveObjects;
-import tasks.Task;
+import tasks.*;
 
 import javax.persistence.EntityManager;
 import java.util.Scanner;
+
 
 public class Engine implements Runnable {
     private EntityManager manager;
@@ -15,8 +14,14 @@ public class Engine implements Runnable {
 
     @Override
     public void run() {
-        Task currentTask = new ContainsEmployee(this.manager);
+        clearDatabase();
+
+        Task currentTask = new GetEmployeeWithProject(this.manager);
 
         currentTask.run();
+    }
+
+    private void clearDatabase() {
+
     }
 }

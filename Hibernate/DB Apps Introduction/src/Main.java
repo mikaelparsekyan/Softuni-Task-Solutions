@@ -32,12 +32,14 @@ public class Main {
 
     private static void runAllTasks(Connection connection) {
         //THIS METHOD RUNS ALL TASKS USING DELIMITER, SO YOU DON'T NEED TO RUN EVERY TASK SEPARATELY :)
-        for (Task task : getAllTasks(connection)) {
-            task.run();
-            System.out.println();
-            System.out.println("--------------------------------");
-            System.out.println();
-        }
+//        for (Task task : getAllTasks(connection)) {
+//            task.run();
+//            System.out.println();
+//            System.out.println("--------------------------------");
+//            System.out.println();
+//        }
+        Task printAllMNames = new AddMinion(connection);
+        printAllMNames.run();
     }
 
     private static Properties getProperties() {

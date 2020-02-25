@@ -20,13 +20,17 @@ public class RemoveObjects extends Task {
 
         towns.forEach(getManager()::detach);
 
-        for (Town town : towns) {
-            town.setName(town.getName().toLowerCase());
-        }
+        printTowns(towns);
 
         towns.forEach(getManager()::merge);
 
         getManager().flush();
         getManager().getTransaction().commit();
+    }
+
+    private void printTowns(List<Town> towns) {
+        for (Town town : towns) {
+            town.setName(town.getName().toLowerCase());
+        }
     }
 }
