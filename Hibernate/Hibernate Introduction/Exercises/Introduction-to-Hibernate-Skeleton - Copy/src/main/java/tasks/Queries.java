@@ -54,7 +54,7 @@ public abstract class Queries {
 
     //9. Find Latest 10 Projects
     static final String GET_LAST_PROJECTS =
-            "SELECT p FROM Project p ORDER BY p.startDate DESC";
+            "SELECT p FROM Project p ORDER BY p.name ASC, p.startDate DESC";
 
 
     //10. Increase Salaries
@@ -86,7 +86,7 @@ public abstract class Queries {
     static final String GET_DEPARTMENT_WITH_MAX_SALARY =
             "SELECT d.name, MAX(e.salary) AS max\n" +
                     "FROM Department d JOIN d.employees e\n" +
-                    "GROUP BY d.name\n" +
-                    "HAVING MAX(e.salary) NOT BETWEEN 30000 AND 70000\n";
+                    "GROUP BY d.id\n" +
+                    "HAVING MAX(e.salary) NOT BETWEEN :start AND :end";
 
 }

@@ -8,6 +8,9 @@ import java.util.List;
 import static tasks.Queries.GET_DEPARTMENT_WITH_MAX_SALARY;
 
 public class EmployeesMaximumSalaries extends Task {
+    private BigDecimal start = new BigDecimal(30000);
+    private BigDecimal end = new BigDecimal(70000);
+
     public EmployeesMaximumSalaries(EntityManager manager) {
         super(manager);
     }
@@ -17,8 +20,9 @@ public class EmployeesMaximumSalaries extends Task {
     public void run() {
         List<Object[]> columns = getManager()
                 .createQuery(GET_DEPARTMENT_WITH_MAX_SALARY)
+                .setParameter("start",start)
+                .setParameter("end",end)
                 .getResultList();
-
 
         printResult(columns);
     }

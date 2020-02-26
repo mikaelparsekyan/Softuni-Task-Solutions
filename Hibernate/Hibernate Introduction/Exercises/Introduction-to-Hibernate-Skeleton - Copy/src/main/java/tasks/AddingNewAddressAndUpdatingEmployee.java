@@ -23,11 +23,11 @@ public class AddingNewAddressAndUpdatingEmployee extends Task {
         Address address = new Address();
         address.setText(addressText);
 
-        addNewAddress(address);
-
+        System.out.println("Enter employee last name: ");
         String employeeLastName = scanner.nextLine();
         Employee employeeToUpdate = findEmployee(employeeLastName);
 
+        addNewAddress(address);
         updateEmployeeName(employeeToUpdate, address);
 
         getManager().close();

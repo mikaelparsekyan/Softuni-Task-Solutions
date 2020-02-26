@@ -8,6 +8,7 @@ import java.util.List;
 import static tasks.Queries.GET_ALL_TOWNS;
 
 public class RemoveObjects extends Task {
+
     public RemoveObjects(EntityManager manager) {
         super(manager);
     }
@@ -30,7 +31,9 @@ public class RemoveObjects extends Task {
         getManager().getTransaction().commit();
 
         printTowns(getAttachedTowns());
+
     }
+
 
     private void transformNames(List<Town> towns) {
         towns.forEach(t -> t.setName(t.getName().toLowerCase()));

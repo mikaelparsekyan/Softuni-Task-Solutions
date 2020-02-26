@@ -1,7 +1,10 @@
-SELECT country_name, river_name
-FROM `countries` as c
-LEFT JOIN `countries_rivers` AS cr ON cr.country_code = c.country_code
-LEFT JOIN `rivers` AS r ON r.id = cr.river_id
-WHERE continent_code = 'AF'
-GROUP BY country_name
-LIMIT 5;
+SELECT continent_code, currency_code, COUNT(currency_code) AS currency_usage
+FROM `countries` AS c
+GROUP BY currency_code, continent_code
+HAVING currency_usage = (
+	SELECT COUNT(currency_code)  FROM `countries`
+    WHERE 
+    LIMIT 1
+)
+ORDER BY continent_code ASC, currency_code ASC
+

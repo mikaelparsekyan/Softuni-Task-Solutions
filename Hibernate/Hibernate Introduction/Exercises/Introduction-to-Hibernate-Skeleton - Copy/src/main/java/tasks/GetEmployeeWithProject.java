@@ -29,7 +29,7 @@ public class GetEmployeeWithProject extends Task {
         System.out.println(employee);
 
         for (Project project : getProjects(employee)) {
-            System.out.println(project.getName());
+            System.out.println("    " + project.getName());
         }
 
     }

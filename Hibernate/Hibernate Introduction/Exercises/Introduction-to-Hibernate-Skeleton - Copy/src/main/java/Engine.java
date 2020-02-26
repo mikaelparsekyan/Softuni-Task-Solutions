@@ -1,27 +1,28 @@
+
 import tasks.*;
 
 import javax.persistence.EntityManager;
-import java.util.Scanner;
 
 
 public class Engine implements Runnable {
     private EntityManager manager;
 
 
-    public Engine(EntityManager manager) {
+    Engine(EntityManager manager) {
         this.manager = manager;
     }
 
     @Override
     public void run() {
-        clearDatabase();
+        /*
+           @Warrning: TO TEST SEE PROPER RESULTS,
+                USE A CLEAR DATABASE BEFORE STARTING A TASK!
 
-        Task currentTask = new FindLatestProjects(this.manager);
+                Happy testing! :)
+         */
+
+        Task currentTask = new EmployeesMaximumSalaries(this.manager);
 
         currentTask.run();
-    }
-
-    private void clearDatabase() {
-
     }
 }

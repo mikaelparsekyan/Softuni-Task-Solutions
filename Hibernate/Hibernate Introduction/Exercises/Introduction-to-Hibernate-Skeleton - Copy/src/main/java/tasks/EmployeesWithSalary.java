@@ -18,7 +18,7 @@ public class EmployeesWithSalary extends Task {
 
     @Override
     public void run() {
-        System.out.printf("All employees with salary more than %d%n: ", minSalary.intValue());
+        System.out.printf("All employees with salary more than %d:%n", minSalary.intValue());
 
         List<Employee> employees = getManager().createQuery(GET_EMPLOYEES_WITH_SALARY_MORE_THAN, Employee.class)
                 .setParameter("min_salary", minSalary).getResultList();
