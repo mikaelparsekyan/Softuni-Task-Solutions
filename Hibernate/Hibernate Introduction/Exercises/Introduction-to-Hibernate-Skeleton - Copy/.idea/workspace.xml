@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb193994-ec87-4e88-9156-fde9c5069f7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/sales/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/sales/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/sales/Sale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/sales/StoreLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/gringotts/WizzardDeposits.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/java/entities/gringotts/WizzardDeposits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernate_code_first/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,7 +47,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
@@ -111,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="82" />
+            <state relative-caret-position="418">
+              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -225,14 +218,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/dataSources.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
@@ -246,7 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,6 +290,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -316,6 +301,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -409,11 +395,12 @@
       <workItem from="1582834853544" duration="3216000" />
       <workItem from="1583006497659" duration="1089000" />
       <workItem from="1583048027092" duration="61000" />
+      <workItem from="1583049798666" duration="1448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46956000" />
+    <option name="totallyTimeSpent" value="48404000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,9 +413,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23959732" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21744967" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -825,13 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tasks/RemoveObjects.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -873,6 +852,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
         </state>
       </provider>
     </entry>
