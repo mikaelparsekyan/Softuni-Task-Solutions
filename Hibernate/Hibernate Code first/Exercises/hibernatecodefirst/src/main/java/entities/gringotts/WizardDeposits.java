@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "wizard_deposits")
+@Table(name = "wizard_deposits", schema = "gringotts_db")
 public class WizardDeposits extends BaseEntity {
 
     private String firstName;

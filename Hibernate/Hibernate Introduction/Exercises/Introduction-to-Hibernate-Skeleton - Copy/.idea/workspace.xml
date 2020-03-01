@@ -3,7 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="fb193994-ec87-4e88-9156-fde9c5069f7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources/f6935945-80be-4aac-9077-777b6a554df3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources/f6935945-80be-4aac-9077-777b6a554df3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/gringotts/WizardDeposits.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/gringotts/WizardDeposits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Sale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/StoreLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/StoreLocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/target/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -395,12 +407,12 @@
       <workItem from="1582834853544" duration="3216000" />
       <workItem from="1583006497659" duration="1089000" />
       <workItem from="1583048027092" duration="61000" />
-      <workItem from="1583049798666" duration="1887000" />
+      <workItem from="1583049798666" duration="2643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48843000" />
+    <option name="totallyTimeSpent" value="49599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

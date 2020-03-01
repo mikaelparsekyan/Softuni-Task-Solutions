@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
-@Table(name = "products")
+@Table(name = "products", schema = "sales_db")
 public class Product extends BaseEntity {
     private String name;
     private String email;

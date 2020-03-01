@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "sales")
+@Table(name = "sales", schema = "sales_db")
 public class Sale extends BaseEntity {
     private Product product;
     private Customer customer;

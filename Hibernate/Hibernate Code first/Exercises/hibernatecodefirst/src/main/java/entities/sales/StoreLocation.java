@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "store_locations")
+@Table(name = "store_locations", schema = "sales_db")
 public class StoreLocation extends BaseEntity {
     private String locationName;
 
