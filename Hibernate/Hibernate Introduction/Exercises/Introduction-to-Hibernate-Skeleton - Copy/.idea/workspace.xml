@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb193994-ec87-4e88-9156-fde9c5069f7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources/f6935945-80be-4aac-9077-777b6a554df3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources/f6935945-80be-4aac-9077-777b6a554df3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Sale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/StoreLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/StoreLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/target/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
