@@ -44,7 +44,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/entities/football/Continent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -100,53 +100,53 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="uml://DATABASE/f6935945-80be-4aac-9077-777b6a554df3.SCHEMA:sales_db">
           <provider selected="true" editor-type-id="UmlEditorProvider">
             <state>
               <ID>DATABASE</ID>
               <OriginalElement>f6935945-80be-4aac-9077-777b6a554df3.SCHEMA:sales_db</OriginalElement>
               <nodes>
-                <node x="999.0" y="711.5">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents</node>
-                <node x="839.0" y="700.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.towns</node>
-                <node x="1108.25" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.continents</node>
+                <node x="1015.0" y="711.5">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents</node>
+                <node x="855.0" y="700.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.towns</node>
+                <node x="1125.25" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.continents</node>
                 <node x="838.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.colors</node>
                 <node x="0.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.credit_cards</node>
                 <node x="408.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.users</node>
-                <node x="878.5" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries</node>
-                <node x="469.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.customers</node>
-                <node x="905.1666666666667" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.diagnoses</node>
+                <node x="893.5" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries</node>
+                <node x="477.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.customers</node>
+                <node x="922.0" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.diagnoses</node>
                 <node x="0.0" y="226.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students</node>
-                <node x="281.5" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses</node>
-                <node x="1017.1354166666667" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments</node>
-                <node x="195.0" y="215.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses</node>
-                <node x="603.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.competition_type</node>
-                <node x="614.0" y="595.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.store_locations</node>
-                <node x="786.1354166666667" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses</node>
-                <node x="1121.3854166666667" y="181.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.medicaments</node>
-                <node x="516.5" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.visitations</node>
-                <node x="725.6354166666667" y="104.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients</node>
-                <node x="249.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.products</node>
-                <node x="204.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.bank_accounts</node>
-                <node x="535.1354166666667" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations</node>
-                <node x="458.5" y="744.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales</node>
-                <node x="65.375" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses</node>
+                <node x="287.0" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses</node>
+                <node x="1036.09375" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments</node>
+                <node x="199.0" y="215.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses</node>
+                <node x="607.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.competition_type</node>
+                <node x="626.0" y="595.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.store_locations</node>
+                <node x="801.09375" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses</node>
+                <node x="1143.34375" y="181.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.medicaments</node>
+                <node x="526.0" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.visitations</node>
+                <node x="738.59375" y="104.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients</node>
+                <node x="253.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.products</node>
+                <node x="208.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.bank_accounts</node>
+                <node x="546.09375" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations</node>
+                <node x="466.5" y="744.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales</node>
+                <node x="68.87500000000003" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses</node>
                 <node x="0.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.wizard_deposits</node>
-                <node x="760.6354166666667" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.gps</node>
-                <node x="264.875" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers</node>
+                <node x="773.59375" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.gps</node>
+                <node x="269.875" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers</node>
               </nodes>
               <notes />
               <edges>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses">
                   <point x="47.5" y="-38.0" />
-                  <point x="207.875" y="427.0" />
-                  <point x="233.25" y="427.0" />
-                  <point x="-38.25" y="93.5" />
+                  <point x="211.37500000000003" y="427.0" />
+                  <point x="238.25" y="427.0" />
+                  <point x="-39.25" y="93.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.store_locations">
-                  <point x="48.66666666666663" y="-71.5" />
-                  <point x="580.1666666666666" y="719.0" />
-                  <point x="704.0" y="719.0" />
+                  <point x="50.0" y="-71.5" />
+                  <point x="591.5" y="719.0" />
+                  <point x="718.0" y="719.0" />
                   <point x="0.0" y="38.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.customers">
@@ -154,92 +154,94 @@
                   <point x="0.0" y="60.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.diagnoses">
-                  <point x="52.75" y="-38.0" />
-                  <point x="944.3854166666667" y="365.0" />
-                  <point x="980.1666666666667" y="365.0" />
+                  <point x="53.75" y="-38.0" />
+                  <point x="962.34375" y="365.0" />
+                  <point x="999.0" y="365.0" />
                   <point x="0.0" y="49.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.towns" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries">
                   <point x="0.0" y="-49.5" />
-                  <point x="-30.5" y="38.5" />
+                  <point x="-31.5" y="38.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.gps">
                   <point x="0.0" y="-115.5" />
                   <point x="0.0" y="27.0" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.continents">
-                  <point x="57.75" y="-38.0" />
+                  <point x="58.75" y="-38.0" />
                   <point x="0.0" y="38.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students">
                   <point x="-47.5" y="-38.0" />
-                  <point x="112.875" y="427.0" />
-                  <point x="87.5" y="427.0" />
+                  <point x="116.37500000000003" y="427.0" />
+                  <point x="89.5" y="427.0" />
                   <point x="0.0" y="82.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses">
-                  <point x="-47.5" y="-38.0" />
-                  <point x="329.0" y="427.0" />
-                  <point x="309.75" y="427.0" />
-                  <point x="38.25" y="93.5" />
+                  <point x="-48.5" y="-38.0" />
+                  <point x="335.5" y="427.0" />
+                  <point x="316.75" y="427.0" />
+                  <point x="39.25" y="93.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
-                  <point x="-57.75" y="-38.0" />
-                  <point x="1074.8854166666667" y="355.0" />
-                  <point x="857.3020833333334" y="355.0" />
-                  <point x="52.66666666666663" y="115.5" />
+                  <point x="-58.75" y="-38.0" />
+                  <point x="1094.84375" y="355.0" />
+                  <point x="873.59375" y="355.0" />
+                  <point x="54.0" y="115.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
-                  <point x="57.75" y="-38.0" />
-                  <point x="708.3854166666667" y="365.0" />
-                  <point x="751.9687500000001" y="365.0" />
-                  <point x="-52.66666666666663" y="115.5" />
+                  <point x="58.75" y="-38.0" />
+                  <point x="722.34375" y="365.0" />
+                  <point x="765.59375" y="365.0" />
+                  <point x="-54.0" y="115.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.products">
-                  <point x="-48.66666666666663" y="-71.5" />
-                  <point x="482.83333333333337" y="719.0" />
-                  <point x="349.0" y="719.0" />
+                  <point x="-50.0" y="-71.5" />
+                  <point x="491.5" y="719.0" />
+                  <point x="355.0" y="719.0" />
                   <point x="0.0" y="60.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers">
-                  <point x="0.0" y="-93.5" />
-                  <point x="271.5" y="190.0" />
-                  <point x="311.125" y="190.0" />
-                  <point x="-46.25" y="82.5" />
+                  <point x="2.8421709430404007E-14" y="-93.5" />
+                  <point x="277.50000000000006" y="190.0" />
+                  <point x="317.125" y="190.0" />
+                  <point x="-47.25" y="82.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers">
-                  <point x="47.5" y="-38.0" />
-                  <point x="424.0" y="427.0" />
-                  <point x="400.875" y="427.0" />
-                  <point x="400.875" y="190.0" />
-                  <point x="403.625" y="190.0" />
-                  <point x="46.25" y="82.5" />
+                  <point x="48.499999999999986" y="-38.0" />
+                  <point x="432.5" y="427.0" />
+                  <point x="408.875" y="427.0" />
+                  <point x="408.875" y="190.0" />
+                  <point x="411.625" y="190.0" />
+                  <point x="47.25" y="82.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
-                  <point x="-52.75" y="-38.0" />
-                  <point x="838.8854166666667" y="365.0" />
-                  <point x="804.6354166666667" y="365.0" />
+                  <point x="-53.75" y="-38.0" />
+                  <point x="854.84375" y="365.0" />
+                  <point x="819.59375" y="365.0" />
                   <point x="0.0" y="115.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries">
-                  <point x="-57.75" y="-38.0" />
-                  <point x="1056.75" y="675.0" />
-                  <point x="970.0" y="675.0" />
-                  <point x="30.5" y="38.5" />
+                  <point x="-58.75" y="-38.0" />
+                  <point x="1073.75" y="675.0" />
+                  <point x="988.0" y="675.0" />
+                  <point x="31.5" y="38.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.medicaments">
-                  <point x="57.75" y="-38.0" />
+                  <point x="58.75" y="-38.0" />
                   <point x="0.0" y="38.5" />
                 </edge>
                 <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.visitations">
-                  <point x="-57.75" y="-38.0" />
-                  <point x="592.8854166666667" y="365.0" />
-                  <point x="591.5" y="365.0" />
+                  <point x="-58.75" y="-38.0" />
+                  <point x="604.84375" y="365.0" />
+                  <point x="603.0" y="365.0" />
                   <point x="0.0" y="49.5" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="1.123951048951049" x="758.5324311712552" y="638.5324311712552" />
-              <SelectedNodes />
+              <settings layout="Hierarchic Group" zoom="0.7239510489510489" x="532.8918135716011" y="913.3776865491427" />
+              <SelectedNodes>
+                <node>f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries</node>
+              </SelectedNodes>
               <Categories>
                 <Category>Key columns</Category>
                 <Category>Columns</Category>
@@ -249,10 +251,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/gringotts/WizardDeposits.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/BankAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="56" />
+            <state relative-caret-position="374">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/BillingDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/CreditCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -358,7 +396,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1045" />
@@ -421,6 +459,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
               <item name="gringotts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hibernatecodefirst" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hibernatecodefirst" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+              <item name="payment_system" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hibernatecodefirst" type="b2602c69:ProjectViewProjectNode" />
@@ -506,12 +553,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583049694859</updated>
-      <workItem from="1583049698122" duration="19714000" />
+      <workItem from="1583049698122" duration="19985000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19714000" />
+    <option name="totallyTimeSpent" value="19985000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -523,7 +570,7 @@
       <window_info id="Capture Tool" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16845638" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18255034" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" weight="0.5892351" />
       <window_info anchor="bottom" id="Terminal" />
@@ -535,7 +582,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19263457" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19263457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -798,50 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/BankAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entities/hospital/Gp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -855,46 +858,6 @@
           <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/BillingDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/CreditCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -977,152 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/f6935945-80be-4aac-9077-777b6a554df3.SCHEMA:sales_db">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>f6935945-80be-4aac-9077-777b6a554df3.SCHEMA:sales_db</OriginalElement>
-          <nodes>
-            <node x="999.0" y="711.5">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents</node>
-            <node x="839.0" y="700.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.towns</node>
-            <node x="1108.25" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.continents</node>
-            <node x="838.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.colors</node>
-            <node x="0.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.credit_cards</node>
-            <node x="408.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.users</node>
-            <node x="878.5" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries</node>
-            <node x="469.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.customers</node>
-            <node x="905.1666666666667" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.diagnoses</node>
-            <node x="0.0" y="226.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students</node>
-            <node x="281.5" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses</node>
-            <node x="1017.1354166666667" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments</node>
-            <node x="195.0" y="215.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses</node>
-            <node x="603.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.competition_type</node>
-            <node x="614.0" y="595.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.store_locations</node>
-            <node x="786.1354166666667" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses</node>
-            <node x="1121.3854166666667" y="181.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.medicaments</node>
-            <node x="516.5" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.visitations</node>
-            <node x="725.6354166666667" y="104.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients</node>
-            <node x="249.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.products</node>
-            <node x="204.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.bank_accounts</node>
-            <node x="535.1354166666667" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations</node>
-            <node x="458.5" y="744.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales</node>
-            <node x="65.375" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses</node>
-            <node x="0.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.wizard_deposits</node>
-            <node x="760.6354166666667" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.gps</node>
-            <node x="264.875" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses">
-              <point x="47.5" y="-38.0" />
-              <point x="207.875" y="427.0" />
-              <point x="233.25" y="427.0" />
-              <point x="-38.25" y="93.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.store_locations">
-              <point x="48.66666666666663" y="-71.5" />
-              <point x="580.1666666666666" y="719.0" />
-              <point x="704.0" y="719.0" />
-              <point x="0.0" y="38.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.customers">
-              <point x="0.0" y="-71.5" />
-              <point x="0.0" y="60.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.diagnoses">
-              <point x="52.75" y="-38.0" />
-              <point x="944.3854166666667" y="365.0" />
-              <point x="980.1666666666667" y="365.0" />
-              <point x="0.0" y="49.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.towns" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries">
-              <point x="0.0" y="-49.5" />
-              <point x="-30.5" y="38.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.gps">
-              <point x="0.0" y="-115.5" />
-              <point x="0.0" y="27.0" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.continents">
-              <point x="57.75" y="-38.0" />
-              <point x="0.0" y="38.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students">
-              <point x="-47.5" y="-38.0" />
-              <point x="112.875" y="427.0" />
-              <point x="87.5" y="427.0" />
-              <point x="0.0" y="82.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses">
-              <point x="-47.5" y="-38.0" />
-              <point x="329.0" y="427.0" />
-              <point x="309.75" y="427.0" />
-              <point x="38.25" y="93.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
-              <point x="-57.75" y="-38.0" />
-              <point x="1074.8854166666667" y="355.0" />
-              <point x="857.3020833333334" y="355.0" />
-              <point x="52.66666666666663" y="115.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
-              <point x="57.75" y="-38.0" />
-              <point x="708.3854166666667" y="365.0" />
-              <point x="751.9687500000001" y="365.0" />
-              <point x="-52.66666666666663" y="115.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.products">
-              <point x="-48.66666666666663" y="-71.5" />
-              <point x="482.83333333333337" y="719.0" />
-              <point x="349.0" y="719.0" />
-              <point x="0.0" y="60.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers">
-              <point x="0.0" y="-93.5" />
-              <point x="271.5" y="190.0" />
-              <point x="311.125" y="190.0" />
-              <point x="-46.25" y="82.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers">
-              <point x="47.5" y="-38.0" />
-              <point x="424.0" y="427.0" />
-              <point x="400.875" y="427.0" />
-              <point x="400.875" y="190.0" />
-              <point x="403.625" y="190.0" />
-              <point x="46.25" y="82.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
-              <point x="-52.75" y="-38.0" />
-              <point x="838.8854166666667" y="365.0" />
-              <point x="804.6354166666667" y="365.0" />
-              <point x="0.0" y="115.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries">
-              <point x="-57.75" y="-38.0" />
-              <point x="1056.75" y="675.0" />
-              <point x="970.0" y="675.0" />
-              <point x="30.5" y="38.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.medicaments">
-              <point x="57.75" y="-38.0" />
-              <point x="0.0" y="38.5" />
-            </edge>
-            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.visitations">
-              <point x="-57.75" y="-38.0" />
-              <point x="592.8854166666667" y="365.0" />
-              <point x="591.5" y="365.0" />
-              <point x="0.0" y="49.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.123951048951049" x="758.5324311712552" y="638.5324311712552" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entities/football/Continent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1138,6 +955,194 @@
             <element signature="e#626#627#0" expanded="true" />
             <element signature="e#668#669#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/BankAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/CreditCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/payment_system/BillingDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/f6935945-80be-4aac-9077-777b6a554df3.SCHEMA:sales_db">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>f6935945-80be-4aac-9077-777b6a554df3.SCHEMA:sales_db</OriginalElement>
+          <nodes>
+            <node x="1015.0" y="711.5">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents</node>
+            <node x="855.0" y="700.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.towns</node>
+            <node x="1125.25" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.continents</node>
+            <node x="838.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.colors</node>
+            <node x="0.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.credit_cards</node>
+            <node x="408.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.users</node>
+            <node x="893.5" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries</node>
+            <node x="477.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.customers</node>
+            <node x="922.0" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.diagnoses</node>
+            <node x="0.0" y="226.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students</node>
+            <node x="287.0" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses</node>
+            <node x="1036.09375" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments</node>
+            <node x="199.0" y="215.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses</node>
+            <node x="607.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.competition_type</node>
+            <node x="626.0" y="595.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.store_locations</node>
+            <node x="801.09375" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses</node>
+            <node x="1143.34375" y="181.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.medicaments</node>
+            <node x="526.0" y="170.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.visitations</node>
+            <node x="738.59375" y="104.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients</node>
+            <node x="253.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.products</node>
+            <node x="208.0" y="959.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.bank_accounts</node>
+            <node x="546.09375" y="385.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations</node>
+            <node x="466.5" y="744.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales</node>
+            <node x="68.87500000000003" y="452.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses</node>
+            <node x="0.0" y="573.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.wizard_deposits</node>
+            <node x="773.59375" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.gps</node>
+            <node x="269.875" y="0.0">f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses">
+              <point x="47.5" y="-38.0" />
+              <point x="211.37500000000003" y="427.0" />
+              <point x="238.25" y="427.0" />
+              <point x="-39.25" y="93.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.store_locations">
+              <point x="50.0" y="-71.5" />
+              <point x="591.5" y="719.0" />
+              <point x="718.0" y="719.0" />
+              <point x="0.0" y="38.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.customers">
+              <point x="0.0" y="-71.5" />
+              <point x="0.0" y="60.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.diagnoses">
+              <point x="53.75" y="-38.0" />
+              <point x="962.34375" y="365.0" />
+              <point x="999.0" y="365.0" />
+              <point x="0.0" y="49.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.towns" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries">
+              <point x="0.0" y="-49.5" />
+              <point x="-31.5" y="38.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.gps">
+              <point x="0.0" y="-115.5" />
+              <point x="0.0" y="27.0" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.continents">
+              <point x="58.75" y="-38.0" />
+              <point x="0.0" y="38.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.students">
+              <point x="-47.5" y="-38.0" />
+              <point x="116.37500000000003" y="427.0" />
+              <point x="89.5" y="427.0" />
+              <point x="0.0" y="82.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses">
+              <point x="-48.5" y="-38.0" />
+              <point x="335.5" y="427.0" />
+              <point x="316.75" y="427.0" />
+              <point x="39.25" y="93.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
+              <point x="-58.75" y="-38.0" />
+              <point x="1094.84375" y="355.0" />
+              <point x="873.59375" y="355.0" />
+              <point x="54.0" y="115.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
+              <point x="58.75" y="-38.0" />
+              <point x="722.34375" y="365.0" />
+              <point x="765.59375" y="365.0" />
+              <point x="-54.0" y="115.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.sales" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.products">
+              <point x="-50.0" y="-71.5" />
+              <point x="491.5" y="719.0" />
+              <point x="355.0" y="719.0" />
+              <point x="0.0" y="60.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers">
+              <point x="2.8421709430404007E-14" y="-93.5" />
+              <point x="277.50000000000006" y="190.0" />
+              <point x="317.125" y="190.0" />
+              <point x="-47.25" y="82.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers_courses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.teachers">
+              <point x="48.499999999999986" y="-38.0" />
+              <point x="432.5" y="427.0" />
+              <point x="408.875" y="427.0" />
+              <point x="408.875" y="190.0" />
+              <point x="411.625" y="190.0" />
+              <point x="47.25" y="82.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_diagnoses" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients">
+              <point x="-53.75" y="-38.0" />
+              <point x="854.84375" y="365.0" />
+              <point x="819.59375" y="365.0" />
+              <point x="0.0" y="115.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries_continents" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries">
+              <point x="-58.75" y="-38.0" />
+              <point x="1073.75" y="675.0" />
+              <point x="988.0" y="675.0" />
+              <point x="31.5" y="38.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_medicaments" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.medicaments">
+              <point x="58.75" y="-38.0" />
+              <point x="0.0" y="38.5" />
+            </edge>
+            <edge source="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.patients_visitations" target="f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.visitations">
+              <point x="-58.75" y="-38.0" />
+              <point x="604.84375" y="365.0" />
+              <point x="603.0" y="365.0" />
+              <point x="0.0" y="49.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7239510489510489" x="532.8918135716011" y="913.3776865491427" />
+          <SelectedNodes>
+            <node>f6935945-80be-4aac-9077-777b6a554df3.TABLE:sales_db.countries</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
