@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb193994-ec87-4e88-9156-fde9c5069f7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources/f6935945-80be-4aac-9077-777b6a554df3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/dataSources/f6935945-80be-4aac-9077-777b6a554df3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/hibernatecodefirst.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/gringotts/WizardDeposits.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/gringotts/WizardDeposits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/Sale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/StoreLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/sales/StoreLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/java/entities/university_system/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hibernate Code first/Exercises/hibernatecodefirst/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="272">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tasks/AddingNewAddressAndUpdatingEmployee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="264">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -84,10 +73,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tasks/AddressesWithEmployeeCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="418">
+              <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,57 +85,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasks/ContainsEmployee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tasks/Queries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
+            <state relative-caret-position="939">
               <caret line="90" selection-start-line="90" selection-end-line="90" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa11488.4375/soft_uni_database.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="1653" lean-forward="true" selection-start-line="1653" selection-end-line="1653" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/introduction-to-hibernate.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasks/RemoveObjects.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#238#239#0" expanded="true" />
-                <element signature="e#268#269#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasks/RemoveTowns.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -168,7 +138,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tasks/IncreaseSalaries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
+            <state relative-caret-position="220">
               <caret line="10" column="29" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -220,6 +190,7 @@
         <option value="$PROJECT_DIR$/src/main/java/tasks/EmployeesMaximumSalaries.java" />
         <option value="$PROJECT_DIR$/src/main/java/tasks/Queries.java" />
         <option value="$PROJECT_DIR$/src/main/java/Engine.java" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DRa11488.4375/soft_uni_database.sql" />
       </list>
     </option>
   </component>
@@ -267,6 +238,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="introduction-to-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Introduction-to-Hibernate-Skeleton - Copy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="introduction-to-hibernate" type="b2602c69:ProjectViewProjectNode" />
@@ -407,12 +386,13 @@
       <workItem from="1582834853544" duration="3216000" />
       <workItem from="1583006497659" duration="1089000" />
       <workItem from="1583048027092" duration="61000" />
-      <workItem from="1583049798666" duration="2643000" />
+      <workItem from="1583049798666" duration="2885000" />
+      <workItem from="1583077730243" duration="1279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49599000" />
+    <option name="totallyTimeSpent" value="51120000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,9 +405,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21744967" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22080536" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -437,12 +416,12 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15864022" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.15014164" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Database Console" order="7" weight="0.46175638" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.19121814" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -582,9 +561,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa11016.9088/minions_db.sql" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar!/javax/persistence/EntityManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -697,16 +673,6 @@
     <entry file="das://e09b5cea-7c81-40b8-aad1-09988a64f037/schema/soft_uni/table/employees" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tasks/DatabaseManager.java" />
     <entry file="das://e09b5cea-7c81-40b8-aad1-09988a64f037/schema/soft_uni/table/addresses" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/AddressesWithEmployeeCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tasks/EmployeesFromDepartment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -777,29 +743,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/AddingNewAddressAndUpdatingEmployee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="308">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -809,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tasks/ContainsEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="286">
           <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -817,16 +763,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/Queries.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tasks/RemoveObjects.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
+        <state relative-caret-position="264">
           <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -838,8 +777,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tasks/RemoveTowns.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="484">
           <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/IncreaseSalaries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/AddressesWithEmployeeCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/introduction-to-hibernate.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/AddingNewAddressAndUpdatingEmployee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -858,20 +840,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/IncreaseSalaries.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="272">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa11488.4375/soft_uni_database.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="231">
+          <caret line="1653" lean-forward="true" selection-start-line="1653" selection-end-line="1653" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasks/Queries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="939">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
         </state>
       </provider>
     </entry>

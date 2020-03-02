@@ -21,7 +21,7 @@ public class Engine implements Runnable {
                 Happy testing! :)
          */
 
-        Task currentTask = new RemoveObjects(this.manager);
+        Task currentTask = new FindLatestProjects(this.manager);
 
         currentTask.run();
     }
