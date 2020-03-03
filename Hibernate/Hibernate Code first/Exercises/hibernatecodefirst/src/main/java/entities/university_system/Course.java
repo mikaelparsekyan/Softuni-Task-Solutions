@@ -75,7 +75,8 @@ public class Course extends BaseEntity {
         this.students = students;
     }
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
     public Teacher getTeacher() {
         return teacher;
     }

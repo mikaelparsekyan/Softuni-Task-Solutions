@@ -2,9 +2,8 @@ package entities.payment_system;
 
 import entities.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -13,7 +12,8 @@ public class User extends BaseEntity {
     private String lastName;
     private String email;
     private String password;
-    private BillingDetail billingDetail;
+    private Set<BankAccount> bankAccounts;
+    private Set<CreditCard> creditCards;
 
     public User() {
     }
@@ -52,5 +52,22 @@ public class User extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public Set<BankAccount> getBankAccounts() {
+        return bankAccounts;
+    }
+
+    public void setBankAccounts(Set<BankAccount> bankAccounts) {
+        this.bankAccounts = bankAccounts;
+    }
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public Set<CreditCard> getCreditCards() {
+        return creditCards;
+    }
+
+    public void setCreditCards(Set<CreditCard> creditCards) {
+        this.creditCards = creditCards;
     }
 }

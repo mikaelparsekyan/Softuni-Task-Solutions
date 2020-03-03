@@ -35,9 +35,7 @@ public class Teacher extends Person {
         this.salaryPerHour = salaryPerHour;
     }
 
-    @OneToMany(targetEntity = Course.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "teachers_courses", joinColumns = @JoinColumn(name = "teacher_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
+    @OneToMany(mappedBy =  "teacher", targetEntity = Course.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public Set<Course> getCourses() {
         return courses;
     }

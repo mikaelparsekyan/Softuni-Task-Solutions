@@ -2,13 +2,14 @@ package entities.payment_system;
 
 import entities.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @MappedSuperclass
 public abstract class BillingDetail extends BaseEntity {
     private String number;
     private String owner;
+
+    private User user;
 
     @Column
     public String getNumber() {
@@ -26,5 +27,14 @@ public abstract class BillingDetail extends BaseEntity {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    @ManyToOne(targetEntity = User.class, cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -22,7 +22,6 @@ public class Patient extends BaseEntity {
     private Set<Diagnose> diagnoses;
     private Set<Medicament> medicaments;
 
-    private Gp gp;
 
     public Patient() {
     }
@@ -118,14 +117,5 @@ public class Patient extends BaseEntity {
 
     public void setMedicaments(Set<Medicament> medicaments) {
         this.medicaments = medicaments;
-    }
-
-    @ManyToOne(targetEntity = Gp.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    public Gp getGp() {
-        return gp;
-    }
-
-    public void setGp(Gp gp) {
-        this.gp = gp;
     }
 }

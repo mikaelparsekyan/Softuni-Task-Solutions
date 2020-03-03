@@ -10,6 +10,11 @@ public class Engine implements Runnable {
 
     @Override
     public void run() {
+        /*
+            NOTHING TO RUN,
+            JUST CANCEL EXCLUSION ON A FOLDER TO RUN ALL ENTITIES IN IT!
 
+            @SEE README.TXT
+        */
     }
 }
