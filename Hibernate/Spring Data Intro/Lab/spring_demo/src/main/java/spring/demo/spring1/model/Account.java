@@ -6,6 +6,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "accounts")
@@ -23,7 +24,11 @@ public class Account {
     @NonNull
     private String name;
 
+    @Column
+    private BigDecimal balance = new BigDecimal(0);
+
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
+
 }
