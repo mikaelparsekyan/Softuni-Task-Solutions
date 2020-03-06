@@ -15,9 +15,11 @@ import java.math.BigDecimal;
 @RequiredArgsConstructor
 public class Account {
 
+    public Account() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NonNull
     private long id;
 
     @Column
@@ -25,7 +27,8 @@ public class Account {
     private String name;
 
     @Column
-    private BigDecimal balance = new BigDecimal(0);
+    @NonNull
+    private BigDecimal balance;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")

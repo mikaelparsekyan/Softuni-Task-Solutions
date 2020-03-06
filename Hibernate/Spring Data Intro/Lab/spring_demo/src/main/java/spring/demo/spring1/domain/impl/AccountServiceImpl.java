@@ -1,5 +1,6 @@
 package spring.demo.spring1.domain.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.demo.spring1.dao.AccountRepository;
 import spring.demo.spring1.domain.AccountService;
@@ -11,7 +12,9 @@ import java.math.BigDecimal;
 
 @Service("accountService")
 public class AccountServiceImpl implements AccountService {
+    @Autowired
     private AccountRepository accountRepository;
+
 
     @Override
     public Account getAccount(long id) {
