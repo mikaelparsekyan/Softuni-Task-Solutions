@@ -45,7 +45,13 @@ public class AppRunner implements CommandLineRunner {
 
         //bookService.getBookTitlesByEditionType(EditionType.GOLD, 5000);
 
-        bookService.getBookTitlesAndPricesNotInBound(5, 40);
+        //bookService.getBookTitlesAndPricesNotInBound(5, 40);
+
+        //bookService.getBookTitlesNotInYear(1998); <-TODO
+
+        //bookService.getBooksByDateBefore(scanner.nextLine());
+
+        //authorService.getAllAuthorsByEnding(scanner.nextLine());
 
     }
 

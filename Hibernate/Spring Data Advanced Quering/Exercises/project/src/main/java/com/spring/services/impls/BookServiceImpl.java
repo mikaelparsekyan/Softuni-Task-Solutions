@@ -18,9 +18,13 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 
 import static com.spring.constants.AppConstants.PRINT_BOOK_TITLE_AND_PRICE;
+import static com.spring.constants.AppConstants.PRINT_BOOK_TITLE_EDITION_TYPE_PRICE;
+import static com.spring.constants.Exceptions.INVALID_DATE;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -85,6 +89,32 @@ public class BookServiceImpl implements BookService {
                         book.getTitle(), book.getPrice().floatValue()));
     }
 
+    @Override
+    public void getBookTitlesNotInYear(int year) {
+        System.out.printf(AppConstants.ALL_BOOKS_NOT_IN_YEAR, year);
+
+//        bookRepository
+//                .getBooksByReleaseDate_YearNot(year)
+//                .forEach(book -> System.out.println(book.getTitle()));
+    }
+
+    @Override
+    public void getBooksByDateBefore(String dateStr) {
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            LocalDate date = LocalDate.parse(dateStr, formatter);
+
+            System.out.printf(AppConstants.ALL_BOOK_RELEASED_BEFORE_DATE, date.toString());
+
+            bookRepository
+                    .getBooksByReleaseDateBefore(date)
+                    .forEach(book ->
+                            System.out.printf(PRINT_BOOK_TITLE_EDITION_TYPE_PRICE,
+                                    book.getTitle(), book.getEditionType().name(), book.getPrice()));
+        } catch (Exception e) {
+            System.err.println(INVALID_DATE);
+        }
+    }
 
     private Book getBookByElements(String[] elements) {
 

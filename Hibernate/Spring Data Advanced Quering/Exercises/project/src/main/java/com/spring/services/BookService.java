@@ -1,10 +1,9 @@
 package com.spring.services;
 
-import com.spring.entities.AgeRestriction;
 import com.spring.entities.EditionType;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
+import java.util.Date;
+import java.util.Scanner;
 
 @Service("bookService")
 public interface BookService {
@@ -15,4 +14,8 @@ public interface BookService {
     void getBookTitlesByEditionType(EditionType editionType, int copies);
 
     void getBookTitlesAndPricesNotInBound(double lowBoundPrice, double topBoundPrice);
+
+    void getBookTitlesNotInYear(int year);
+
+    void getBooksByDateBefore(String dateStr);
 }

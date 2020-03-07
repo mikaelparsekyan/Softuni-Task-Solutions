@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.spring.constants.AppConstants.PRINT_AUTHOR_INFORMATION;
+
 @Service
 public class AuthorServiceImpl implements AuthorService {
     @Autowired
@@ -36,49 +38,11 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public void getAuthorWithMinNumberOfBooks(int bookNumber, int bookReleaseYear) {
-        List<Author> authors = authorRepository.findAll();
-
-        for (Author author : authors) {
-            Set<Book> authorBooks = author.getBooks();
-
-            if (isAuthorContainBookBefore(authorBooks, bookReleaseYear) && authorBooks.size() >= bookNumber) {
-                System.out.println(author.getFirstName() + "    " + author.getLastName());
-            }
-        }
-
-    }
-
-    @Override
-    public void getAllAuthorsOrderByNumberOfBooks() {
-        List<Author> orderedAuthors = authorRepository
-                .findAll()
-                .stream()
-                .sorted((a1, a2) ->
-                        Integer.compare(a2.getBooks().size(),
-                                a1.getBooks().size()))
-                .collect(Collectors.toList());
-
-        printOrderedAuthors(orderedAuthors);
-    }
-
-    private void printOrderedAuthors(List<Author> authors) {
-        for (Author author : authors) {
-            System.out.printf("%s %s    |   Count of books: %d%n",
-                    author.getFirstName(), author.getLastName(),
-                    author.getBooks().size());
-        }
-
-    }
-
-    private boolean isAuthorContainBookBefore(Set<Book> books, int bookReleaseYear) {
-        for (Book book : books) {
-            if (book.getReleaseDate()
-                    .isBefore(LocalDate.of(bookReleaseYear, 1, 1))) {
-                return true;
-            }
-        }
-        return false;
+    public void getAllAuthorsByEnding(String ending) {
+        authorRepository
+                .getAuthorsByFirstNameEndingWith(ending)
+                .forEach(author -> System.out.printf(PRINT_AUTHOR_INFORMATION,
+                        author.getFirstName(), author.getLastName()));
     }
 
     private Author getAuthorByData(String data) {

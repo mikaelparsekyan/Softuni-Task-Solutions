@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 public interface AuthorService {
     void seedAuthors();
 
-    void getAuthorWithMinNumberOfBooks(int bookNumber, int releaseYear);
-
-    void getAllAuthorsOrderByNumberOfBooks();
+    void getAllAuthorsByEnding(String ending);
 
 }

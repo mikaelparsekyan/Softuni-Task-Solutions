@@ -17,4 +17,16 @@ public class AppConstants {
     public static final String ALL_BOOKS_NOT_IN_RANGE =
             "ALL BOOKS NOT IN RANGE [%.2f - %.2f]%n%n";
 
+    public static final String ALL_BOOKS_NOT_IN_YEAR =
+            "ALL BOOKS NOT RELEASED AT %d%n%n";
+
+    public static final String PRINT_BOOK_TITLE_EDITION_TYPE_PRICE =
+            "%s %s %.2f%n";
+
+    public static final String ALL_BOOK_RELEASED_BEFORE_DATE =
+            "ALL BOOKS RELEASED BEFORE - [%s]%n%n";
+
+    public static final String PRINT_AUTHOR_INFORMATION =
+            "%s %s%n";
+
 }
