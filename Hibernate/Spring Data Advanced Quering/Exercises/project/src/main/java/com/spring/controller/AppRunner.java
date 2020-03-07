@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import com.spring.entities.EditionType;
 import com.spring.services.AuthorService;
 import com.spring.services.BookService;
 import com.spring.services.CategoryService;
@@ -8,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 
+import java.math.BigDecimal;
+import java.util.Scanner;
+
 @Controller
-@NoArgsConstructor
 public class AppRunner implements CommandLineRunner {
     @Autowired
     private CategoryService categoryService;
@@ -18,6 +21,11 @@ public class AppRunner implements CommandLineRunner {
     @Autowired
     private AuthorService authorService;
 
+    private Scanner scanner;
+
+    public AppRunner() {
+        scanner = new Scanner(System.in);
+    }
 
     @Override
     public void run(String... args) throws Exception {
@@ -25,13 +33,19 @@ public class AppRunner implements CommandLineRunner {
             @Warning -> UNCOMMENT TO SEED ALL INFORMATION TO THE DATABASE!
             seedDatabase();
         */
-        seedDatabase();
+        //seedDatabase();
 
         /*
             TO RUN THE APP, ADJUST THE application.properties file!
             THE APPLICATION DOES NOT CREATE A SCHEMA! IT SHOULD BE CREATED MANUALLY!
             UNCOMMENT THE ROWS BELLOW TO RUN A QUERY
          */
+
+        //bookService.getBookTitlesByAgeRestriction(scanner.nextLine());
+
+        //bookService.getBookTitlesByEditionType(EditionType.GOLD, 5000);
+
+        bookService.getBookTitlesAndPricesNotInBound(5, 40);
 
     }
 
