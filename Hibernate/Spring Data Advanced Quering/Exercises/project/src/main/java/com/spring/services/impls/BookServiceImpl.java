@@ -18,12 +18,10 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
-import static com.spring.constants.AppConstants.PRINT_BOOK_TITLE_AND_PRICE;
-import static com.spring.constants.AppConstants.PRINT_BOOK_TITLE_EDITION_TYPE_PRICE;
+import static com.spring.constants.AppConstants.*;
 import static com.spring.constants.Exceptions.INVALID_DATE;
 
 @Service
@@ -55,12 +53,14 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void getBookTitlesByAgeRestriction(String ageRestrictionValue) {
+    public void getBookTitlesByAgeRestriction(Scanner scanner) {
         try {
+            System.out.println("Enter age restriction: ");
             AgeRestriction ageRestriction = AgeRestriction
-                    .valueOf(ageRestrictionValue.toUpperCase());
+                    .valueOf(scanner.nextLine().toUpperCase());
 
-            System.out.printf(AppConstants.ALL_BOOKS_BY_AGE_RESTRICTION, ageRestrictionValue);
+            System.out.printf(AppConstants.ALL_BOOKS_BY_AGE_RESTRICTION,
+                    ageRestriction.name());
 
             bookRepository.getBooksByAgeRestriction(ageRestriction)
                     .forEach(book -> System.out.println(book.getTitle()));
@@ -90,19 +90,25 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void getBookTitlesNotInYear(int year) {
-        System.out.printf(AppConstants.ALL_BOOKS_NOT_IN_YEAR, year);
+    public void getBookTitlesNotInYear(Scanner scanner) {
+        try {
+            System.out.printf(AppConstants.ALL_BOOKS_NOT_IN_YEAR,
+                    Integer.parseInt(scanner.nextLine()));
 
 //        bookRepository
 //                .getBooksByReleaseDate_YearNot(year)
 //                .forEach(book -> System.out.println(book.getTitle()));
+        } catch (IllegalArgumentException e) {
+            System.err.println();
+        }
     }
 
     @Override
-    public void getBooksByDateBefore(String dateStr) {
+    public void getBooksByDateBefore(Scanner scanner) {
         try {
+            System.out.println("Enter date: ");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-            LocalDate date = LocalDate.parse(dateStr, formatter);
+            LocalDate date = LocalDate.parse(scanner.nextLine(), formatter);
 
             System.out.printf(AppConstants.ALL_BOOK_RELEASED_BEFORE_DATE, date.toString());
 
@@ -114,6 +120,37 @@ public class BookServiceImpl implements BookService {
         } catch (Exception e) {
             System.err.println(INVALID_DATE);
         }
+    }
+
+    @Override
+    public void getBooksByContainingText(Scanner scanner) {
+
+        System.out.println("Enter text: ");
+        String text = scanner.nextLine();
+
+        List<Book> books = new LinkedList<>(bookRepository
+                .getBooksByTitleContains(text));
+
+        if (books.isEmpty()) {
+            System.err.println("Nothing found!");
+            return;
+        }
+
+        System.out.printf(AppConstants.ALL_TEXT_CONTAINING_TEXT, text);
+
+        books.forEach(book -> System.out.println(book.getTitle()));
+    }
+
+
+    @Override
+    public void getBooksCountByMinLength(Scanner scanner) {
+        System.out.println("Enter min length for book title: ");
+        int minLength = Integer.parseInt(scanner.nextLine());
+
+        int bookCount = bookRepository
+                .countBooksByTitle(minLength);
+        System.out.printf("There are %d books with longer title than %d symbols%n",
+                bookCount, minLength);
     }
 
     private Book getBookByElements(String[] elements) {

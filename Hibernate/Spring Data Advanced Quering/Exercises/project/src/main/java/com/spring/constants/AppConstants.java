@@ -29,4 +29,6 @@ public class AppConstants {
     public static final String PRINT_AUTHOR_INFORMATION =
             "%s %s%n";
 
+    public static final String ALL_TEXT_CONTAINING_TEXT = "ALL BOOKS WHICH CONTAINS [%s]%n%n";
+
 }

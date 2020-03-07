@@ -41,7 +41,7 @@ public class AppRunner implements CommandLineRunner {
             UNCOMMENT THE ROWS BELLOW TO RUN A QUERY
          */
 
-        //bookService.getBookTitlesByAgeRestriction(scanner.nextLine());
+        //bookService.getBookTitlesByAgeRestriction(scanner);
 
         //bookService.getBookTitlesByEditionType(EditionType.GOLD, 5000);
 
@@ -49,9 +49,13 @@ public class AppRunner implements CommandLineRunner {
 
         //bookService.getBookTitlesNotInYear(1998); <-TODO
 
-        //bookService.getBooksByDateBefore(scanner.nextLine());
+        //bookService.getBooksByDateBefore(scanner);
 
-        //authorService.getAllAuthorsByEnding(scanner.nextLine());
+        //authorService.getAllAuthorsByEnding(scanner);
+
+        //bookService.getBooksByContainingText(scanner);
+
+        bookService.getBooksCountByMinLength(scanner);
 
     }
 

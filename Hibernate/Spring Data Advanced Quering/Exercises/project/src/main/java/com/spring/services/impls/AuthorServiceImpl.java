@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -38,9 +39,11 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public void getAllAuthorsByEnding(String ending) {
+    public void getAllAuthorsByEnding(Scanner scanner) {
+        System.out.println("Enter ending string: ");
+
         authorRepository
-                .getAuthorsByFirstNameEndingWith(ending)
+                .getAuthorsByFirstNameEndingWith(scanner.nextLine())
                 .forEach(author -> System.out.printf(PRINT_AUTHOR_INFORMATION,
                         author.getFirstName(), author.getLastName()));
     }
