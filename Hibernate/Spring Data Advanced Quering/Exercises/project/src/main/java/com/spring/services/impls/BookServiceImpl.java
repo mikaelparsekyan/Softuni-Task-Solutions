@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -145,12 +146,74 @@ public class BookServiceImpl implements BookService {
     @Override
     public void getBooksCountByMinLength(Scanner scanner) {
         System.out.println("Enter min length for book title: ");
-        int minLength = Integer.parseInt(scanner.nextLine());
+        try {
+            int minLength = Integer.parseInt(scanner.nextLine());
 
-        int bookCount = bookRepository
-                .countBooksByTitle(minLength);
-        System.out.printf("There are %d books with longer title than %d symbols%n",
-                bookCount, minLength);
+            int bookCount = bookRepository
+                    .countBooksByTitle(minLength);
+            if (bookCount == 0) {
+                System.err.printf("Nothing found with %d characters length!%n", minLength);
+                return;
+            }
+            System.out.printf("There are %d books with longer title than %d symbols%n",
+                    bookCount, minLength);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Invalid length!");
+            getBooksCountByMinLength(scanner);
+        }
+    }
+
+    @Override
+    public void getBooksCountByAuthorName() {
+
+    }
+
+    @Override
+    public void getBookInfoByTitle(Scanner scanner) {
+        System.out.println("Enter book title: ");
+        String bookTitle = scanner.nextLine();
+
+        List<Object[]> bookInfo = bookRepository.getBooksInfo(bookTitle);
+
+        if (bookInfo.isEmpty()) {
+            System.err.println("Nothing found!");
+            getBookInfoByTitle(scanner);
+        }
+        for (Object[] values : bookInfo) {
+            System.out.printf("%s %s %s %.2f%n",
+                    String.valueOf(values[0]),
+                    String.valueOf(values[1]),
+                    String.valueOf(values[2]),
+                    Double.parseDouble(String.valueOf(values[3])));
+        }
+    }
+
+    @Override
+    public void increaseAllBooksByGivenDate(Scanner scanner) {
+
+        try {
+            System.out.println("Enter date: ");
+            String dateStr = scanner.nextLine();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+            LocalDate date = LocalDate.parse(dateStr, formatter);
+
+            System.out.println("Enter number of copies: ");
+            int copies = Integer.parseInt(scanner.nextLine());
+            bookRepository
+                    .getBooksByReleaseDateAfter(date)
+                    .forEach(book -> {
+                        book.setCopies(book.getCopies() + copies);
+                        bookRepository.saveAndFlush(book);
+                    });
+
+        } catch (DateTimeParseException e) {
+            System.err.println("Invalid date!");
+            increaseAllBooksByGivenDate(scanner);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid number of copies!");
+            increaseAllBooksByGivenDate(scanner);
+        }
+
     }
 
     private Book getBookByElements(String[] elements) {

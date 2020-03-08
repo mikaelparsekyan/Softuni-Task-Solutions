@@ -23,4 +23,12 @@ public interface BookService {
     void getBooksByContainingText(Scanner scanner);
 
     void getBooksCountByMinLength(Scanner scanner);
+
+    void getBooksCountByAuthorName();
+
+    void getBookInfoByTitle(Scanner scanner);
+
+    void increaseAllBooksByGivenDate(Scanner scanner);
+
+    void removeAllBooksWithLowerCountOfCopies(int copies);
 }

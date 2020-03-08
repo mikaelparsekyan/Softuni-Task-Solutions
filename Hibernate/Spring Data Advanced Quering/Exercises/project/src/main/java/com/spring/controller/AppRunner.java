@@ -55,7 +55,13 @@ public class AppRunner implements CommandLineRunner {
 
         //bookService.getBooksByContainingText(scanner);
 
-        bookService.getBooksCountByMinLength(scanner);
+        //bookService.getBooksCountByMinLength(scanner);
+
+        //bookService.getBooksCountByAuthorName(); <-TODO
+
+        //bookService.getBookInfoByTitle(scanner);
+
+        //bookService.increaseAllBooksByGivenDate(scanner);
 
     }
 
