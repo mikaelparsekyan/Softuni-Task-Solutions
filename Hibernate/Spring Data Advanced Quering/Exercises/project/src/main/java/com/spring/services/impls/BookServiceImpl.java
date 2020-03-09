@@ -13,8 +13,10 @@ import com.spring.services.BookService;
 import com.spring.util.FileUtil;
 import com.spring.util.FileUtilImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -93,14 +95,20 @@ public class BookServiceImpl implements BookService {
     @Override
     public void getBookTitlesNotInYear(Scanner scanner) {
         try {
-            System.out.printf(AppConstants.ALL_BOOKS_NOT_IN_YEAR,
-                    Integer.parseInt(scanner.nextLine()));
+            System.out.println("Enter year: ");
+            int year = Integer.parseInt(scanner.nextLine());
 
-//        bookRepository
-//                .getBooksByReleaseDate_YearNot(year)
-//                .forEach(book -> System.out.println(book.getTitle()));
+            if (year <= 0) {
+                throw new IllegalArgumentException();
+            }
+            System.out.printf(AppConstants.ALL_BOOKS_NOT_IN_YEAR, year);
+
+            bookRepository
+                    .getBooksByNotInRealiseDate(year)
+                    .forEach(book -> System.out.println(book.getTitle()));
         } catch (IllegalArgumentException e) {
-            System.err.println();
+            System.err.println("Enter valid year!");
+            getBookTitlesNotInYear(scanner);
         }
     }
 
@@ -142,6 +150,26 @@ public class BookServiceImpl implements BookService {
         books.forEach(book -> System.out.println(book.getTitle()));
     }
 
+    @Override
+    public void getBooksByAuthorLastNameStartingWith(Scanner scanner) {
+        try {
+            System.out.println("Enter last name starting pattern: ");
+            String startStr = scanner.nextLine();
+            if (startStr.matches(".*\\d.*")) {
+                throw new IllegalArgumentException();
+            }
+            bookRepository
+                    .getBooksByAuthorLastNameStartsWith(startStr)
+                    .forEach(book ->
+                            System.out.printf("%s (%s %s)%n",
+                                    book.getTitle(),
+                                    book.getAuthor().getFirstName(),
+                                    book.getAuthor().getLastName()));
+        } catch (IllegalArgumentException e) {
+            System.err.println("Invalid starting pattern!");
+            getBooksByAuthorLastNameStartingWith(scanner);
+        }
+    }
 
     @Override
     public void getBooksCountByMinLength(Scanner scanner) {
@@ -164,8 +192,15 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void getBooksCountByAuthorName() {
+    public void getCopiesByAuthor() {
+        List<Object[]> columns = bookRepository.getBooksCopiesWithAuthorName();
 
+        for (Object[] column : columns) {
+            System.out.printf("%s %s - %d%n",
+                    String.valueOf(column[0]),
+                    String.valueOf(column[1]),
+                    Integer.parseInt(String.valueOf(column[2])));
+        }
     }
 
     @Override
@@ -199,12 +234,17 @@ public class BookServiceImpl implements BookService {
 
             System.out.println("Enter number of copies: ");
             int copies = Integer.parseInt(scanner.nextLine());
-            bookRepository
-                    .getBooksByReleaseDateAfter(date)
-                    .forEach(book -> {
-                        book.setCopies(book.getCopies() + copies);
-                        bookRepository.saveAndFlush(book);
-                    });
+
+            List<Book> books = bookRepository
+                    .getBooksByReleaseDateAfter(date);
+
+            books.forEach(book -> {
+                book.setCopies(book.getCopies() + copies);
+                bookRepository.saveAndFlush(book);
+            });
+
+            int booksCount = books.size();
+            System.out.println(booksCount * copies);
 
         } catch (DateTimeParseException e) {
             System.err.println("Invalid date!");
@@ -213,6 +253,33 @@ public class BookServiceImpl implements BookService {
             System.err.println("Invalid number of copies!");
             increaseAllBooksByGivenDate(scanner);
         }
+    }
+
+    @Override
+    @Transactional
+    @Modifying
+    public void removeAllBooksWithLowerCountOfCopies(Scanner scanner) {
+        try {
+            System.out.println("Enter count of copies: ");
+            int copies = Integer.parseInt(scanner.nextLine());
+            if (copies <= 0) {
+                throw new NumberFormatException();
+            }
+            bookRepository.deleteBooksByCopies(copies);
+
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid number of count!");
+            removeAllBooksWithLowerCountOfCopies(scanner);
+        }
+    }
+
+    @Override
+    public void getNumberOfBooksByAuthorName(Scanner scanner) {
+        String[] authorNames = scanner.nextLine().split("\\s+");
+
+        String firstName = authorNames[0];
+        String lastName = authorNames[1];
+
 
     }
 

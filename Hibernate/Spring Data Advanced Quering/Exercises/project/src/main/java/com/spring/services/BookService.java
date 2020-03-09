@@ -22,13 +22,17 @@ public interface BookService {
 
     void getBooksByContainingText(Scanner scanner);
 
+    void getBooksByAuthorLastNameStartingWith(Scanner scanner);
+
     void getBooksCountByMinLength(Scanner scanner);
 
-    void getBooksCountByAuthorName();
+    void getCopiesByAuthor();
 
     void getBookInfoByTitle(Scanner scanner);
 
     void increaseAllBooksByGivenDate(Scanner scanner);
 
-    void removeAllBooksWithLowerCountOfCopies(int copies);
+    void removeAllBooksWithLowerCountOfCopies(Scanner scanner);
+
+    void getNumberOfBooksByAuthorName(Scanner scanner);
 }
