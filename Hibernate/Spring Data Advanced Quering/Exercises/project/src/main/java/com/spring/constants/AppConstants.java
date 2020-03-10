@@ -18,7 +18,7 @@ public class AppConstants {
             "ALL BOOKS NOT IN RANGE [%.2f - %.2f]%n%n";
 
     public static final String ALL_BOOKS_NOT_IN_YEAR =
-            "ALL BOOKS NOT RELEASED AT %d%n%n";
+            "ALL BOOKS NOT RELEASED IN %d%n%n";
 
     public static final String PRINT_BOOK_TITLE_EDITION_TYPE_PRICE =
             "%s %s %.2f%n";
@@ -30,5 +30,18 @@ public class AppConstants {
             "%s %s%n";
 
     public static final String ALL_TEXT_CONTAINING_TEXT = "ALL BOOKS WHICH CONTAINS [%s]%n%n";
+
+    //14. PROCEDURE
+    /*
+        CREATE PROCEDURE get_amount_of_books_by_name(IN first_name VARCHAR(255),
+                                                     IN last_name VARCHAR(255), OUT count INT)
+        BEGIN
+            SELECT COUNT(b.id) into count
+            FROM books AS b
+                     JOIN authors AS a ON a.id = b.author_id
+            WHERE a.first_name = first_name
+              AND a.last_name = last_name;
+        END;
+     */
 
 }

@@ -14,6 +14,16 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
+@NamedStoredProcedureQuery(name = "get_amount_of_books_by_name",
+        procedureName = "get_amount_of_books_by_name",
+        parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN,
+                        name = "first_name", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN,
+                        name = "last_name", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.OUT,
+                        name = "count", type = Integer.class)
+        })
 public class Author extends BaseEntity {
 
     @NonNull
@@ -24,7 +34,7 @@ public class Author extends BaseEntity {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @OneToMany(mappedBy = "author",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Book> books;
 
     @Override

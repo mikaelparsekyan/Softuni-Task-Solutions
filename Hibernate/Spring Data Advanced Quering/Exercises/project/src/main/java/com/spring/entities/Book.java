@@ -49,7 +49,7 @@ public class Book extends BaseEntity {
 
     @ManyToOne
     @NonNull
-    @JoinColumn(name = "author_id",referencedColumnName = "id")
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
 
     @ManyToMany

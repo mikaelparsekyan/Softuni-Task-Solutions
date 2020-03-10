@@ -7,12 +7,12 @@ import com.spring.services.CategoryService;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-@Controller
+@Component
 public class AppRunner implements CommandLineRunner {
     @Autowired
     private CategoryService categoryService;
@@ -29,19 +29,11 @@ public class AppRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        /*
-            @Warning -> UNCOMMENT TO SEED ALL INFORMATION TO THE DATABASE!
-            seedDatabase();
-        */
+        //@Warning -> UNCOMMENT TO SEED ALL INFORMATION TO THE DATABASE!
         //seedDatabase();
-
-        /*
-            TO RUN THE APP, ADJUST THE application.properties file!
-            THE APPLICATION DOES NOT CREATE A SCHEMA! IT SHOULD BE CREATED MANUALLY!
-            UNCOMMENT THE ROWS BELLOW TO RUN A QUERY
-         */
+        
         //1. Books Titles by Age Restriction
-        //bookService.getBookTitlesByAgeRestriction(scanner);
+        bookService.getBookTitlesByAgeRestriction(scanner);
 
         //2. Golden Books
         //bookService.getBookTitlesByEditionType(EditionType.GOLD, 5000);
@@ -62,7 +54,7 @@ public class AppRunner implements CommandLineRunner {
         //bookService.getBooksByContainingText(scanner);
 
         //8. Book Titles Search
-        bookService.getBooksByAuthorLastNameStartingWith(scanner);
+        //bookService.getBooksByAuthorLastNameStartingWith(scanner);
 
         //9. Count Books
         //bookService.getBooksCountByMinLength(scanner);

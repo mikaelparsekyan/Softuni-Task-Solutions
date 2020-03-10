@@ -10,4 +10,6 @@ public interface AuthorService {
 
     void getAllAuthorsByEnding(Scanner scanner);
 
+
+
 }

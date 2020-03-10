@@ -48,11 +48,8 @@ public class BookServiceImpl implements BookService {
 
         for (String data : bookData) {
             String[] elements = data.split("\\s+");
-
             bookRepository.saveAndFlush(getBookByElements(elements));
-
         }
-
     }
 
     @Override
@@ -128,6 +125,7 @@ public class BookServiceImpl implements BookService {
                                     book.getTitle(), book.getEditionType().name(), book.getPrice()));
         } catch (Exception e) {
             System.err.println(INVALID_DATE);
+            getBooksByDateBefore(scanner);
         }
     }
 
@@ -275,12 +273,20 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void getNumberOfBooksByAuthorName(Scanner scanner) {
-        String[] authorNames = scanner.nextLine().split("\\s+");
+        try {
+            System.out.println("Enter author full name: ");
+            String[] authorNames = scanner.nextLine().split("\\s+");
 
-        String firstName = authorNames[0];
-        String lastName = authorNames[1];
-
-
+            String firstName = authorNames[0];
+            String lastName = authorNames[1];
+            List<Object[]> authors = authorRepository
+                    .getBooksCountByFirstNameAndLastName(firstName, lastName);
+            System.out.printf("%s %s has written %d books%n",
+                    firstName, lastName, authors.size());
+        } catch (Exception e) {
+            System.err.println("Something went wrong!");
+            getNumberOfBooksByAuthorName(scanner);
+        }
     }
 
     private Book getBookByElements(String[] elements) {
