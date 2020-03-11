@@ -1,22 +1,31 @@
 package com.example.project.init;
 
-import com.example.project.data.dtos.UserLoginDto;
-import com.example.project.data.dtos.UserRegisterDto;
+import com.example.project.data.dtos.user.UserLoginDto;
+import com.example.project.data.dtos.user.UserRegisterDto;
+import com.example.project.data.entities.Game;
+import com.example.project.data.entities.User;
+import com.example.project.services.GameService;
 import com.example.project.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 @Component
 public class ApplicationRunner implements CommandLineRunner {
     private final UserService userService;
+    private final GameService gameService;
+
     private final Scanner scanner;
 
     @Autowired
-    public ApplicationRunner(UserService userService) {
+    public ApplicationRunner(UserService userService, GameService gameService) {
         this.userService = userService;
+        this.gameService = gameService;
         scanner = new Scanner(System.in);
     }
 
@@ -51,10 +60,36 @@ public class ApplicationRunner implements CommandLineRunner {
                 userService.logoutUser();
                 break;
 
+            case "AddGame":
+                addGame(commandParts);
+                break;
+
+            case "EditGame":
+                break;
+
+            case "Stop":
+                System.exit(0);
+                break;
+
             default:
                 System.out.println("Unexpected command.");
                 break;
         }
+    }
+
+    private void addGame(String[] commandParts) {
+        User loggedUser = userService.getLoggedUser();
+        Game game = new Game(
+                commandParts[1],
+                commandParts[4],
+                commandParts[5],
+                new BigDecimal(commandParts[2]),
+                Double.parseDouble(commandParts[3]),
+                commandParts[6],
+                LocalDate.parse(commandParts[7],
+                        DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+        );
+        gameService.addGame(game, loggedUser);
     }
 
     private void loginUser(String[] commandParts) {

@@ -6,7 +6,10 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -15,34 +18,43 @@ import java.util.Set;
 @Entity
 @Table(name = "games")
 @Data
-@NoArgsConstructor
 @RequiredArgsConstructor
 public class Game extends BaseEntity {
 
     @NonNull
     @NotNull
     @Column(nullable = false, unique = true)
+    @Pattern(regexp = "[A-Z].*", message = "Game title must starts with uppercase!")
+    @Size(min = 3, max = 100)
     private String title;
 
-    @Column
+    @NonNull
+    @NotNull
+    @Column(length = 11)
     private String trailer;
 
     @NonNull
     @NotNull
     @Column(nullable = false)
+    @Pattern(regexp = "^https://.*|^http://.*", message = "Invalid image url!")
     private String image;
 
     @NonNull
     @NotNull
     @Column(nullable = false)
+    @Min(0)
     private BigDecimal price;
 
     @NonNull
     @NotNull
     @Column(nullable = false)
+    @Min(0)
     private double size;
 
+    @NonNull
+    @NotNull
     @Column
+    @Size(min = 20)
     private String description;
 
     @NonNull

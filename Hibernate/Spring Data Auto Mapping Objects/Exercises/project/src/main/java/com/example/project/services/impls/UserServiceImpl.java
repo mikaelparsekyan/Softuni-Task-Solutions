@@ -1,7 +1,7 @@
 package com.example.project.services.impls;
 
-import com.example.project.data.dtos.UserLoginDto;
-import com.example.project.data.dtos.UserRegisterDto;
+import com.example.project.data.dtos.user.UserLoginDto;
+import com.example.project.data.dtos.user.UserRegisterDto;
 import com.example.project.data.entities.User;
 import com.example.project.data.enums.UserRole;
 import com.example.project.data.repositories.UserRepository;
@@ -10,6 +10,8 @@ import com.example.project.exceptions.UserLoginException;
 import com.example.project.exceptions.UserNotExistException;
 import com.example.project.services.UserService;
 import com.example.project.validator.ValidationUtil;
+import lombok.Data;
+import lombok.Getter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -89,5 +91,10 @@ public class UserServiceImpl implements UserService {
         } catch (LogoutException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @Override
+    public User getLoggedUser() {
+        return this.loggedUser;
     }
 }

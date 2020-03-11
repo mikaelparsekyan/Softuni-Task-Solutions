@@ -1,7 +1,8 @@
 package com.example.project.services;
 
-import com.example.project.data.dtos.UserLoginDto;
-import com.example.project.data.dtos.UserRegisterDto;
+import com.example.project.data.dtos.user.UserLoginDto;
+import com.example.project.data.dtos.user.UserRegisterDto;
+import com.example.project.data.entities.User;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,4 +12,6 @@ public interface UserService {
     void loginUser(UserLoginDto userDto);
 
     void logoutUser();
+
+    User getLoggedUser();
 }
