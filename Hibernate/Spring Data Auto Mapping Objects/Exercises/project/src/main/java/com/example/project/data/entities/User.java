@@ -7,8 +7,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 import java.util.Set;
 
 @Entity
@@ -20,7 +19,8 @@ public class User extends BaseEntity {
 
     @NonNull
     @NotNull
-    @Pattern(message = "Email is not valid!", regexp = "")
+    @Size(min = 6,message = "Email size must be greater than 6 symbols!")
+    @Pattern(message = "Email is not valid!", regexp = ".+@.+\\..*")
     @Column(nullable = false, unique = true)
     private String email;
 
@@ -34,13 +34,16 @@ public class User extends BaseEntity {
     @Column(name = "full_name", nullable = false)
     private String fullName;
 
-    @OneToMany
-    @JoinColumn(name = "game_id", referencedColumnName = "id")
-    private Set<Game> games;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private UserRole role;
+
+    @ManyToMany
+    @JoinTable(name = "users_games",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "game_id", referencedColumnName = "id"))
+    private Set<Game> games;
+
 
     @OneToMany(mappedBy = "buyer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Order> orders;

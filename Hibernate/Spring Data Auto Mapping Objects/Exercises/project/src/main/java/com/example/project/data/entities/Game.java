@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
@@ -29,7 +30,12 @@ public class Game extends BaseEntity {
     @NonNull
     @NotNull
     @Column(nullable = false)
-    private String url;
+    private String image;
+
+    @NonNull
+    @NotNull
+    @Column(nullable = false)
+    private BigDecimal price;
 
     @NonNull
     @NotNull
@@ -43,8 +49,13 @@ public class Game extends BaseEntity {
     @NotNull
     @Column(name = "release_date", nullable = false)
     private LocalDate releaseDate;
-    
-    private Order order;
+
+    @ManyToMany(mappedBy = "games", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<User> users;
+
+
+    @ManyToMany(mappedBy = "games", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Order> orders;
 
     @Override
     public boolean equals(Object o) {
@@ -55,13 +66,15 @@ public class Game extends BaseEntity {
         return Double.compare(game.size, size) == 0 &&
                 Objects.equals(title, game.title) &&
                 Objects.equals(trailer, game.trailer) &&
-                Objects.equals(url, game.url) &&
+                Objects.equals(image, game.image) &&
+                Objects.equals(price, game.price) &&
                 Objects.equals(description, game.description) &&
-                Objects.equals(releaseDate, game.releaseDate);
+                Objects.equals(releaseDate, game.releaseDate) &&
+                Objects.equals(users, game.users);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), title, trailer, url, size, description, releaseDate);
+        return Objects.hash(super.hashCode(), title, trailer, image, price, size, description, releaseDate);
     }
 }
