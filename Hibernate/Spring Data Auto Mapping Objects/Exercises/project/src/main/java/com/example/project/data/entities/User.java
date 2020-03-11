@@ -19,13 +19,17 @@ public class User extends BaseEntity {
 
     @NonNull
     @NotNull
-    @Size(min = 6,message = "Email size must be greater than 6 symbols!")
-    @Pattern(message = "Email is not valid!", regexp = ".+@.+\\..*")
+    @Size(min = 6, message = "Email size must be greater than 6 symbols!")
+    @Pattern(regexp = ".+@.+\\..*", message = "Email is not valid!")
     @Column(nullable = false, unique = true)
     private String email;
 
     @NonNull
     @NotNull
+    @Size(min = 6, message = "Password should be at least 6 symbols!")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$",
+            message = "Password should contains one upper, " +
+                    "one lower and one digit symbol!")
     @Column(nullable = false)
     private String password;
 

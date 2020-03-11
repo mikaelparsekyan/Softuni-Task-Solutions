@@ -1,24 +1,29 @@
 package com.example.project.services.impls;
 
+import com.example.project.data.dtos.UserLoginDto;
 import com.example.project.data.dtos.UserRegisterDto;
 import com.example.project.data.entities.User;
 import com.example.project.data.enums.UserRole;
 import com.example.project.data.repositories.UserRepository;
+import com.example.project.exceptions.LogoutException;
+import com.example.project.exceptions.UserLoginException;
+import com.example.project.exceptions.UserNotExistException;
 import com.example.project.services.UserService;
 import com.example.project.validator.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolation;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
     private final ValidationUtil validationUtil;
+
+    private User loggedUser;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, ValidationUtil validationUtil) {
@@ -28,7 +33,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean registerUser(UserRegisterDto userDto) {
+    public void registerUser(UserRegisterDto userDto) {
         User user = modelMapper.map(userDto, User.class);
 
         if (userRepository.findAll().isEmpty()) {
@@ -37,15 +42,52 @@ public class UserServiceImpl implements UserService {
             user.setRole(UserRole.USER);
         }
         if (validationUtil.isValid(user)) {
-            userRepository.saveAndFlush(user);
-            System.out.printf("Successfully registration of user: %s%n",
-                    user.getFullName());
-            return true;
-        }
+            try {
+                userRepository.saveAndFlush(user);
+                System.out.printf("Successfully registration of user: %s%n",
+                        user.getFullName());
+            } catch (DataIntegrityViolationException e) {
+                System.err.println("This user already exists!");
 
-        validationUtil
-                .getViolations(user)
-                .forEach(System.out::println);
-        return false;
+            }
+        } else {
+
+            String errorMessage = new ArrayList<>(validationUtil
+                    .getViolations(user))
+                    .get(0)
+                    .getMessage();
+
+            System.out.println(errorMessage);
+        }
+    }
+
+    @Override
+    public void loginUser(UserLoginDto userDto) {
+        loggedUser = userRepository.findUserByEmail(userDto.getEmail());
+
+        try {
+            if (loggedUser == null) {
+                throw new UserNotExistException();
+            } else if (!loggedUser.getPassword().equals(userDto.getPassword())) {
+                throw new UserLoginException();
+            }
+            System.out.printf("Successfully logged in %s%n", loggedUser.getFullName());
+        } catch (UserLoginException | UserNotExistException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void logoutUser() {
+        try {
+            if (this.loggedUser == null) {
+                throw new LogoutException();
+            }
+            System.out.printf("User %s successfully logged out%n",
+                    loggedUser.getFullName());
+            this.loggedUser = null;
+        } catch (LogoutException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.project.init;
 
+import com.example.project.data.dtos.UserLoginDto;
 import com.example.project.data.dtos.UserRegisterDto;
 import com.example.project.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,30 +23,46 @@ public class ApplicationRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String command = scanner.nextLine();
-        while (!"Logout".equals(command)) {
-            String[] commandParts = command.split("\\|");
-
-            parseCommand(commandParts);
-
+        String command;
+        do {
+            System.out.println("Enter command: ");
             command = scanner.nextLine();
-        }
+            String[] commandParts = command.split("\\|");
+            parseCommand(commandParts);
+        } while (!(command).equals("Stop"));
     }
 
     private void parseCommand(String[] commandParts) {
         switch (commandParts[0]) {
             case "RegisterUser":
-                registerUser(commandParts);
+                if (commandParts[2].equals(commandParts[3])) {
+                    //register user if passwords match
+                    registerUser(commandParts);
+                } else {
+                    System.err.println("Passwords did not match!");
+                }
                 break;
 
             case "LoginUser":
-
+                loginUser(commandParts);
                 break;
 
             case "Logout":
+                userService.logoutUser();
+                break;
 
+            default:
+                System.out.println("Unexpected command.");
                 break;
         }
+    }
+
+    private void loginUser(String[] commandParts) {
+        UserLoginDto user = new UserLoginDto(
+                commandParts[1],
+                commandParts[2]
+        );
+        userService.loginUser(user);
     }
 
     private void registerUser(String[] commandParts) {
