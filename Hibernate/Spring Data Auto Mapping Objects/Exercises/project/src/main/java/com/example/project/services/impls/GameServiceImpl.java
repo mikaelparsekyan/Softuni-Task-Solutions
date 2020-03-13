@@ -1,16 +1,32 @@
 package com.example.project.services.impls;
 
+import com.example.project.data.dtos.game.EditGameDto;
 import com.example.project.data.entities.Game;
 import com.example.project.data.entities.User;
 import com.example.project.data.enums.UserRole;
 import com.example.project.data.repositories.GameRepository;
 import com.example.project.data.repositories.UserRepository;
-import com.example.project.exceptions.UserNotAdminException;
-import com.example.project.exceptions.UserNotLoggedException;
+import com.example.project.exceptions.game.GameNotExistsException;
+import com.example.project.exceptions.user.UserNotAdminException;
+import com.example.project.exceptions.user.UserNotLoggedException;
 import com.example.project.services.GameService;
 import com.example.project.validator.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -41,6 +57,107 @@ public class GameServiceImpl implements GameService {
                 }
             }
         } catch (UserNotAdminException | UserNotLoggedException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void editGame(String[] lineInput, User loggedUser) {
+        try {
+            long gameId = Long.parseLong(lineInput[1]);
+            if (gameId <= 0) {
+                throw new IllegalArgumentException();
+            }
+            Game game = gameRepository.findById(gameId);
+            if (loggedUser == null) {
+                throw new UserNotLoggedException();
+            }
+            if (game == null) {
+                throw new GameNotExistsException();
+            }
+            if (loggedUser.getRole() == UserRole.USER) {
+                throw new UserNotAdminException();
+            }
+
+            List<String> values = Arrays.stream(lineInput)
+                    .skip(2)
+                    .collect(Collectors.toList());
+
+            for (String line : values) {
+                String[] elements = line.split("=");
+                String valueName = elements[0];
+                String value = elements[1];
+
+                addValueToGame(valueName, value, game);
+            }
+            gameRepository.saveAndFlush(game);
+            System.out.printf("Successfully updated game: %s%n", game.getTitle());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid id!");
+        } catch (GameNotExistsException | UserNotAdminException
+                | UserNotLoggedException e) {
+            System.out.println(e.getMessage());
+        } catch (ConstraintViolationException e) {
+            System.out.println(new ArrayList<>(e.getConstraintViolations())
+                    .get(0)
+                    .getMessage());
+        }
+    }
+
+    private void addValueToGame(String valueName, String value, Game game) {
+        try {
+            Field[] fields = Game.class.getDeclaredFields();
+            Method[] methods = Game.class.getDeclaredMethods();
+
+            for (Field field : fields) {
+                field.setAccessible(true);
+                if (field.getName().equals(valueName)) {
+                    for (Method method : methods) {
+                        method.setAccessible(true);
+                        if (method.getName()
+                                .equalsIgnoreCase("set".concat(field.getName()))) {
+                            Class<?> inputType = method.getParameterTypes()[0];
+                            String paramTypeName = inputType.getSimpleName();
+                            if (paramTypeName.equals("String")) {
+                                method.invoke(game, value);
+                            } else if (paramTypeName.equals("double")) {
+                                method.invoke(game, Double.parseDouble(value));
+                            } else if (paramTypeName.equals("int")) {
+                                method.invoke(game, Integer.parseInt(value));
+                            } else if (paramTypeName.equals("BigDecimal")) {
+                                method.invoke(game, new BigDecimal(value));
+                            } else if (paramTypeName.equals("LocalDate")) {
+                                method.invoke(game, LocalDate.parse(value,
+                                        DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+                            } else {
+                                System.out.printf("No value with name %s exists %n", value);
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid type of argument!");
+        } catch (DateTimeParseException e) {
+            System.out.println("Wrong date format!");
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteGame(long id, User loggedUser) {
+        Game gameToDelete = gameRepository.findById(id);
+        try {
+            if (gameToDelete == null) {
+                throw new GameNotExistsException();
+            }
+            if (loggedUser.getRole() != UserRole.ADMIN) {
+                throw new UserNotAdminException();
+            }
+            gameRepository.delete(gameToDelete);
+            System.out.printf("Deleted %s%n", gameToDelete.getTitle());
+        } catch (GameNotExistsException | UserNotAdminException e) {
             System.out.println(e.getMessage());
         }
     }

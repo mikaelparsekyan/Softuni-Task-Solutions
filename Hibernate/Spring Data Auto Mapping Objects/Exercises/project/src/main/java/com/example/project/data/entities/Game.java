@@ -19,6 +19,7 @@ import java.util.Set;
 @Table(name = "games")
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class Game extends BaseEntity {
 
     @NonNull
@@ -62,11 +63,11 @@ public class Game extends BaseEntity {
     @Column(name = "release_date", nullable = false)
     private LocalDate releaseDate;
 
-    @ManyToMany(mappedBy = "games", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "games", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<User> users;
 
 
-    @ManyToMany(mappedBy = "games", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "games", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Order> orders;
 
     @Override

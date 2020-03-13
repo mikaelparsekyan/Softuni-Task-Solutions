@@ -1,5 +1,6 @@
 package com.example.project.init;
 
+import com.example.project.data.dtos.game.EditGameDto;
 import com.example.project.data.dtos.user.UserLoginDto;
 import com.example.project.data.dtos.user.UserRegisterDto;
 import com.example.project.data.entities.Game;
@@ -65,6 +66,11 @@ public class ApplicationRunner implements CommandLineRunner {
                 break;
 
             case "EditGame":
+                gameService.editGame(commandParts, userService.getLoggedUser());
+                break;
+
+            case "DeleteGame":
+                deleteGame(commandParts);
                 break;
 
             case "Stop":
@@ -77,6 +83,17 @@ public class ApplicationRunner implements CommandLineRunner {
         }
     }
 
+    private void deleteGame(String[] commandParts) {
+        try {
+            long id = Long.parseLong(commandParts[1]);
+            if (id <= 0) {
+                throw new IllegalArgumentException();
+            }
+            gameService.deleteGame(id, userService.getLoggedUser());
+        } catch (IllegalArgumentException e) {
+            System.err.println("Invalid type of id!");
+        }
+    }
     private void addGame(String[] commandParts) {
         User loggedUser = userService.getLoggedUser();
         Game game = new Game(

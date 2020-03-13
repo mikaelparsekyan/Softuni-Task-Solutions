@@ -1,4 +1,4 @@
-package com.example.project.exceptions;
+package com.example.project.exceptions.user;
 
 public class UserNotLoggedException extends Exception{
     public UserNotLoggedException() {
