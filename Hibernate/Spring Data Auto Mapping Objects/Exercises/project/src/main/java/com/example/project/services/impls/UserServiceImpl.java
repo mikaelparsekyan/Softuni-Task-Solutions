@@ -6,10 +6,13 @@ import com.example.project.data.entities.User;
 import com.example.project.data.enums.UserRole;
 import com.example.project.data.repositories.UserRepository;
 import com.example.project.exceptions.user.LogoutException;
+import com.example.project.exceptions.user.UnsupportedLoginOperation;
 import com.example.project.exceptions.user.UserLoginException;
 import com.example.project.exceptions.user.UserNotExistException;
 import com.example.project.services.UserService;
 import com.example.project.validator.ValidationUtil;
+import lombok.Getter;
+import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -23,6 +26,8 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final ValidationUtil validationUtil;
 
+    @Getter
+    @Setter
     private User loggedUser;
 
     @Autowired
@@ -30,6 +35,8 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.validationUtil = validationUtil;
+
+        this.loggedUser = null;
     }
 
     @Override
@@ -63,16 +70,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void loginUser(UserLoginDto userDto) {
-        loggedUser = userRepository.findUserByEmail(userDto.getEmail());
-
+        User userToLogin = userRepository.findUserByEmail(userDto.getEmail());
         try {
-            if (loggedUser == null) {
+            if (this.getLoggedUser() != null) {
+                throw new UnsupportedLoginOperation();
+            }
+            if (userToLogin == null) {
                 throw new UserNotExistException();
-            } else if (!loggedUser.getPassword().equals(userDto.getPassword())) {
+            } else if (!userToLogin.getPassword().equals(userDto.getPassword())) {
                 throw new UserLoginException();
             }
-            System.out.printf("Successfully logged in %s%n", loggedUser.getFullName());
-        } catch (UserLoginException | UserNotExistException e) {
+            this.setLoggedUser(userToLogin);
+            System.out.printf("Successfully logged in %s%n", getLoggedUser().getFullName());
+        } catch (UserLoginException | UserNotExistException |
+                UnsupportedLoginOperation e) {
             System.out.println(e.getMessage());
         }
     }
@@ -91,8 +102,4 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Override
-    public User getLoggedUser() {
-        return this.loggedUser;
-    }
 }

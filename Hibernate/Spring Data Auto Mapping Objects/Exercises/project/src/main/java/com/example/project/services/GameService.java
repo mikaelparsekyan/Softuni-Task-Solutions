@@ -12,4 +12,10 @@ public interface GameService {
     void editGame(String[] lineInput, User loggedUser);
 
     void deleteGame(long id, User loggedUser);
+
+    void printAllGames();
+
+    void printGameDetailByTitle(String title);
+
+    void printAllOwnedGames(User loggedUser);
 }

@@ -91,7 +91,7 @@ public class GameServiceImpl implements GameService {
                 addValueToGame(valueName, value, game);
             }
             gameRepository.saveAndFlush(game);
-            System.out.printf("Successfully updated game: %s%n", game.getTitle());
+            System.out.printf("Edited %s%n", game.getTitle());
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid id!");
         } catch (GameNotExistsException | UserNotAdminException
@@ -158,6 +158,49 @@ public class GameServiceImpl implements GameService {
             gameRepository.delete(gameToDelete);
             System.out.printf("Deleted %s%n", gameToDelete.getTitle());
         } catch (GameNotExistsException | UserNotAdminException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void printAllGames() {
+        List<Game> games = gameRepository.findAll();
+        if (games == null) {
+            System.out.println("There aren't any games!");
+            return;
+        }
+        for (Game game : games) {
+            System.out.printf("%s %.2f%n", game.getTitle(), game.getPrice().floatValue());
+        }
+    }
+
+    @Override
+    public void printGameDetailByTitle(String title) {
+        Game game = gameRepository.findGameByTitle(title);
+        try {
+            if (game == null) {
+                throw new GameNotExistsException();
+            }
+            System.out.println(game.toString());
+
+        } catch (GameNotExistsException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void printAllOwnedGames(User loggedUser) {
+        List<Game> games = gameRepository.getGamesByUsers(loggedUser);
+        try {
+            if (loggedUser == null) {
+                throw new UserNotLoggedException();
+            }
+            if (games == null) {
+                throw new GameNotExistsException();
+            }
+
+            games.forEach(game -> System.out.println(game.getTitle()));
+        } catch (GameNotExistsException | UserNotLoggedException e) {
             System.out.println(e.getMessage());
         }
     }

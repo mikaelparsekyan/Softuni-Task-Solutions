@@ -73,8 +73,20 @@ public class ApplicationRunner implements CommandLineRunner {
                 deleteGame(commandParts);
                 break;
 
+            case "AllGames":
+                gameService.printAllGames();
+                break;
+
+            case "DetailGame":
+                gameService.printGameDetailByTitle(commandParts[1]);
+                break;
+
             case "Stop":
                 System.exit(0);
+                break;
+
+            case "OwnedGames":
+                gameService.printAllOwnedGames(userService.getLoggedUser());
                 break;
 
             default:
@@ -94,6 +106,7 @@ public class ApplicationRunner implements CommandLineRunner {
             System.err.println("Invalid type of id!");
         }
     }
+
     private void addGame(String[] commandParts) {
         User loggedUser = userService.getLoggedUser();
         Game game = new Game(

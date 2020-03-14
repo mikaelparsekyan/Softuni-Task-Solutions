@@ -12,6 +12,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.Set;
 
@@ -69,6 +70,15 @@ public class Game extends BaseEntity {
 
     @ManyToMany(mappedBy = "games", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Order> orders;
+
+    @Override
+    public String toString() {
+        return "Title: " + this.getTitle() + System.lineSeparator() +
+                "Price: " + String.format("%.2f", getPrice().floatValue()) + System.lineSeparator() +
+                "Description: " + this.getDescription() + System.lineSeparator() +
+                "Release date: " + this.getReleaseDate()
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    }
 
     @Override
     public boolean equals(Object o) {
