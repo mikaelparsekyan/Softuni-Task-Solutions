@@ -1,5 +1,7 @@
 package com.example.project.services;
 
+import com.example.project.data.dtos.game.AddGameToShoppingCartDto;
+import com.example.project.data.dtos.game.RemoveGameFromShoppingCartDto;
 import com.example.project.data.dtos.user.UserLoginDto;
 import com.example.project.data.dtos.user.UserRegisterDto;
 import com.example.project.data.entities.User;
@@ -15,9 +17,9 @@ public interface UserService {
 
     User getLoggedUser();
 
-    void addItemToShoppingCart(String gameTitle);
+    void addGameToShoppingCart(AddGameToShoppingCartDto addGameDto);
 
-    void removeItemFromShoppingCart(String gameTitle);
+    void removeGameFromShoppingCart(RemoveGameFromShoppingCartDto removeGameDto);
 
-    void buyAllItemsInTheShoppingCart();
+    void buyAllGamesInTheShoppingCart();
 }

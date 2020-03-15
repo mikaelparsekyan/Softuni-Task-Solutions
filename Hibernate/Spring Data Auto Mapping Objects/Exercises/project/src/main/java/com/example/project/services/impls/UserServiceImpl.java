@@ -1,5 +1,7 @@
 package com.example.project.services.impls;
 
+import com.example.project.data.dtos.game.AddGameToShoppingCartDto;
+import com.example.project.data.dtos.game.RemoveGameFromShoppingCartDto;
 import com.example.project.data.dtos.user.UserLoginDto;
 import com.example.project.data.dtos.user.UserRegisterDto;
 import com.example.project.data.entities.Game;
@@ -26,7 +28,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -115,14 +116,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void addItemToShoppingCart(String gameTitle) {
+    public void addGameToShoppingCart(AddGameToShoppingCartDto addGameDto) {
         try {
-            Game game = gameRepository.findGameByTitle(gameTitle);
+            Game game = gameRepository.findGameByTitle(addGameDto.getTitle());
             User loggedUser = getLoggedUser();
 
             List<Game> loggedUserGames = gameRepository.getGamesByUsers(loggedUser);
 
             System.out.println();
+            if (loggedUser == null) {
+                throw new UserNotLoggedException();
+            }
             if (game == null) {
                 throw new GameNotExistsException();
             }
@@ -135,16 +139,20 @@ public class UserServiceImpl implements UserService {
             loggedUser.getShoppingCart().add(game);
             System.out.printf("%s added to cart. %n", game.getTitle());
         } catch (GameNotExistsException | GameAlreadyBoughtException |
-                GameAlreadyInCartException e) {
+                GameAlreadyInCartException | UserNotLoggedException e) {
             System.out.println(e.getMessage());
         }
     }
 
     @Override
-    public void removeItemFromShoppingCart(String gameTitle) {
+    public void removeGameFromShoppingCart(RemoveGameFromShoppingCartDto removeGameDto) {
         try {
-            Game game = gameRepository.findGameByTitle(gameTitle);
+            Game game = gameRepository.findGameByTitle(removeGameDto.getTitle());
             User loggedUser = getLoggedUser();
+
+            if (loggedUser == null) {
+                throw new UserNotLoggedException();
+            }
 
             if (game == null) {
                 throw new GameNotExistsException();
@@ -156,17 +164,21 @@ public class UserServiceImpl implements UserService {
 
             loggedUser.getShoppingCart().remove(game);
             System.out.printf("%s removed from cart. %n", game.getTitle());
-        } catch (GameNotExistsException | GameNotInCartException e) {
+        } catch (GameNotExistsException | GameNotInCartException |
+                UserNotLoggedException e) {
             System.out.println(e.getMessage());
         }
     }
 
     @Override
-    public void buyAllItemsInTheShoppingCart() {
+    public void buyAllGamesInTheShoppingCart() {
         User loggedUser = getLoggedUser();
 
-        List<Game> shoppingCart = loggedUser.getShoppingCart();
         try {
+            if (loggedUser == null) {
+                throw new UserNotLoggedException();
+            }
+            List<Game> shoppingCart = loggedUser.getShoppingCart();
 
             if (shoppingCart.isEmpty()) {
                 throw new EmptyShoppingCartException();
@@ -184,7 +196,7 @@ public class UserServiceImpl implements UserService {
                 System.out.printf(" -%s%n", game.getTitle());
             }
             loggedUser.getShoppingCart().clear();
-        } catch (EmptyShoppingCartException e) {
+        } catch (EmptyShoppingCartException | UserNotLoggedException e) {
             System.out.println(e.getMessage());
         }
     }

@@ -1,5 +1,6 @@
 package com.example.project.services.impls;
 
+import com.example.project.data.dtos.game.DeleteGameDto;
 import com.example.project.data.dtos.game.EditGameDto;
 import com.example.project.data.entities.Game;
 import com.example.project.data.entities.User;
@@ -48,6 +49,9 @@ public class GameServiceImpl implements GameService {
             if (loggedUser == null) {
                 throw new UserNotLoggedException();
             }
+            if(game == null){
+                throw new GameNotExistsException();
+            }
             if (validationUtil.isValid(game)) {
                 if (loggedUser.getRole() == UserRole.ADMIN) {
                     gameRepository.saveAndFlush(game);
@@ -56,7 +60,8 @@ public class GameServiceImpl implements GameService {
                     throw new UserNotAdminException();
                 }
             }
-        } catch (UserNotAdminException | UserNotLoggedException e) {
+        } catch (UserNotAdminException | UserNotLoggedException |
+                GameNotExistsException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -146,9 +151,13 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void deleteGame(long id, User loggedUser) {
-        Game gameToDelete = gameRepository.findById(id);
+    public void deleteGame(DeleteGameDto deleteGameDto, User loggedUser) {
+        Game gameToDelete = gameRepository.findById(deleteGameDto.getId());
         try {
+            if (loggedUser == null) {
+                throw new UserNotLoggedException();
+            }
+
             if (gameToDelete == null) {
                 throw new GameNotExistsException();
             }
@@ -157,7 +166,8 @@ public class GameServiceImpl implements GameService {
             }
             gameRepository.delete(gameToDelete);
             System.out.printf("Deleted %s%n", gameToDelete.getTitle());
-        } catch (GameNotExistsException | UserNotAdminException e) {
+        } catch (GameNotExistsException | UserNotAdminException |
+                UserNotLoggedException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -178,6 +188,7 @@ public class GameServiceImpl implements GameService {
     public void printGameDetailByTitle(String title) {
         Game game = gameRepository.findGameByTitle(title);
         try {
+
             if (game == null) {
                 throw new GameNotExistsException();
             }

@@ -1,6 +1,9 @@
 package com.example.project.init;
 
+import com.example.project.data.dtos.game.AddGameToShoppingCartDto;
+import com.example.project.data.dtos.game.DeleteGameDto;
 import com.example.project.data.dtos.game.EditGameDto;
+import com.example.project.data.dtos.game.RemoveGameFromShoppingCartDto;
 import com.example.project.data.dtos.user.UserLoginDto;
 import com.example.project.data.dtos.user.UserRegisterDto;
 import com.example.project.data.entities.Game;
@@ -43,83 +46,102 @@ public class ApplicationRunner implements CommandLineRunner {
     }
 
     private void parseCommand(String[] commandParts) {
-        switch (commandParts[0]) {
-            case "RegisterUser":
-                if (commandParts[2].equals(commandParts[3])) {
-                    //register user if passwords match
-                    registerUser(commandParts);
-                } else {
-                    System.err.println("Passwords did not match!");
-                }
-                break;
+        try {
+            switch (commandParts[0].toLowerCase()) {
+                case "registeruser":
+                    if (commandParts[2].equals(commandParts[3])) {
+                        //register user if passwords match
+                        registerUser(commandParts);
+                    } else {
+                        System.err.println("Passwords did not match!");
+                    }
+                    break;
 
-            case "LoginUser":
-                loginUser(commandParts);
-                break;
+                case "loginuser":
+                    loginUser(commandParts);
+                    break;
 
-            case "Logout":
-                userService.logoutUser();
-                break;
+                case "logout":
+                    userService.logoutUser();
+                    break;
 
-            case "AddGame":
-                addGame(commandParts);
-                break;
+                case "addgame":
+                    addGame(commandParts);
+                    break;
 
-            case "EditGame":
-                gameService.editGame(commandParts, userService.getLoggedUser());
-                break;
+                case "editgame":
+                    gameService.editGame(commandParts, userService.getLoggedUser());
+                    break;
 
-            case "DeleteGame":
-                deleteGame(commandParts);
-                break;
+                case "deletegame":
+                    deleteGame(commandParts);
+                    break;
 
-            case "AllGames":
-                gameService.printAllGames();
-                break;
+                case "allgames":
+                    gameService.printAllGames();
+                    break;
 
-            case "DetailGame":
-                gameService.printGameDetailByTitle(commandParts[1]);
-                break;
+                case "detailgame":
+                    gameService.printGameDetailByTitle(commandParts[1]);
+                    break;
 
-            case "OwnedGames":
-                gameService.printAllOwnedGames(userService.getLoggedUser());
-                break;
+                case "ownedgames":
+                    gameService.printAllOwnedGames(userService.getLoggedUser());
+                    break;
 
-            case "AddItem":
-                userService.addItemToShoppingCart(commandParts[1]);
-                break;
+                case "additem":
+                    addGameToShoppingCart(commandParts);
+                    break;
 
-            case "RemoveItem":
-                userService.removeItemFromShoppingCart(commandParts[1]);
-                break;
+                case "removeitem":
+                    removeGameFromShoppingCart(commandParts);
+                    break;
 
-            case "BuyItem":
-                userService.buyAllItemsInTheShoppingCart();
-                break;
+                case "buyitem":
+                    userService.buyAllGamesInTheShoppingCart();
+                    break;
 
-            case "Stop":
-                System.exit(0);
-                break;
+                case "stop":
+                    System.exit(0);
+                    break;
 
-            default:
-                System.out.println("Unexpected command.");
-                break;
+                default:
+                    System.out.println("Unexpected command.");
+                    break;
+            }
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Invalid number of arguments for the current command!");
         }
     }
 
-    private void deleteGame(String[] commandParts) {
+    private void removeGameFromShoppingCart(String[] commandParts) throws ArrayIndexOutOfBoundsException{
+        RemoveGameFromShoppingCartDto gameDto =
+                new RemoveGameFromShoppingCartDto(commandParts[1]);
+
+        userService.removeGameFromShoppingCart(gameDto);
+    }
+
+    private void addGameToShoppingCart(String[] commandParts) throws ArrayIndexOutOfBoundsException{
+        AddGameToShoppingCartDto gameDto =
+                new AddGameToShoppingCartDto(commandParts[1]);
+
+        userService.addGameToShoppingCart(gameDto);
+    }
+
+    private void deleteGame(String[] commandParts) throws ArrayIndexOutOfBoundsException{
         try {
             long id = Long.parseLong(commandParts[1]);
             if (id <= 0) {
                 throw new IllegalArgumentException();
             }
-            gameService.deleteGame(id, userService.getLoggedUser());
+            DeleteGameDto deleteGameDto = new DeleteGameDto(id);
+            gameService.deleteGame(deleteGameDto, userService.getLoggedUser());
         } catch (IllegalArgumentException e) {
             System.err.println("Invalid type of id!");
         }
     }
 
-    private void addGame(String[] commandParts) {
+    private void addGame(String[] commandParts) throws ArrayIndexOutOfBoundsException{
         User loggedUser = userService.getLoggedUser();
         Game game = new Game(
                 commandParts[1],
@@ -134,7 +156,7 @@ public class ApplicationRunner implements CommandLineRunner {
         gameService.addGame(game, loggedUser);
     }
 
-    private void loginUser(String[] commandParts) {
+    private void loginUser(String[] commandParts) throws ArrayIndexOutOfBoundsException{
         UserLoginDto user = new UserLoginDto(
                 commandParts[1],
                 commandParts[2]
@@ -142,7 +164,7 @@ public class ApplicationRunner implements CommandLineRunner {
         userService.loginUser(user);
     }
 
-    private void registerUser(String[] commandParts) {
+    private void registerUser(String[] commandParts) throws ArrayIndexOutOfBoundsException{
         UserRegisterDto user = new UserRegisterDto(
                 commandParts[1],
                 commandParts[2],
