@@ -2,13 +2,18 @@ package com.example.project.services.impls;
 
 import com.example.project.data.dtos.user.UserLoginDto;
 import com.example.project.data.dtos.user.UserRegisterDto;
+import com.example.project.data.entities.Game;
+import com.example.project.data.entities.Order;
 import com.example.project.data.entities.User;
 import com.example.project.data.enums.UserRole;
+import com.example.project.data.repositories.GameRepository;
+import com.example.project.data.repositories.OrderRepository;
 import com.example.project.data.repositories.UserRepository;
-import com.example.project.exceptions.user.LogoutException;
-import com.example.project.exceptions.user.UnsupportedLoginOperation;
-import com.example.project.exceptions.user.UserLoginException;
-import com.example.project.exceptions.user.UserNotExistException;
+import com.example.project.exceptions.game.GameAlreadyBoughtException;
+import com.example.project.exceptions.game.GameAlreadyInCartException;
+import com.example.project.exceptions.game.GameNotExistsException;
+import com.example.project.exceptions.game.GameNotInCartException;
+import com.example.project.exceptions.user.*;
 import com.example.project.services.UserService;
 import com.example.project.validator.ValidationUtil;
 import lombok.Getter;
@@ -19,10 +24,15 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final GameRepository gameRepository;
+    private final OrderRepository orderRepository;
     private final ModelMapper modelMapper;
     private final ValidationUtil validationUtil;
 
@@ -31,8 +41,10 @@ public class UserServiceImpl implements UserService {
     private User loggedUser;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, ValidationUtil validationUtil) {
+    public UserServiceImpl(UserRepository userRepository, GameRepository gameRepository, OrderRepository orderRepository, ModelMapper modelMapper, ValidationUtil validationUtil) {
         this.userRepository = userRepository;
+        this.gameRepository = gameRepository;
+        this.orderRepository = orderRepository;
         this.modelMapper = modelMapper;
         this.validationUtil = validationUtil;
 
@@ -102,4 +114,78 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public void addItemToShoppingCart(String gameTitle) {
+        try {
+            Game game = gameRepository.findGameByTitle(gameTitle);
+            User loggedUser = getLoggedUser();
+
+            List<Game> loggedUserGames = gameRepository.getGamesByUsers(loggedUser);
+
+            System.out.println();
+            if (game == null) {
+                throw new GameNotExistsException();
+            }
+            if (loggedUserGames.contains(game)) {
+                throw new GameAlreadyBoughtException();
+            }
+            if (loggedUser.getShoppingCart().contains(game)) {
+                throw new GameAlreadyInCartException();
+            }
+            loggedUser.getShoppingCart().add(game);
+            System.out.printf("%s added to cart. %n", game.getTitle());
+        } catch (GameNotExistsException | GameAlreadyBoughtException |
+                GameAlreadyInCartException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void removeItemFromShoppingCart(String gameTitle) {
+        try {
+            Game game = gameRepository.findGameByTitle(gameTitle);
+            User loggedUser = getLoggedUser();
+
+            if (game == null) {
+                throw new GameNotExistsException();
+            }
+
+            if (!loggedUser.getShoppingCart().contains(game)) {
+                throw new GameNotInCartException();
+            }
+
+            loggedUser.getShoppingCart().remove(game);
+            System.out.printf("%s removed from cart. %n", game.getTitle());
+        } catch (GameNotExistsException | GameNotInCartException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void buyAllItemsInTheShoppingCart() {
+        User loggedUser = getLoggedUser();
+
+        List<Game> shoppingCart = loggedUser.getShoppingCart();
+        try {
+
+            if (shoppingCart.isEmpty()) {
+                throw new EmptyShoppingCartException();
+            }
+            Order order = new Order();
+            order.setBuyer(loggedUser);
+            order.setGames(new HashSet<>(shoppingCart));
+
+            loggedUser.getGames().addAll(shoppingCart);
+            orderRepository.saveAndFlush(order);
+            userRepository.saveAndFlush(loggedUser);
+
+            System.out.println("Successfully bought games:");
+            for (Game game : shoppingCart) {
+                System.out.printf(" -%s%n", game.getTitle());
+            }
+            loggedUser.getShoppingCart().clear();
+        } catch (EmptyShoppingCartException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

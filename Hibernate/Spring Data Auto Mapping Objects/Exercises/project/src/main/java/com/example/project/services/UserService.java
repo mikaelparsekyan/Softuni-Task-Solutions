@@ -14,4 +14,10 @@ public interface UserService {
     void logoutUser();
 
     User getLoggedUser();
+
+    void addItemToShoppingCart(String gameTitle);
+
+    void removeItemFromShoppingCart(String gameTitle);
+
+    void buyAllItemsInTheShoppingCart();
 }

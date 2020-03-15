@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "users")
@@ -42,14 +42,33 @@ public class User extends BaseEntity {
     @Column(name = "role")
     private UserRole role;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_games",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "game_id", referencedColumnName = "id"))
-    private Set<Game> games;
+    private Set<Game> games = new HashSet<>();
 
 
-    @OneToMany(mappedBy = "buyer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "buyer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Order> orders;
 
+    @Transient
+    private List<Game> shoppingCart = new LinkedList<>();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        User user = (User) o;
+        return Objects.equals(email, user.email) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(fullName, user.fullName) &&
+                role == user.role;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), email, password, fullName, role);
+    }
 }

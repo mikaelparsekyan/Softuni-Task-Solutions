@@ -81,12 +81,24 @@ public class ApplicationRunner implements CommandLineRunner {
                 gameService.printGameDetailByTitle(commandParts[1]);
                 break;
 
-            case "Stop":
-                System.exit(0);
-                break;
-
             case "OwnedGames":
                 gameService.printAllOwnedGames(userService.getLoggedUser());
+                break;
+
+            case "AddItem":
+                userService.addItemToShoppingCart(commandParts[1]);
+                break;
+
+            case "RemoveItem":
+                userService.removeItemFromShoppingCart(commandParts[1]);
+                break;
+
+            case "BuyItem":
+                userService.buyAllItemsInTheShoppingCart();
+                break;
+
+            case "Stop":
+                System.exit(0);
                 break;
 
             default:
