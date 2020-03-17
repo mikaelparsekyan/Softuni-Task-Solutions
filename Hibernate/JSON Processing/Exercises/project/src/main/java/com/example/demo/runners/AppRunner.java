@@ -1,23 +1,36 @@
 package com.example.demo.runners;
 
-import com.example.demo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.service.api.CategoryService;
+import com.example.demo.service.api.ProductService;
+import com.example.demo.service.api.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Component
 public class AppRunner implements CommandLineRunner {
     private final UserService userService;
+    private final CategoryService categoryService;
+    private final ProductService productService;
 
-    public AppRunner(UserService userService) {
+    public AppRunner(UserService userService, CategoryService categoryService, ProductService productService) {
         this.userService = userService;
+        this.categoryService = categoryService;
+        this.productService = productService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        seedDatabase();
+
+        productService.exportAllProductsInRange(new BigDecimal(500),
+                new BigDecimal(1000));
+    }
+
+    private void seedDatabase() {
         userService.seedUsersToDatabase();
+        categoryService.seedCategoriesToDatabase();
+        productService.seedProductsToDatabase();
     }
 }

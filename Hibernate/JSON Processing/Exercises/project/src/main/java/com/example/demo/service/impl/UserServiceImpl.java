@@ -2,47 +2,48 @@ package com.example.demo.service.impl;
 
 import com.example.demo.data.dao.UserRepository;
 import com.example.demo.data.entiites.User;
-import com.example.demo.service.UserService;
+import com.example.demo.service.api.UserService;
+import com.example.demo.util.FileUtil;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.*;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class UserServiceImpl implements UserService {
+    @Autowired
     private final UserRepository userRepository;
+    @Autowired
+    private final Gson gson;
 
-    private Gson gson;
-
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, Gson gson) {
         this.userRepository = userRepository;
-
-        gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()
-                .setPrettyPrinting()
-                .create();
+        this.gson = gson;
     }
 
     @Override
     public void seedUsersToDatabase() {
-        File file = new File("src/main/resources/files/users.json");
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            StringBuilder fileBuilder = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                fileBuilder.append(line);
-            }
-            List<User> users = gson.fromJson(fileBuilder.toString(), new TypeToken<List<User>>() {
-            }.getType());
+        String fileText = FileUtil.readFile("src/main/resources/files/users.json");
 
+        List<User> users = gson.fromJson(fileText,
+                new TypeToken<List<User>>() {
+                }.getType());
+
+        if (users != null) {
             users.forEach(userRepository::saveAndFlush);
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+    }
+
+    @Override
+    public User getRandomUser() {
+        Random random = new Random();
+        int usersCount = userRepository.getAllUsersCount();
+
+        long userId = random.nextInt(usersCount) + 1;
+
+        return userRepository.findById(userId);
     }
 }

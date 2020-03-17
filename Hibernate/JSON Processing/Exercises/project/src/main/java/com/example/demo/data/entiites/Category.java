@@ -5,11 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -26,9 +27,6 @@ public class Category extends BaseEntity {
     @Column
     private String name;
 
-    @ManyToMany
-    @JoinTable(name = "products_categories",
-            joinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
-    private Set<Product> products;
+    @ManyToMany(mappedBy = "categories", fetch = FetchType.EAGER)
+    private Set<Product> products = new HashSet<>();
 }
