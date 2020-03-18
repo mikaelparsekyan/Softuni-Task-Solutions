@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.constants.FileImportPaths;
 import com.example.demo.data.dao.CategoryRepository;
 import com.example.demo.data.entiites.Category;
 import com.example.demo.service.api.CategoryService;
@@ -26,7 +27,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void seedCategoriesToDatabase() {
         String fileText = FileUtil
-                .readFile("src/main/resources/files/categories.json");
+                .readFile(FileImportPaths.CATEGORIES_IMPORT_FILE_PATH);
         List<Category> categories = gson.fromJson(fileText,
                 new TypeToken<List<Category>>() {
                 }.getType());

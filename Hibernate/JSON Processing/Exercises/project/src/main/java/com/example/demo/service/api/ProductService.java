@@ -9,4 +9,5 @@ public interface ProductService {
     void seedProductsToDatabase();
 
     void exportAllProductsInRange(BigDecimal min, BigDecimal max);
+
 }

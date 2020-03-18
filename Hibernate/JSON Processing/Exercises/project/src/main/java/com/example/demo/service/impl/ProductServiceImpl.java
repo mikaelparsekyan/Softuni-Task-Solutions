@@ -1,5 +1,7 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.constants.FileExportPaths;
+import com.example.demo.constants.FileImportPaths;
 import com.example.demo.data.dao.ProductRepository;
 import com.example.demo.data.entiites.Category;
 import com.example.demo.data.entiites.Product;
@@ -16,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -45,7 +48,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void seedProductsToDatabase() {
-        String fileText = FileUtil.readFile("src/main/resources/files/products.json");
+        String fileText = FileUtil
+                .readFile(FileImportPaths.PRODUCTS_IMPORT_FILE_PATH);
         List<Product> products = gson.fromJson(fileText,
                 new TypeToken<List<Product>>() {
                 }.getType());
@@ -78,14 +82,15 @@ public class ProductServiceImpl implements ProductService {
 
                     dto.setSeller((currentSeller.getFirstName() == null ? "" :
                             currentSeller.getFirstName() + " ") +
-                                    currentSeller.getLastName());
+                            currentSeller.getLastName());
 
                     return dto;
 
-                }).collect(Collectors.toList());
+                }).sorted(Comparator.comparing(ProductInRangeExportDto::getPrice))
+                .collect(Collectors.toList());
 
 
-        String fileOutputPath = "src/main/resources/export/products-in-range.json";
+        String fileOutputPath = FileExportPaths.PRODUCTS_IN_RANGE_EXPORT_FILE_PATH;
 
         FileUtil.write(fileOutputPath, gson.toJson(products));
     }
