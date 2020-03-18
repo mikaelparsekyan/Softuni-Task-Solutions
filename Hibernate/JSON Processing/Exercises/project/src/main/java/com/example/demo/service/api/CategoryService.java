@@ -10,4 +10,6 @@ public interface CategoryService {
     void seedCategoriesToDatabase();
 
     Set<Category> getRandomCategories();
+
+    void exportAllCategoriesByProductCount();
 }
