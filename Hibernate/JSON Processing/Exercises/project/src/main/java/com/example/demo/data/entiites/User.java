@@ -1,6 +1,7 @@
 package com.example.demo.data.entiites;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import com.sun.istack.NotNull;
 import lombok.*;
 
@@ -15,9 +16,11 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 public class User extends BaseEntity {
+    @Expose
     @Column
     private int age;
 
+    @Expose
     @Column(name = "first_name")
     private String firstName;
 

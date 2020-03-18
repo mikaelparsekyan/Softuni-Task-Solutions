@@ -3,6 +3,8 @@ package com.example.demo.service.impl;
 import com.example.demo.data.dao.ProductRepository;
 import com.example.demo.data.entiites.Category;
 import com.example.demo.data.entiites.Product;
+import com.example.demo.data.entiites.User;
+import com.example.demo.dtos.product.ProductInRangeExportDto;
 import com.example.demo.service.api.CategoryService;
 import com.example.demo.service.api.ProductService;
 import com.example.demo.service.api.UserService;
@@ -14,8 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -62,8 +66,24 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void exportAllProductsInRange(BigDecimal min, BigDecimal max) {
-        List<Product> products = productRepository
-                .getProductsByPriceIsBetween(min, max);
+        List<ProductInRangeExportDto> products = productRepository
+                .getProductsByPriceIsBetween(min, max)
+                .stream()
+                .map(product -> {
+
+                    ProductInRangeExportDto dto = modelMapper.map(
+                            product, ProductInRangeExportDto.class);
+
+                    User currentSeller = product.getSeller();
+
+                    dto.setSeller((currentSeller.getFirstName() == null ? "" :
+                            currentSeller.getFirstName() + " ") +
+                                    currentSeller.getLastName());
+
+                    return dto;
+
+                }).collect(Collectors.toList());
+
 
         String fileOutputPath = "src/main/resources/export/products-in-range.json";
 

@@ -22,7 +22,7 @@ public class AppRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        seedDatabase();
+        //seedDatabase();
 
         productService.exportAllProductsInRange(new BigDecimal(500),
                 new BigDecimal(1000));

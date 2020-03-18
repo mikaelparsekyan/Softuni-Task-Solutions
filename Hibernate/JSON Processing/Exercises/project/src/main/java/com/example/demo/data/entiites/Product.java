@@ -65,4 +65,5 @@ public class Product extends BaseEntity {
     public int hashCode() {
         return Objects.hash(super.hashCode(), name, price, buyer, seller);
     }
+
 }
