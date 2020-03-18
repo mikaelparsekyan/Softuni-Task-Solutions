@@ -14,4 +14,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     User findById(long id);
 
+    @Query(value = "SELECT COUNT(u.id) FROM User u JOIN u.products p " +
+            "WHERE p.buyer <> NULL")
+    int getAllUsersCountWithSoldProducts();
 }

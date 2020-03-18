@@ -6,6 +6,8 @@ import com.example.demo.data.dao.UserRepository;
 import com.example.demo.data.entiites.Product;
 import com.example.demo.data.entiites.User;
 import com.example.demo.dtos.product.SoldProductExportDto;
+import com.example.demo.dtos.user.UserCountDto;
+import com.example.demo.dtos.user.UserProductsExportDto;
 import com.example.demo.dtos.user.UserWithSoldProductsExportDto;
 import com.example.demo.service.api.UserService;
 import com.example.demo.util.FileUtil;
@@ -59,7 +61,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void exportAllUsersWithSoldProducts() {
+    public void exportAllUsersWithSuccessfullySoldProducts() {
+        List<UserProductsExportDto> users = userRepository
+                .findAll()
+                .stream()
+                .map(user -> modelMapper.map(user, UserProductsExportDto.class))
+                .collect(Collectors.toList());
+
+        FileUtil.write(FileExportPaths.USERS_PRODUCTS_FILE_PATH, gson.toJson(users));
+    }
+
+    @Override
+    public void exportAllUsersAndProducts() {
         List<UserWithSoldProductsExportDto> users = userRepository
                 .findAll()
                 .stream()
@@ -71,8 +84,11 @@ public class UserServiceImpl implements UserService {
                 .map(this::mapUsers)
                 .collect(Collectors.toList());
 
-        FileUtil.write(FileExportPaths.USERS_WITH_SOLD_PRODUCTS_FILE_PATH,
-                gson.toJson(users));
+        UserCountDto userCountDto = new UserCountDto();
+        userCountDto.setUserCount(userRepository.getAllUsersCountWithSoldProducts());
+//
+//        FileUtil.write(FileExportPaths.USERS_WITH_SOLD_PRODUCTS_FILE_PATH,
+//                gson.toJson());
     }
 
     private UserWithSoldProductsExportDto mapUsers(User user) {

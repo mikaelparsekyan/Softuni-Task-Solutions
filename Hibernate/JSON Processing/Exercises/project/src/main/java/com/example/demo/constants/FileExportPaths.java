@@ -9,4 +9,8 @@ public class FileExportPaths {
 
     public static final String CATEGORY_EXPORT_FILE_PATH =
             "src/main/resources/export/categories-by-products.json";
+
+
+    public static final String USERS_PRODUCTS_FILE_PATH =
+            "src/main/resources/export/users-and-products.json";
 }

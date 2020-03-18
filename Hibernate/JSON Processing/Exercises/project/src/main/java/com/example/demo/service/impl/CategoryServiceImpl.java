@@ -63,28 +63,32 @@ public class CategoryServiceImpl implements CategoryService {
         List<CategoryExportDto> categories = categoryRepository
                 .findAll()
                 .stream()
-                .map(category -> {
-                    CategoryExportDto dto = mapper
-                            .map(category, CategoryExportDto.class);
-
-                    dto.setProductsCount(categoryRepository
-                            .getAllProductsCountByCategory(category.getId()));
-
-                    dto.setAveragePrice(new BigDecimal(
-                            String.format("%.6f", categoryRepository
-                                    .getAllProductAveragePriceByCategory(
-                                            category.getId()))));
-
-                    dto.setTotalRevenue(new BigDecimal(
-                            String.format("%.6f", categoryRepository
-                                    .getAllProductRevenuePriceByCategory(
-                                            category.getId()))));
-
-                    return dto;
-                })
+                .map(this::mapCategoryFields)
+                .sorted((c1, c2) -> Integer.compare(c2.getProductsCount(),
+                        c1.getProductsCount()))
                 .collect(Collectors.toList());
 
         FileUtil.write(FileExportPaths.CATEGORY_EXPORT_FILE_PATH,
                 gson.toJson(categories));
+    }
+
+    private CategoryExportDto mapCategoryFields(Category category) {
+        CategoryExportDto dto = mapper
+                .map(category, CategoryExportDto.class);
+
+        dto.setProductsCount(categoryRepository
+                .getAllProductsCountByCategory(category.getId()));
+
+        dto.setAveragePrice(new BigDecimal(
+                String.format("%.6f", categoryRepository
+                        .getAllProductAveragePriceByCategory(
+                                category.getId()))));
+
+        dto.setTotalRevenue(new BigDecimal(
+                String.format("%.6f", categoryRepository
+                        .getAllProductRevenuePriceByCategory(
+                                category.getId()))));
+
+        return dto;
     }
 }

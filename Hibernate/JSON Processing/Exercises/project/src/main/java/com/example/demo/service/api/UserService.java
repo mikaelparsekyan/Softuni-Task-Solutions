@@ -10,5 +10,7 @@ public interface UserService {
 
     User getRandomUser();
 
-    void exportAllUsersWithSoldProducts();
+    void exportAllUsersWithSuccessfullySoldProducts();
+
+    void exportAllUsersAndProducts();
 }

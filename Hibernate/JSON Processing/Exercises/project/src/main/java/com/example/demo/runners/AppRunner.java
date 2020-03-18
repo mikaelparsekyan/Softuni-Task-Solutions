@@ -26,8 +26,12 @@ public class AppRunner implements CommandLineRunner {
 
 //        productService.exportAllProductsInRange(new BigDecimal(500),
 //                new BigDecimal(1000));
-        //userService.exportAllUsersWithSoldProducts();
-        categoryService.exportAllCategoriesByProductCount();
+
+        //userService.exportAllUsersWithSuccessfullySoldProducts();
+
+        //categoryService.exportAllCategoriesByProductCount();
+
+        userService.exportAllUsersAndProducts();
     }
 
     private void seedDatabase() {
