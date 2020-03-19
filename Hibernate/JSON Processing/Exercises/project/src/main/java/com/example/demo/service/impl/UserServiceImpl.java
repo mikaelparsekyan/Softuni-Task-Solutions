@@ -91,7 +91,13 @@ public class UserServiceImpl implements UserService {
                 new ProductCountExportDto();
 
         productCountExportDto.setCount(getAllProductsCountByUser(user));
-        productCountExportDto.getProducts().addAll(user.getProducts());
+
+        productCountExportDto.getProducts()
+                .addAll(user.getProducts()
+                        .stream()
+                        .sorted((p1, p2) ->
+                                p2.getPrice().compareTo(p1.getPrice()))
+                        .collect(Collectors.toList()));
 
         userDto.setDto(productCountExportDto);
 
