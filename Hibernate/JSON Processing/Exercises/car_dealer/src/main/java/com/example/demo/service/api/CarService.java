@@ -4,4 +4,5 @@ import org.springframework.stereotype.Service;
 
 @Service("carService")
 public interface CarService {
+    void seedCarsToDatabase();
 }
