@@ -1,6 +1,7 @@
 package com.example.demo.dtos.user;
 
 import com.example.demo.data.entiites.Product;
+import com.example.demo.dtos.product.ProductCountExportDto;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
@@ -25,5 +26,5 @@ public class UserProductsExportDto {
 
     @Expose
     @SerializedName("soldProducts")
-    private List<Product> products;
+    private ProductCountExportDto dto;
 }

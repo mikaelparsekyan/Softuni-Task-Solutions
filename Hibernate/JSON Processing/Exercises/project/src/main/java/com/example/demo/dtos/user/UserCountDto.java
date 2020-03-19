@@ -14,7 +14,7 @@ import java.util.List;
 public class UserCountDto {
 
     @Expose
-    private int userCount;
+    private long userCount;
 
     @Expose
     private List<UserProductsExportDto> users = new ArrayList<>();
