@@ -7,6 +7,9 @@ import com.example.demo.data.dao.PartRepository;
 import com.example.demo.data.entities.Car;
 import com.example.demo.data.entities.Part;
 import com.example.demo.dtos.car.CarExportDto;
+import com.example.demo.dtos.car.CarWithIdExportDto;
+import com.example.demo.dtos.car.CarWithPartsDto;
+import com.example.demo.dtos.part.PartExportDto;
 import com.example.demo.service.api.CarService;
 import com.example.demo.service.api.PartService;
 import com.example.demo.util.FileUtil;
@@ -16,7 +19,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -70,7 +72,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void exportAllCarsByMake(String make) {
-        List<CarExportDto> cars = carRepository.findAll()
+        List<CarWithIdExportDto> cars = carRepository.findAll()
                 .stream()
                 .filter(car -> car.getMake().equals(make))
                 .sorted((c1, c2) -> {
@@ -83,11 +85,39 @@ public class CarServiceImpl implements CarService {
                 })
                 .map(car -> {
                     return modelMapper
-                            .map(car, CarExportDto.class);
+                            .map(car, CarWithIdExportDto.class);
 
                 })
                 .collect(Collectors.toList());
 
         FileUtil.write(FileExportPath.CARS_FILE_PATH, gson.toJson(cars));
+    }
+
+    @Override
+    public void exportAllCarsWithParts() {
+        List<CarWithPartsDto> carWithPartsList = carRepository.findAll()
+                .stream()
+                .map(car -> {
+                    CarWithPartsDto carWithPartsDto = new CarWithPartsDto();
+
+                    CarExportDto carWithIdExportDto = modelMapper
+                            .map(car, CarExportDto.class);
+
+                    List<PartExportDto> partExportDtos = car.getParts().stream()
+                            .map(part -> {
+                                PartExportDto dto = modelMapper.map(part, PartExportDto.class);
+                                dto.setPrice(Double.parseDouble(
+                                        String.format("%.2f",
+                                                part.getPrice().doubleValue())));
+                                return dto;
+                            }).collect(Collectors.toList());
+
+                    carWithPartsDto.setCar(carWithIdExportDto);
+                    carWithPartsDto.setParts(partExportDtos);
+                    return carWithPartsDto;
+                }).collect(Collectors.toList());
+
+        FileUtil.write(FileExportPath.CARS_WITH_PARTS_FILE_PATH,
+                gson.toJson(carWithPartsList));
     }
 }

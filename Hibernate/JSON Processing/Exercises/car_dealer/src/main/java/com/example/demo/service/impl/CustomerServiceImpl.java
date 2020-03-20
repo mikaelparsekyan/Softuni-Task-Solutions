@@ -3,9 +3,12 @@ package com.example.demo.service.impl;
 import com.example.demo.constant.FileExportPath;
 import com.example.demo.constant.FileImportPath;
 import com.example.demo.data.dao.CustomerRepository;
+import com.example.demo.data.entities.Car;
 import com.example.demo.data.entities.Customer;
+import com.example.demo.data.entities.Part;
 import com.example.demo.dtos.customer.CustomerImportDto;
 import com.example.demo.dtos.customer.CustomerOrderExportDto;
+import com.example.demo.dtos.customer.CustomerWithCarsCountDto;
 import com.example.demo.service.api.CustomerService;
 import com.example.demo.util.FileUtil;
 import com.google.gson.Gson;
@@ -18,6 +21,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service("customerService")
@@ -68,7 +72,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void exportAllCustomersOrderedByBirthdate() {
+    public void exportAllCustomersOrderedByBirthDate() {
         List<CustomerOrderExportDto> customers = customerRepository.findAll()
                 .stream()
                 .sorted((c1, c2) -> {
@@ -91,6 +95,47 @@ public class CustomerServiceImpl implements CustomerService {
                 }).collect(Collectors.toList());
 
         FileUtil.write(FileExportPath.ORDERED_CUSTOMERS_FILE_PATH,
+                gson.toJson(customers));
+    }
+
+    @Override
+    public void exportAllSalesByCustomer() {
+        List<CustomerWithCarsCountDto> customers = customerRepository.findAll()
+                .stream()
+                .map(customer -> {
+                    CustomerWithCarsCountDto dto = modelMapper
+                            .map(customer, CustomerWithCarsCountDto.class);
+
+                    Set<Car> customerCars = customerRepository
+                            .getAllCarsByCustomer(customer.getId());
+                    dto.setBoughtCars(customerCars.size());
+
+                    double totalPrice = 0;
+                    for (Car car : customerCars) {
+                        for (Part part : car.getParts()) {
+                            totalPrice += part.getPrice().doubleValue();
+                        }
+                    }
+
+
+                    dto.setSpentMoney(Double.parseDouble(
+                            String.format("%.2f", totalPrice)
+                    ));
+
+                    return dto;
+                })
+                .sorted((c1, c2) -> {
+                    int result = Double.compare(c2.getSpentMoney(),
+                            c1.getSpentMoney());
+
+                    if (result == 0) {
+                        result = Long.compare(c2.getBoughtCars(),
+                                c1.getBoughtCars());
+                    }
+                    return result;
+                })
+                .collect(Collectors.toList());
+        FileUtil.write(FileExportPath.TOTAL_SALES_BY_CUSTOMER_FILE_PATH,
                 gson.toJson(customers));
     }
 }

@@ -10,4 +10,6 @@ public interface CarService {
     void seedCarsToDatabase();
 
     void exportAllCarsByMake(String make);
+
+    void exportAllCarsWithParts();
 }

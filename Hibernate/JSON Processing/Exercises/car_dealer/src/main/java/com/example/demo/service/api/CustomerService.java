@@ -10,5 +10,7 @@ public interface CustomerService {
 
     void seedCustomersToDatabase();
 
-    void exportAllCustomersOrderedByBirthdate();
+    void exportAllCustomersOrderedByBirthDate();
+
+    void exportAllSalesByCustomer();
 }

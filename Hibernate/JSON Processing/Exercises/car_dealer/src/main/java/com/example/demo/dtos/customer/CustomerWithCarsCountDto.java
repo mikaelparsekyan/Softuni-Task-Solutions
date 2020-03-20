@@ -1,4 +1,4 @@
-package com.example.demo.dtos.car;
+package com.example.demo.dtos.customer;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -9,16 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CarExportDto {
+public class CustomerWithCarsCountDto {
     @Expose
-    @SerializedName("Make")
-    private String make;
+    @SerializedName("fullName")
+    private String name;
 
     @Expose
-    @SerializedName("Model")
-    private String model;
+    private long boughtCars;
 
     @Expose
-    @SerializedName("TravelledDistance")
-    private long travelledDistance;
+    private double spentMoney;
 }

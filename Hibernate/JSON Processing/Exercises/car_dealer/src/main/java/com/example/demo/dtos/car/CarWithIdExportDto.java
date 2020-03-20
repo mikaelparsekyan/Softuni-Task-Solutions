@@ -9,7 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CarExportDto {
+public class CarWithIdExportDto {
+    @Expose
+    @SerializedName("Id")
+    private long id;
+
     @Expose
     @SerializedName("Make")
     private String make;
@@ -21,4 +25,5 @@ public class CarExportDto {
     @Expose
     @SerializedName("TravelledDistance")
     private long travelledDistance;
+
 }
