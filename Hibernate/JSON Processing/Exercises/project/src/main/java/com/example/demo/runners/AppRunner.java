@@ -24,13 +24,17 @@ public class AppRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //seedDatabase();
 
-        productService.exportAllProductsInRange(new BigDecimal(500),
-                new BigDecimal(1000));
+        //Query 1
+        //productService.exportAllProductsInRange(new BigDecimal(500),
+        //new BigDecimal(1000));
 
+        //Query 2
         //userService.exportAllUsersWithSuccessfullySoldProducts();
 
+        //Query 3
         //categoryService.exportAllCategoriesByProductCount();
 
+        //Query 4
         //userService.exportAllUsersAndProducts();
     }
 
