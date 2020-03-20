@@ -8,4 +8,6 @@ public interface SupplierService {
     void seedSuppliersToDatabase();
 
     Supplier getRandomSupplier();
+
+    void exportAllSuppliersNotImportFromAbroad();
 }

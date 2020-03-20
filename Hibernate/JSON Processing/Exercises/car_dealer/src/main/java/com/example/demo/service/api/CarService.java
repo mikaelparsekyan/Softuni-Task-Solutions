@@ -8,4 +8,6 @@ public interface CarService {
     Car getRandomCar();
 
     void seedCarsToDatabase();
+
+    void exportAllCarsByMake(String make);
 }

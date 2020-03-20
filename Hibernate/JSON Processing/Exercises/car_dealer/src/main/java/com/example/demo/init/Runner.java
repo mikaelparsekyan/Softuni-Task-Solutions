@@ -29,7 +29,10 @@ public class Runner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         //seedDatabase();
-        customerService.exportAllCustomersOrderedByBirthdate();
+        //customerService.exportAllCustomersOrderedByBirthdate();
+        //carService.exportAllCarsByMake("Toyota");
+        //supplierService.exportAllSuppliersNotImportFromAbroad();
+
     }
 
     private void seedDatabase() {
