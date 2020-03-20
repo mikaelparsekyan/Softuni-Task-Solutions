@@ -5,7 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "customers")
@@ -23,7 +23,7 @@ public class Customer extends BaseEntity {
     @NonNull
     @NotNull
     @Column(name = "birth_date", nullable = false)
-    private LocalDate birthDate;
+    private LocalDateTime birthDate;
 
     @Expose
     @NonNull

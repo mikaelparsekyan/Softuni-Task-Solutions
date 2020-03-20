@@ -24,14 +24,14 @@ public class AppRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //seedDatabase();
 
-//        productService.exportAllProductsInRange(new BigDecimal(500),
-//                new BigDecimal(1000));
+        productService.exportAllProductsInRange(new BigDecimal(500),
+                new BigDecimal(1000));
 
         //userService.exportAllUsersWithSuccessfullySoldProducts();
 
         //categoryService.exportAllCategoriesByProductCount();
 
-        userService.exportAllUsersAndProducts();
+        //userService.exportAllUsersAndProducts();
     }
 
     private void seedDatabase() {
