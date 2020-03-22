@@ -1,6 +1,6 @@
-package com.example.demo.dtos;
+package com.example.demo.dtos.category;
 
-import com.example.demo.data.entiites.User;
+import com.example.demo.data.entiites.Category;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,11 +9,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "users")
+@XmlRootElement(name = "categories")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class UsersImportDto {
+public class CategoryImportDto {
 
-    @XmlElement(name = "user")
-    private List<User> users;
+    @XmlElement(name = "category")
+    private List<Category> categories;
 }

@@ -1,8 +1,12 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.constants.FileImportPaths;
 import com.example.demo.data.dao.CategoryRepository;
 import com.example.demo.data.entiites.Category;
+import com.example.demo.dtos.category.CategoryImportDto;
 import com.example.demo.service.api.CategoryService;
+import com.example.demo.util.FileUtil;
+import com.example.demo.util.XmlParser;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +29,13 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void seedCategoriesToDatabase() {
+        String fileXml = FileUtil.readFile(FileImportPaths.CATEGORIES_IMPORT_FILE_PATH);
 
+
+        CategoryImportDto categoryImportDto = XmlParser.deserialize(fileXml,
+                CategoryImportDto.class);
+
+        categoryImportDto.getCategories().forEach(categoryRepository::saveAndFlush);
     }
 
     @Override
