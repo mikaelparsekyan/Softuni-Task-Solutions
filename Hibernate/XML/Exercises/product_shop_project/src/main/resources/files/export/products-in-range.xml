@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<products>
+    <product name="Allopurinol" price="518.5" seller="Thompson"/>
+    <product name="Extra Strength Pain Reliever PM" price="542.72" seller="Sandra Riley"/>
+    <product name="Prednisone" price="550.72" seller="Betty Ward"/>
+    <product name="DAYWEAR PLUS MULTI PROTECTION TINTED MOISTURIZER" price="555.12" seller="Clarence Fowler"/>
+    <product name="Echinacea Quartz Gum Support" price="570.08" seller="Patricia Fuller"/>
+    <product name="Topiramate" price="578.77" seller="Marie Williamson"/>
+    <product name="Agaricus Equisetum Special Order" price="585.93" seller="Wanda Harris"/>
+    <product name="Ketorolac Tromethamine" price="608.18" seller="Thompson"/>
+    <product name="Pleo Ginkgo" price="613.65" seller="Stewart"/>
+    <product name="Glipizide" price="621.78" seller="Benjamin Henry"/>
+    <product name="AMARANTHUS PALMERI POLLEN" price="623.16" seller="Fox"/>
+    <product name="AVANDAMET" price="632.08" seller="Benjamin Henry"/>
+    <product name="Amitiza" price="666.58" seller="Marie Williamson"/>
+    <product name="ENBREL" price="673.97" seller="Thompson"/>
+    <product name="PRIMAXIN" price="686.66" seller="Amanda Frazier"/>
+    <product name="CLARINS Ever Matte SPF 15 - 105 Nude" price="696.06" seller="Thompson"/>
+    <product name="CALMING DIAPER RASH" price="700.92" seller="Diana Harvey"/>
+    <product name="Pleo Lat" price="720.08" seller="Fox"/>
+    <product name="Warfarin Sodium" price="770.05" seller="Fred Barnes"/>
+    <product name="Pollens - Weeds and Garden Plants, Nettle Urtica dioica" price="782.77" seller="Peterson"/>
+    <product name="Azithromycin" price="813.87" seller="Gloria Alexander"/>
+    <product name="IOPE SUPER VITAL" price="824.68" seller="Clarence Fowler"/>
+    <product name="Aquafresh" price="849.93" seller="Jeremy Woods"/>
+    <product name="Shopko Lip Treatment" price="861.42" seller="Patricia Fuller"/>
+    <product name="Levothyroxine Sodium" price="885.86" seller="Gary Stevens"/>
+    <product name="EPZICOM" price="895.65" seller="Gary Stevens"/>
+    <product name="Aspirin" price="925.45" seller="Amanda Frazier"/>
+    <product name="Care One Hemorrhoidal" price="932.18" seller="Benjamin Henry"/>
+    <product name="pain relief" price="938.23" seller="Diana Harvey"/>
+    <product name="Glipizide and Metformin Hydrochloride" price="953.6" seller="Schmidt"/>
+    <product name="Clearskin" price="968.59" seller="Jean Henry"/>
+</products>

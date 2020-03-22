@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
 public class CommandRunner implements CommandLineRunner {
     @Autowired
@@ -24,7 +26,10 @@ public class CommandRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        seedDatabase();
+        //seedDatabase();
+
+        productService.exportAllProductsByPriceInRange(new BigDecimal(500),
+                new BigDecimal(1000));
     }
 
     private void seedDatabase() {

@@ -36,6 +36,7 @@ public class User extends BaseEntity {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
+    @XmlTransient
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_friends",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
@@ -44,6 +45,11 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "seller", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Product> products = new HashSet<>();
+
+    @Override
+    public String toString() {
+        return "";
+    }
 
     @Override
     public boolean equals(Object o) {
