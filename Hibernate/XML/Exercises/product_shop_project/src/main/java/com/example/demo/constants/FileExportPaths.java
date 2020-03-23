@@ -10,7 +10,6 @@ public class FileExportPaths {
     public static final String CATEGORIES_EXPORT_FILE_PATH =
             "src/main/resources/files/export/categories-by-products.xml";
 
-
     public static final String USERS_PRODUCTS_FILE_PATH =
-            "src/main/resources/export/users-and-products.json";
+            "src/main/resources/files/export/users-and-products.xml";
 }

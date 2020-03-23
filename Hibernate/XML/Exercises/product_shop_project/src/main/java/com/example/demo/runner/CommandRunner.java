@@ -33,7 +33,9 @@ public class CommandRunner implements CommandLineRunner {
 
         //productService.exportSuccessfullySoldProducts();
 
-        categoryService.exportAllCategories();
+        //categoryService.exportAllCategories();
+
+        userService.exportAllUsersWithProducts();
     }
 
     private void seedDatabase() {

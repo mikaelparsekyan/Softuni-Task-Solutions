@@ -1,8 +1,13 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.constants.FileExportPaths;
 import com.example.demo.constants.FileImportPaths;
 import com.example.demo.data.dao.UserRepository;
 import com.example.demo.data.entiites.User;
+import com.example.demo.dtos.product.ProductsInfoWithAttributesDto;
+import com.example.demo.dtos.product.SoldProductsWithCountDto;
+import com.example.demo.dtos.user.UserAndProductsCountExportDto;
+import com.example.demo.dtos.user.UserWithProductsCountExportDto;
 import com.example.demo.dtos.user.UsersImportDto;
 import com.example.demo.service.api.UserService;
 import com.example.demo.util.FileUtil;
@@ -15,6 +20,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -76,5 +82,48 @@ public class UserServiceImpl implements UserService {
             users.add(userRepository.findById(userId));
         }
         return users;
+    }
+
+    @Override
+    public void exportAllUsersWithProducts() {
+        List<UserWithProductsCountExportDto> users = userRepository
+                .findAll()
+                .stream()
+                .filter(user -> user.getProducts()
+                        .stream().filter(product ->
+                                product.getBuyer() != null).count() >= 1)
+                .map(user -> {
+                    UserWithProductsCountExportDto dto = modelMapper.map(user,
+                            UserWithProductsCountExportDto.class);
+                    dto.setSoldProducts(mapProductsWithCountToUser(user));
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        UserAndProductsCountExportDto exportDto = new UserAndProductsCountExportDto();
+
+        exportDto.setUsers(users);
+        exportDto.setCount(users.size());
+
+        XmlParser.serialize(exportDto, FileExportPaths.USERS_PRODUCTS_FILE_PATH);
+    }
+
+    private SoldProductsWithCountDto mapProductsWithCountToUser(User user) {
+        SoldProductsWithCountDto productsWithCountDto =
+                new SoldProductsWithCountDto();
+        productsWithCountDto.setProducts(
+                user.getProducts().stream()
+                        .map(product1 -> {
+                            ProductsInfoWithAttributesDto productsInfoWithAttributesDto =
+                                    modelMapper.map(product1, ProductsInfoWithAttributesDto.class);
+
+                            productsInfoWithAttributesDto.setPrice(product1.getPrice().doubleValue());
+
+                            return productsInfoWithAttributesDto;
+                        }).collect(Collectors.toList()));
+        productsWithCountDto.setCount(
+                productsWithCountDto.getProducts().size());
+
+        return productsWithCountDto;
     }
 }
