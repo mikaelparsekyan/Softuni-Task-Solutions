@@ -1,6 +1,5 @@
 package com.example.demo.dtos.user;
 
-import com.example.demo.data.entiites.User;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
