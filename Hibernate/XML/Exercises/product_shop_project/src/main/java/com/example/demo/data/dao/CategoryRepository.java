@@ -11,4 +11,15 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 
     Category findById(long id);
 
+    @Query(value = "SELECT COUNT(p.id) FROM Category c JOIN c.products p " +
+            "WHERE c.id = :id")
+    int getAllProductCountByCategory(long id);
+
+    @Query(value = "SELECT AVG(p.price) FROM Category c JOIN c.products p " +
+            "WHERE c.id = :id")
+    double getAllProductAveragePriceByCategory(long id);
+
+    @Query(value = "SELECT SUM(p.price) FROM Category c JOIN c.products p " +
+            "WHERE c.id = :id")
+    double getAllProductSumPriceByCategory(long id);
 }

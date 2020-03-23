@@ -5,9 +5,10 @@ import com.example.demo.constants.FileExportPaths;
 import com.example.demo.constants.FileImportPaths;
 import com.example.demo.data.dao.ProductRepository;
 import com.example.demo.data.entiites.Product;
-import com.example.demo.dtos.product.ProductElementInfoDto;
-import com.example.demo.dtos.product.ProductImportDto;
-import com.example.demo.dtos.product.ProductsInRangeExportDto;
+import com.example.demo.data.entiites.User;
+import com.example.demo.dtos.product.*;
+import com.example.demo.dtos.user.UserSoldProductsExportDto;
+import com.example.demo.dtos.user.UserWithProductsExportDto;
 import com.example.demo.service.api.CategoryService;
 import com.example.demo.service.api.ProductService;
 import com.example.demo.service.api.UserService;
@@ -21,6 +22,7 @@ import java.math.BigDecimal;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Service
@@ -86,9 +88,63 @@ public class ProductServiceImpl implements ProductService {
         dto.setPrice(product.getPrice().doubleValue());
         String sellerFirstName = product.getSeller().getFirstName();
         String sellerLastName = product.getSeller().getLastName();
-        dto.setSeller((sellerFirstName == null ? "" : sellerFirstName + " ")  +
+        dto.setSeller((sellerFirstName == null ? "" : sellerFirstName + " ") +
                 sellerLastName
         );
         return dto;
+    }
+
+    @Override
+    public void exportSuccessfullySoldProducts() {
+        UserSoldProductsExportDto soldProducts = new UserSoldProductsExportDto();
+
+        List<UserWithProductsExportDto> users = userService
+                .getAllUsers()
+                .stream()
+                .filter(filterUsersByProductsCount())
+                .sorted(this::sortUsersByName)
+                .map(this::mapUsersWithProducts)
+                .collect(Collectors.toList());
+
+        soldProducts.setUsers(users);
+
+        XmlParser.serialize(soldProducts,
+                FileExportPaths.SUCCESSFULLY_SOLD_PRODUCTS_FILE_PATH);
+    }
+
+    private UserWithProductsExportDto mapUsersWithProducts(User user) {
+        UserWithProductsExportDto productsExportDto = modelMapper
+                .map(user, UserWithProductsExportDto.class);
+
+        productsExportDto.setFirstName(user.getFirstName());
+        productsExportDto.setLastName(user.getLastName());
+
+        List<ProductInfoByElementsDto> products = user.getProducts()
+                .stream()
+                .filter(product ->
+                        product.getBuyer() != null
+                )
+                .map(product -> modelMapper.map(product,
+                        ProductInfoByElementsDto.class
+                ))
+                .collect(Collectors.toList());
+        productsExportDto.setSoldProductsExportDto(
+                new SoldProductsExportDto(products));
+        return productsExportDto;
+    }
+
+    private Predicate<User> filterUsersByProductsCount() {
+        return user -> user.getProducts().stream().filter(product ->
+                product.getBuyer() != null).count() >= 1;
+    }
+
+    private int sortUsersByName(User u1, User u2) {
+        int result = u1.getLastName().compareTo(u2.getLastName());
+        String firstUserName = u1.getFirstName();
+        String secondUserName = u2.getFirstName();
+        if (result == 0 && firstUserName != null && secondUserName != null) {
+            result = u1.getFirstName().compareTo(u2.getFirstName());
+        }
+        return result;
     }
 }

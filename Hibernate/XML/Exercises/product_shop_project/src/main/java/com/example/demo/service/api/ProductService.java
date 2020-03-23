@@ -9,4 +9,6 @@ public interface ProductService {
     void seedProductsToDatabase();
 
     void exportAllProductsByPriceInRange(BigDecimal lowBound, BigDecimal topBound);
+
+    void exportSuccessfullySoldProducts();
 }

@@ -28,8 +28,12 @@ public class CommandRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //seedDatabase();
 
-        productService.exportAllProductsByPriceInRange(new BigDecimal(500),
-                new BigDecimal(1000));
+        //productService.exportAllProductsByPriceInRange(new BigDecimal(500),
+        // new BigDecimal(1000));
+
+        //productService.exportSuccessfullySoldProducts();
+
+        categoryService.exportAllCategories();
     }
 
     private void seedDatabase() {

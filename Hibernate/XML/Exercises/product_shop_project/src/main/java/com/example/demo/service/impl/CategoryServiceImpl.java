@@ -1,8 +1,11 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.constants.FileExportPaths;
 import com.example.demo.constants.FileImportPaths;
 import com.example.demo.data.dao.CategoryRepository;
 import com.example.demo.data.entiites.Category;
+import com.example.demo.dtos.category.CategoriesByProductsCountExportDto;
+import com.example.demo.dtos.category.CategoryElementInfoExportDto;
 import com.example.demo.dtos.category.CategoryImportDto;
 import com.example.demo.service.api.CategoryService;
 import com.example.demo.util.FileUtil;
@@ -12,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -49,5 +53,30 @@ public class CategoryServiceImpl implements CategoryService {
             categories.add(categoryRepository.findById(categoryId));
         }
         return new HashSet<>(categories);
+    }
+
+    @Override
+    public void exportAllCategories() {
+        List<CategoryElementInfoExportDto> categories = categoryRepository.findAll()
+                .stream()
+                .map(category -> {
+                    CategoryElementInfoExportDto elementInfoExportDto = mapper
+                            .map(category, CategoryElementInfoExportDto.class);
+
+                    elementInfoExportDto.setProductsCount(
+                            categoryRepository.getAllProductCountByCategory(category.getId()));
+                    elementInfoExportDto.setAveragePrice(
+                            categoryRepository.getAllProductAveragePriceByCategory(category.getId()));
+                    elementInfoExportDto.setTotalRevenue(
+                            categoryRepository.getAllProductSumPriceByCategory(category.getId()));
+                    return elementInfoExportDto;
+                })
+                .sorted(Comparator.comparingInt(CategoryElementInfoExportDto::getProductsCount))
+                .collect(Collectors.toList());
+        CategoriesByProductsCountExportDto exportDto =
+                new CategoriesByProductsCountExportDto();
+        exportDto.setCategories(categories);
+
+        XmlParser.serialize(exportDto, FileExportPaths.CATEGORIES_EXPORT_FILE_PATH);
     }
 }
