@@ -5,8 +5,8 @@ import com.example.demo.constant.FileImportPath;
 import com.example.demo.data.dao.CarRepository;
 import com.example.demo.data.entities.Car;
 import com.example.demo.data.entities.Part;
-import com.example.demo.dtos.export_dtos.car.CarAttributeInfoDto;
-import com.example.demo.dtos.export_dtos.car.ExportCarsFromMakeDto;
+import com.example.demo.dtos.export_dtos.car.*;
+import com.example.demo.dtos.export_dtos.part.PartInfoAttributeDto;
 import com.example.demo.dtos.import_dtos.car.CarsImportDto;
 import com.example.demo.service.api.CarService;
 import com.example.demo.service.api.PartService;
@@ -85,6 +85,25 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void exportAllCarsWithParts() {
+        List<CarWithPartsDto> cars = carRepository.findAll()
+                .stream()
+                .map(car -> {
+                    CarWithPartsDto dto = modelMapper
+                            .map(car, CarWithPartsDto.class);
 
+                    ExportAllPartForCarDto carDto = new ExportAllPartForCarDto();
+                    carDto.setParts(car.getParts()
+                            .stream()
+                            .map(part -> modelMapper
+                                    .map(part, PartInfoAttributeDto.class))
+                            .collect(Collectors.toList()));
+                    dto.setCarPartsDto(carDto);
+                    return dto;
+                }).collect(Collectors.toList());
+
+        ExportCarWithListOfPartsDto dto = new ExportCarWithListOfPartsDto();
+        dto.setCars(cars);
+
+        XmlParser.serialize(dto, FileExportPath.CARS_WITH_PARTS_FILE_PATH);
     }
 }

@@ -36,7 +36,7 @@ public class Runner implements CommandLineRunner {
         //Query 3
         //supplierService.exportAllLocalSuppliers();
         //Query 4
-            
+        carService.exportAllCarsWithParts();
         //Query 5
 
         //Query 6
