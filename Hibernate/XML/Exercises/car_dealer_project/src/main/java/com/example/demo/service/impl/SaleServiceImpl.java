@@ -34,7 +34,7 @@ public class SaleServiceImpl implements SaleService {
 
     @Override
     public void makeSales() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             Customer randomCustomer = customerService.getRandomCustomer();
             Sale sale = new Sale();
 

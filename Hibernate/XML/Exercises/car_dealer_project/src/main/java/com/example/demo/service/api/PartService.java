@@ -11,4 +11,6 @@ public interface PartService {
     void seedPartsToDatabase();
 
     Set<Part> getRandomParts(List<Part> allParts);
+
+    List<Part> getAllParts();
 }

@@ -28,16 +28,15 @@ public class Runner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        seedDatabase();
-
+        //seedDatabase();
         //Query 1
-
+        //customerService.exportAllCustomersOrderByBirthDate();
         //Query 2
-
+        //carService.exportAllCarsByMake("Toyota");
         //Query 3
-
+        //supplierService.exportAllLocalSuppliers();
         //Query 4
-
+            
         //Query 5
 
         //Query 6
@@ -47,9 +46,9 @@ public class Runner implements CommandLineRunner {
         System.out.println("Seeding information... ");
         supplierService.seedSuppliersToDatabase();
         partService.seedPartsToDatabase();
-//        carService.seedCarsToDatabase();
-//        customerService.seedCustomersToDatabase();
-//        saleService.makeSales();
+        carService.seedCarsToDatabase();
+        customerService.seedCustomersToDatabase();
+        saleService.makeSales();
         System.out.println("Seeding finished!");
     }
 }

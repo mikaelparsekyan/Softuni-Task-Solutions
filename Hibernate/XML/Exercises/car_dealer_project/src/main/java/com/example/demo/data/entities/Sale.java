@@ -1,9 +1,6 @@
 package com.example.demo.data.entities;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "sales")
 @RequiredArgsConstructor
 @NoArgsConstructor
-@Data
+@Setter
 public class Sale extends BaseEntity {
 
     @NonNull

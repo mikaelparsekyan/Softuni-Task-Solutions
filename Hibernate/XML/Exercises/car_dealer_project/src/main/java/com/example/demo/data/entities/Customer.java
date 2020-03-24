@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,6 +17,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @Data
 public class Customer extends BaseEntity {
+
     @NonNull
     @NotNull
     @Column(nullable = false)

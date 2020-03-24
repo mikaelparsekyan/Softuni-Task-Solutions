@@ -9,4 +9,5 @@ public interface SupplierService {
 
     Supplier getRandomSupplier();
 
+    void exportAllLocalSuppliers();
 }

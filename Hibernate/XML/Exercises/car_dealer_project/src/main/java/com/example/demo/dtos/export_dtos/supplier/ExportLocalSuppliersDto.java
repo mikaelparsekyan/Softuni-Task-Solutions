@@ -1,6 +1,5 @@
-package com.example.demo.dtos.supplier;
+package com.example.demo.dtos.export_dtos.supplier;
 
-import com.example.demo.data.entities.Supplier;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,8 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class SuppliersImportDto {
-
+public class ExportLocalSuppliersDto {
     @XmlElement(name = "supplier")
-    private List<Supplier> suppliers;
+    private List<SuppliersAttributeInfoDto> suppliers;
 }

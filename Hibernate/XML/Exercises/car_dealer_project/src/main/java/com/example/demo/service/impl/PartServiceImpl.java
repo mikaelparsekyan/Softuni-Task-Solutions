@@ -3,7 +3,7 @@ package com.example.demo.service.impl;
 import com.example.demo.constant.FileImportPath;
 import com.example.demo.data.dao.PartRepository;
 import com.example.demo.data.entities.Part;
-import com.example.demo.dtos.part.PartsImportDto;
+import com.example.demo.dtos.import_dtos.part.PartsImportDto;
 import com.example.demo.service.api.PartService;
 import com.example.demo.service.api.SupplierService;
 import com.example.demo.util.FileUtil;
@@ -43,6 +43,11 @@ public class PartServiceImpl implements PartService {
             part.setSupplier(supplierService.getRandomSupplier());
             partRepository.saveAndFlush(part);
         });
+    }
+
+    @Override
+    public List<Part> getAllParts() {
+        return partRepository.findAll();
     }
 
     @Override

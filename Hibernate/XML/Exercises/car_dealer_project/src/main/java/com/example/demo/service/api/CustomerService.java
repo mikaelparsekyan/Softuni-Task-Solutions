@@ -9,4 +9,6 @@ public interface CustomerService {
     Customer getRandomCustomer();
 
     void seedCustomersToDatabase();
+
+    void exportAllCustomersOrderByBirthDate();
 }

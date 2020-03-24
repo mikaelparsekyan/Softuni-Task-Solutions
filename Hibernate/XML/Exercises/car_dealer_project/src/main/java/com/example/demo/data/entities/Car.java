@@ -8,10 +8,16 @@ import lombok.RequiredArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@XmlRootElement(name = "car")
+@XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 @Table(name = "cars")
 @NoArgsConstructor
@@ -19,16 +25,19 @@ import java.util.Set;
 @Data
 public class Car extends BaseEntity {
 
+    @XmlElement
     @NotNull
     @NonNull
     @Column(nullable = false)
     private String make;
 
+    @XmlElement
     @NotNull
     @NonNull
     @Column(nullable = false)
     private String model;
 
+    @XmlElement(name = "travelled-distance")
     @NotNull
     @NonNull
     @Column(name = "travelled_distance", nullable = false)
