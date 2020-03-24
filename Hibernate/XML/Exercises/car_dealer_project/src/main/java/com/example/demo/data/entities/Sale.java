@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "sales")
 @RequiredArgsConstructor
 @NoArgsConstructor
-@Setter
+@Data
 public class Sale extends BaseEntity {
 
     @NonNull

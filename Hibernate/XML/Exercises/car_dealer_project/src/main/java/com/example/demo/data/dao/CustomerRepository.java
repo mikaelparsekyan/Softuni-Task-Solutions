@@ -17,4 +17,5 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     @Query("SELECT ca FROM Customer c JOIN " +
             "c.sale s JOIN s.car ca WHERE c.id = :id GROUP BY ca.id")
     Set<Car> getAllCarsByCustomer(@Param("id") long id);
+
 }
