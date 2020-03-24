@@ -38,8 +38,9 @@ public class Runner implements CommandLineRunner {
         //Query 4
         //carService.exportAllCarsWithParts();
         //Query 5
-        customerService.exportAllCustomersWithSales();
+        //customerService.exportAllCustomersWithSales();
         //Query 6
+        saleService.exportAllSales();
     }
 
     private void seedDatabase() {

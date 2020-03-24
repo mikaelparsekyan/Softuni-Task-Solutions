@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sales>
+    <sale>
+        <car make="Toyota" model="Camry Hybrid" travelled-distance="214647"/>
+        <customer-name>Francis Mckim</customer-name>
+        <discount>0.6</discount>
+        <price>4294.069999999999</price>
+        <price-with-discount>2576.441999999999</price-with-discount>
+    </sale>
+    <sale>
+        <car make="Lamborghini" model="Diablo" travelled-distance="283647"/>
+        <customer-name>Jimmy Grossi</customer-name>
+        <discount>0.7</discount>
+        <price>8900.349999999999</price>
+        <price-with-discount>6230.244999999999</price-with-discount>
+    </sale>
+    <sale>
+        <car make="Dacia" model="Dokker" travelled-distance="213647"/>
+        <customer-name>Daniele Zarate</customer-name>
+        <discount>0.95</discount>
+        <price>9329.609999999997</price>
+        <price-with-discount>8863.129499999997</price-with-discount>
+    </sale>
+    <sale>
+        <car make="Ford" model="Fiesta" travelled-distance="2143647"/>
+        <customer-name>Ann Mcenaney</customer-name>
+        <discount>0.5</discount>
+        <price>5302.579999999999</price>
+        <price-with-discount>2651.2899999999995</price-with-discount>
+    </sale>
+    <sale>
+        <car make="Fiat" model="Panda" travelled-distance="92233854775807"/>
+        <customer-name>Daniele Zarate</customer-name>
+        <discount>0.9</discount>
+        <price>4426.189999999998</price>
+        <price-with-discount>3983.570999999998</price-with-discount>
+    </sale>
+</sales>

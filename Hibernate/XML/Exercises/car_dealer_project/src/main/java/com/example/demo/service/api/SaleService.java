@@ -5,4 +5,6 @@ import org.springframework.stereotype.Service;
 @Service("saleService")
 public interface SaleService {
     void makeSales();
+
+    void exportAllSales();
 }
