@@ -6,4 +6,7 @@ public class FileImportPath {
 
     public static final String TEAMS_IMPORT_FILE_PATH =
             "src/main/resources/files/xml/teams.xml";
+
+    public static final String PLAYERS_IMPORT_FILE_PATH =
+            "src/main/resources/files/json/players.json";
 }

@@ -1,5 +1,6 @@
 package softuni.exam.domain.entities;
 
+import com.google.gson.annotations.Expose;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 public class Picture extends BaseEntity {
+    @Expose
     @NotNull
     @NonNull
     @Column(nullable = false)

@@ -1,5 +1,7 @@
 package softuni.exam.domain.entities;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -18,16 +20,19 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Data
 public class Player extends BaseEntity {
+    @Expose
     @NonNull
     @NotNull
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
+    @Expose
     @NonNull
     @NotNull
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
+    @Expose
     @NonNull
     @NotNull
     @Column(nullable = false)
@@ -35,27 +40,42 @@ public class Player extends BaseEntity {
     @Max(99)
     private int number;
 
+    @Expose
     @NonNull
     @NotNull
     @Column(nullable = false)
     @Min(0)
     private BigDecimal salary;
 
+    @Expose
     @NonNull
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Position position;
 
+    @Expose
     @NonNull
     @NotNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "team_id", referencedColumnName = "id", nullable = false)
     private Team team;
 
+    @Expose
     @NonNull
     @NotNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "picture_id", referencedColumnName = "id", nullable = false)
     private Picture picture;
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append(String.format("Player name: %s %s%n" +
+                        "   Number: %d%n" +
+                        "   Salary: %.2f%n" +
+                        "   Team: %s%n", getFirstName(), getLastName(), getNumber(),
+                getSalary().doubleValue(), getTeam().getName()));
+        return result.toString();
+    }
 }

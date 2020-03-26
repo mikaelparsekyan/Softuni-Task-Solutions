@@ -6,5 +6,5 @@ import softuni.exam.domain.entities.Picture;
 
 @Repository
 public interface PictureRepository extends JpaRepository<Picture, Long> {
-
+    Picture findByUrl(String url);
 }
