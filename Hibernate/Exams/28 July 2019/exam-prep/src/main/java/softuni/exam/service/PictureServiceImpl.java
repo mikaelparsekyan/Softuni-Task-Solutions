@@ -11,7 +11,7 @@ import softuni.exam.util.ValidatorUtil;
 import softuni.exam.util.XmlParser;
 
 import javax.xml.bind.JAXBException;
-import java.io.*;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -38,7 +38,7 @@ public class PictureServiceImpl implements PictureService {
     @Override
     public String importPictures() throws IOException, JAXBException {
         StringBuilder result = new StringBuilder();
-        PicturesImportDto importDto = xmlParser.convertFromFile(FileImportPath.PICTURE_IMPORT_FILE_PATH,
+        PicturesImportDto importDto = xmlParser.convertFromFile(FileImportPath.PICTURES_IMPORT_FILE_PATH,
                 PicturesImportDto.class);
 
         importDto.getPictures()
@@ -47,10 +47,10 @@ public class PictureServiceImpl implements PictureService {
                     if (validatorUtil.isValid(pic)) {
                         pictureRepository.saveAndFlush(modelMapper
                                 .map(pic, Picture.class));
-                        System.out.printf("Successfully imported picture - %s%n",
-                                pic.getUrl());
+                        result.append(String.format("Successfully imported picture - %s%n",
+                                pic.getUrl()));
                     } else {
-                        System.out.println("Invalid picture");
+                        result.append("Invalid picture").append(System.lineSeparator());
                     }
                 });
 
@@ -64,9 +64,8 @@ public class PictureServiceImpl implements PictureService {
 
     @Override
     public String readPicturesXmlFile() throws IOException {
-        String content = Files.readString(Path.of(FileImportPath.PICTURE_IMPORT_FILE_PATH),
+        return Files.readString(Path.of(FileImportPath.PICTURES_IMPORT_FILE_PATH),
                 StandardCharsets.US_ASCII);
-        return content;
     }
 
 

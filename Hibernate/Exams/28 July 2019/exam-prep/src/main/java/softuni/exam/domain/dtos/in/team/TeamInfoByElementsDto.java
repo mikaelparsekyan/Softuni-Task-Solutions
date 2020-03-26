@@ -1,10 +1,9 @@
-package softuni.exam.domain.dtos.in.picture;
-
+package softuni.exam.domain.dtos.in.team;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import softuni.exam.domain.dtos.in.picture.PictureInfoByElementsDto;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -12,15 +11,18 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "picture")
+@XmlRootElement(name = "team")
 @XmlAccessorType(XmlAccessType.FIELD)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class PictureInfoByElementsDto {
+public class TeamInfoByElementsDto {
 
-    @XmlElement
-    @NonNull
     @NotNull
-    private String url;
+    @XmlElement
+    private String name;
+
+    @NotNull
+    @XmlElement(name = "picture")
+    private PictureInfoByElementsDto picture;
 }

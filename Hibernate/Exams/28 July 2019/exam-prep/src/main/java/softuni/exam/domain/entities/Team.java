@@ -24,7 +24,7 @@ public class Team extends BaseEntity {
 
     @NonNull
     @NotNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "picture_id", referencedColumnName = "id", nullable = false)
     private Picture picture;
 
