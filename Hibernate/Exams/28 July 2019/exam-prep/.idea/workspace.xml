@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="887ef9e7-38f2-44e1-8b71-33f3368b8dcc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f59688c-7f37-4128-bfbb-b4eeb1fff803.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f59688c-7f37-4128-bfbb-b4eeb1fff803.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/constants/FileImportPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/constants/FileImportPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/domain/entities/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/domain/entities/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/domain/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/domain/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/domain/entities/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/domain/entities/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/repository/PictureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/repository/PictureRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/repository/PlayerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/repository/PlayerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/service/PlayerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/service/PlayerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/exam/service/TeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/exam/service/TeamServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="887ef9e7-38f2-44e1-8b71-33f3368b8dcc" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/softuni/exam/service/PlayerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1452">
-              <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
+            <state relative-caret-position="286">
+              <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#727#728#0" expanded="true" />
@@ -93,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/softuni/exam/service/TeamServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="376">
@@ -102,6 +91,28 @@
                 <element signature="e#2340#2341#0" expanded="true" />
                 <element signature="e#2398#2399#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://0f59688c-7f37-4128-bfbb-b4eeb1fff803/schema/test_exam_db/table/teams">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="e83328f1-245a-42a6-b8c0-de2b1ea62ca2">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://0f59688c-7f37-4128-bfbb-b4eeb1fff803/schema/test_exam_db/table/players">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="e83328f1-245a-42a6-b8c0-de2b1ea62ca2">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -512,18 +523,18 @@
       <updated>1585126370295</updated>
       <workItem from="1585126371748" duration="5528000" />
       <workItem from="1585150232301" duration="3874000" />
-      <workItem from="1585206607162" duration="10233000" />
+      <workItem from="1585206607162" duration="11549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19635000" />
+    <option name="totallyTimeSpent" value="20951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23489933" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22080536" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -533,7 +544,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.04249292" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.04249292" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40934843" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -881,18 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/softuni/exam/service/PlayerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1452">
-          <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#727#728#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/softuni/exam/repository/PictureRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -922,24 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://0f59688c-7f37-4128-bfbb-b4eeb1fff803/schema/test_exam_db/table/players">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="e83328f1-245a-42a6-b8c0-de2b1ea62ca2">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0f59688c-7f37-4128-bfbb-b4eeb1fff803/schema/test_exam_db/table/teams">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="e83328f1-245a-42a6-b8c0-de2b1ea62ca2">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://0f59688c-7f37-4128-bfbb-b4eeb1fff803/schema/test_exam_db/table/pictures">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="e83328f1-245a-42a6-b8c0-de2b1ea62ca2">
@@ -956,6 +937,36 @@
           <folding>
             <element signature="e#2340#2341#0" expanded="true" />
             <element signature="e#2398#2399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0f59688c-7f37-4128-bfbb-b4eeb1fff803/schema/test_exam_db/table/teams">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="e83328f1-245a-42a6-b8c0-de2b1ea62ca2">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://0f59688c-7f37-4128-bfbb-b4eeb1fff803/schema/test_exam_db/table/players">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="e83328f1-245a-42a6-b8c0-de2b1ea62ca2">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/softuni/exam/service/PlayerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
           </folding>
         </state>
       </provider>
