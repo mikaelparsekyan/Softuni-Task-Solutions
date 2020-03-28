@@ -1,5 +1,6 @@
 package alararestaurant.domain.entities;
 
+import com.google.gson.annotations.Expose;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -24,13 +25,13 @@ public class Item extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id", referencedColumnName = "id", nullable = false)
     private Category category;
 
     @NonNull
     @NotNull
-    @DecimalMin("0.01")
+    @DecimalMin(value = "0.01", message = "Price must be greater or equal 0.01!")
     @Column(nullable = false)
     private BigDecimal price;
 

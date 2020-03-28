@@ -963,5 +963,254 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
+    <table id="246" parent="2" name="categories">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="247" parent="2" name="employees">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="248" parent="2" name="items">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="249" parent="2" name="order_items">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="250" parent="2" name="orders">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="251" parent="2" name="positions">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="252" parent="246" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="246" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="254" parent="246" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="255" parent="247" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="256" parent="247" name="age">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="247" name="name">
+      <Position>3</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="247" name="position_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="259" parent="247" name="FKngcpgx7fx5kednw3m7u0u8of3">
+      <ColNames>position_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="260" parent="247" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="261" parent="247" name="FKngcpgx7fx5kednw3m7u0u8of3">
+      <ColNames>position_id</ColNames>
+      <RefSchemaName>alara_restaurant_db</RefSchemaName>
+      <RefTableName>positions</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="262" parent="248" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="263" parent="248" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="264" parent="248" name="price">
+      <Position>3</Position>
+      <DataType>decimal(19,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="265" parent="248" name="category_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="266" parent="248" name="UK_mnhl79u3u6jdvutuoeq54stne">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="267" parent="248" name="FKjcdcde7htb3tyjgouo4g9xbmr">
+      <ColNames>category_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="268" parent="248" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="269" parent="248" name="UK_mnhl79u3u6jdvutuoeq54stne">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>UK_mnhl79u3u6jdvutuoeq54stne</UnderlyingIndexName>
+    </key>
+    <foreign-key id="270" parent="248" name="FKjcdcde7htb3tyjgouo4g9xbmr">
+      <ColNames>category_id</ColNames>
+      <RefSchemaName>alara_restaurant_db</RefSchemaName>
+      <RefTableName>categories</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="271" parent="249" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="249" name="quantity">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="249" name="item_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="249" name="order_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="275" parent="249" name="FK88tn2oqcxl1034banqif9r70x">
+      <ColNames>item_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="276" parent="249" name="FKbioxgbv59vetrxe0ejfubep1w">
+      <ColNames>order_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="277" parent="249" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="278" parent="249" name="FK88tn2oqcxl1034banqif9r70x">
+      <ColNames>item_id</ColNames>
+      <RefSchemaName>alara_restaurant_db</RefSchemaName>
+      <RefTableName>items</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="279" parent="249" name="FKbioxgbv59vetrxe0ejfubep1w">
+      <ColNames>order_id</ColNames>
+      <RefSchemaName>alara_restaurant_db</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="280" parent="250" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="281" parent="250" name="customer">
+      <Position>2</Position>
+      <DataType>varchar(512)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="282" parent="250" name="date_time">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="283" parent="250" name="type">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;ForHere&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="284" parent="250" name="employee_id">
+      <Position>5</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="285" parent="250" name="FKfhl8bv0xn3sj33q2f3scf1bq6">
+      <ColNames>employee_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="286" parent="250" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="287" parent="250" name="FKfhl8bv0xn3sj33q2f3scf1bq6">
+      <ColNames>employee_id</ColNames>
+      <RefSchemaName>alara_restaurant_db</RefSchemaName>
+      <RefTableName>employees</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="288" parent="251" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="289" parent="251" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="290" parent="251" name="UK_3vhyopdpf9huqh1t67ho6nayj">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="291" parent="251" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="292" parent="251" name="UK_3vhyopdpf9huqh1t67ho6nayj">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>UK_3vhyopdpf9huqh1t67ho6nayj</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

@@ -34,7 +34,7 @@ public class Employee extends BaseEntity {
 
     @NotNull
     @NonNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "position_id", referencedColumnName = "id", nullable = false)
     private Position position;
 
