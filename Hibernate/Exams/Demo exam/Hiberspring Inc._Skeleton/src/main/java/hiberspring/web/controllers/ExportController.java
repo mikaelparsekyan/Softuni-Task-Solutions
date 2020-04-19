@@ -22,6 +22,7 @@ public class ExportController extends BaseController {
     public ModelAndView exportProductiveEmployees() {
         String exportResult = this.employeeService.exportProductiveEmployees();
 
-        return super.view("export/export-productive-employees", "productiveEmployees", exportResult);
+        return super.view("export/export-productive-employees",
+                "productiveEmployees", exportResult);
     }
 }
