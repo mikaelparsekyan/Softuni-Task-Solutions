@@ -3,19 +3,22 @@
 <p>This repository contains:</p>
 
 [Programming Fundamentals with Java](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Programming%20Fundamentals)
-Contains all <b>Fundamentals module</b> problems in <b>Softuni</b>
+contains all <b>Fundamentals module</b> problems in <b>Softuni</b>
 
 [Java Advanced](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Java%20Advanced)
-Contains all <b>Java Advanced module</b> problems in <b>Softuni</b>
+contains all <b>Java Advanced module</b> problems in <b>Softuni</b>
 
 [Java OOP](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Java%20OOP)
-Contains all <b>Java OOP module</b> problems in <b>Softuni</b>
+contains all <b>Java OOP module</b> problems in <b>Softuni</b>
 
 [Java DB](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Java%20DB)
-Contains all <b>Mysql module</b> problems in <b>Softuni</b>
+contains all <b>Mysql module</b> problems in <b>Softuni</b>
 
 [Hibernate](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Hibernate)
-Contains all <b>Hibernate module</b> problems in <b>Softuni</b>
+contains all <b>Hibernate module</b> problems in <b>Softuni</b>
 
-[Hibernate](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Softuniada)
-Contains all <b>Softuniada</b> tasks in <b>Softuni</b>
+[Softuniada](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Softuniada)
+contains all <b>Softuniada</b> tasks in <b>Softuni</b>
+
+<p>License:</p>
+[MIT](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/blob/master/LICENSE)
