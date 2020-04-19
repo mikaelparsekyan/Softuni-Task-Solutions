@@ -5,8 +5,7 @@
   <tbody>
     <tr>
       <td align="center" valign="middle">
-        [Programming Fundamentals with Java](https://github.com/ivaylokenov/MyTested.AspNetCore.Mvc/issues/265#issue-194578165)
-          
+        > [Programming Fundamentals with Java](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Programming%20Fundamentals)
         <p>-Contains all tasks related with the Fundamentals module in Softuni</p>
       </td>
     </tr>
