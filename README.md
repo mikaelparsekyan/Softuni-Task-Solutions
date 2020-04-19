@@ -20,5 +20,5 @@ contains all <b>Hibernate module</b> problems in <b>Softuni</b>
 [Softuniada](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/tree/master/Softuniada)
 contains all <b>Softuniada</b> tasks in <b>Softuni</b>
 
-<p>License:</p>
+License:
 [MIT](https://github.com/mikaelparsekyan/Softuni-Task-Solutions/blob/master/LICENSE)
